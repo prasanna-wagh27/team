@@ -24,6 +24,7 @@ const { chromium } = require('playwright');
     }, i);
     const part = path.join(outDir, `.part${i}.pdf`);
     await page.pdf({ path: part, width: '110mm', height: `${h + 2}px`, printBackground: true, pageRanges: '1' });
+    await page.setViewportSize({ width: 416, height: h });
     await page.screenshot({ path: path.join(outDir, `${base}_p${i + 1}.png`), fullPage: true });
     parts.push(part);
   }
