@@ -14,7 +14,7 @@ const { chromium } = require('playwright');
   await page.pdf({
     path: out, printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
     headerTemplate: '<span></span>',
-    footerTemplate: `<div style="width:100%;font-family:Inter,Helvetica,Arial,sans-serif;font-size:7.5px;color:#6b7280;padding:0 8mm;display:flex;justify-content:space-between">
+    footerTemplate: `<div style="width:100%;font-family:Helvetica,Arial,sans-serif;font-size:7.5px;color:#6b7280;padding:0 8mm;display:flex;justify-content:space-between">
       <span><b style="color:#0B0D12">Outgrid</b> Labs · outgridlabs.com</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
   });
   await browser.close();
