@@ -1,223 +1,498 @@
-<!-- title: Proposal · Your own quick-delivery app · outgridlabs.com -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Your own quick-delivery app · Outgrid Labs</title>
 <style>
-  .plan{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;break-inside:avoid}
-  .plan.star{border-color:var(--blue);background:var(--blue-soft)}
-  .plan .pname{font-weight:700;font-size:14pt}
-  .plan .price{font-weight:700;font-size:22pt;color:var(--blue);line-height:1.1;margin:4px 0 2px}
-  .plan .meta2{color:var(--muted);font-size:10pt;margin-bottom:6px}
-  .plan .badge{display:inline-block;background:var(--blue);color:#fff;font-size:8.5pt;font-weight:600;border-radius:20px;padding:2px 10px;margin-left:6px;vertical-align:middle}
-  .plan ul{margin:6px 0 0}
-  .flow{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0}
-  .step{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:9px 11px;break-inside:avoid}
-  .step .n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:10.5pt}
-  .feat{margin:6px 0 4px}
-  .feat li{margin-bottom:4px}
-  .pay{border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin:8px 0;break-inside:avoid}
-  .pay b.amt{color:var(--blue)}
-  .contact{font-size:12pt;line-height:1.8}
-  .site{color:var(--blue);font-weight:600}
+  :root{--char:#0B0D12;--char2:#1a1d24;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#5f6673;--line:#E5E7EB}
+  @page{size:110mm 196mm;margin:10mm 8mm 12mm 8mm}
+  @page cover{margin:0}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{font-family:Inter,"Noto Sans Devanagari",sans-serif;color:var(--char);font-size:10.5pt;line-height:1.5}
+  h1,h2,h3{margin:0;line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  p{margin:0 0 8px}
+  b,strong{font-weight:700}
+
+  /* Logo */
+  .logo{display:flex;align-items:center;gap:9px}
+  .logo svg{width:34px;height:34px}
+  .logo .div{width:1.5px;height:30px;background:currentColor;opacity:.5}
+  .logo .word b{display:block;font-size:17pt;font-weight:800;line-height:1}
+  .logo .word span{display:block;font-size:10.5pt;letter-spacing:.32em;font-weight:400;line-height:1.3}
+
+  /* Cover */
+  .cover{page:cover;width:110mm;height:196mm;padding:11mm 9mm 9mm;color:#fff;break-after:page;position:relative;overflow:hidden;
+    background:radial-gradient(circle at 105% -5%,rgba(255,208,20,.75) 0,rgba(255,208,20,.18) 32%,rgba(255,208,20,0) 52%),var(--char);
+    display:flex;flex-direction:column}
+  .cover .pattern{position:absolute;right:-22mm;top:58mm;width:62mm;opacity:.45;z-index:0}
+  .cover > *:not(.pattern){position:relative;z-index:1}
+  .cover .tag{display:inline-block;margin-top:14mm;background:var(--yellow);color:var(--char);font-weight:700;font-size:8.5pt;border-radius:20px;padding:3px 11px;letter-spacing:.04em}
+  .cover h1{font-size:29pt;margin:5mm 0 4mm}
+  .cover h1 em{font-style:normal;color:var(--yellow)}
+  .cover .sub{color:#c9ccd3;font-size:11pt;max-width:88mm}
+  .cover .phonewrap{margin-top:auto;display:flex;align-items:flex-end;gap:10px;position:relative;z-index:1}
+  .cover .meta{font-size:8.5pt;color:#c9ccd3;line-height:1.7}
+  .cover .meta b{color:#fff;font-weight:600}
+
+  /* Sections */
+  .eyebrow{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:8pt;letter-spacing:.08em;text-transform:uppercase;border-radius:20px;padding:3px 10px;margin:14px 0 8px}
+  h2{font-size:19pt;margin-bottom:8px}
+  h2 .hl{background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+  h3{font-size:12.5pt;margin:14px 0 6px;break-after:avoid}
+  .lede{color:var(--muted);font-size:10.5pt}
+  section{break-inside:auto}
+  .first{margin-top:0}
+
+  /* Stat strip */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}
+  .stat{background:var(--cloud);border:1px solid var(--line);border-radius:12px;padding:9px 11px}
+  .stat b{display:block;font-size:17pt;font-weight:800;line-height:1.1}
+  .stat span{font-size:8.8pt;color:var(--muted)}
+  .stat.dark{background:var(--char);border-color:var(--char);color:#fff}
+  .stat.dark b{color:var(--yellow)}
+  .stat.dark span{color:#c9ccd3}
+
+  /* Steps */
+  .steps{counter-reset:s;margin:8px 0}
+  .stepx{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);break-inside:avoid}
+  .stepx:last-child{border-bottom:0}
+  .stepx .n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--yellow);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:10.5pt}
+  .stepx b{display:block}
+  .stepx span{color:var(--muted);font-size:9.8pt}
+
+  /* Callout */
+  .callout{background:var(--char);color:#fff;border-radius:14px;padding:12px 14px;margin:10px 0;break-inside:avoid}
+  .callout b{color:var(--yellow)}
+  .callout .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  .callout .chips span{background:#232733;border:1px solid #343947;border-radius:20px;padding:2px 9px;font-size:8.8pt;color:#e8eaee}
+  .note{font-size:9pt;color:var(--muted);background:var(--cloud);border-left:3px solid var(--yellow);padding:7px 10px;border-radius:0 8px 8px 0}
+
+  /* Checklists */
+  .checks{list-style:none;padding:0;margin:6px 0 4px}
+  .checks li{position:relative;padding-left:22px;margin-bottom:5px}
+  .checks li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:4px;background:var(--yellow)}
+  .checks li::after{content:"";position:absolute;left:4.5px;top:5.5px;width:4px;height:7px;border:solid var(--char);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .appcard{border:1px solid var(--line);border-radius:14px;padding:11px 13px;margin:10px 0}
+  .appcard .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+  .appcard .head h3{margin:0}
+  .pill{font-size:8pt;font-weight:600;border-radius:20px;padding:2px 9px;background:var(--stone)}
+  .pill.y{background:var(--yellow)}
+
+  /* Phone mockups */
+  .phone{width:44mm;height:88mm;background:#05060a;border-radius:7mm;padding:1.6mm;box-shadow:0 0 0 1px #2a2e38;flex:0 0 auto}
+  .phone .scr{width:100%;height:100%;border-radius:5.6mm;overflow:hidden;background:#fff;position:relative;font-size:6.2pt;line-height:1.3;color:var(--char)}
+  .phone .notch{position:absolute;top:1.6mm;left:50%;transform:translateX(-50%);width:13mm;height:2.6mm;background:#05060a;border-radius:2mm;z-index:2}
+  .a-top{background:var(--yellow);padding:5.5mm 2.6mm 2.2mm}
+  .a-top .r{display:flex;justify-content:space-between;align-items:center}
+  .a-top b{font-size:7.6pt}
+  .a-top .eta{background:var(--char);color:var(--yellow);border-radius:8px;padding:0 4px;font-weight:700;font-size:5.6pt}
+  .a-top .addr{font-size:5.6pt;opacity:.75}
+  .a-search{margin:1.6mm 2.4mm;background:var(--cloud);border:1px solid var(--stone);border-radius:6px;padding:1.2mm 2mm;color:#8b919c;font-size:5.8pt}
+  .a-banner{margin:0 2.4mm;background:var(--char);color:#fff;border-radius:7px;padding:1.8mm 2.2mm}
+  .a-banner b{color:var(--yellow);font-size:7.4pt}
+  .a-cats{display:flex;gap:1.2mm;margin:1.8mm 2.4mm 1.2mm}
+  .a-cats span{background:var(--cloud);border:1px solid var(--stone);border-radius:6px;padding:.5mm 1.6mm;font-size:5.4pt;font-weight:600}
+  .a-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm;margin:0 2.4mm}
+  .tile{border:1px solid var(--stone);border-radius:6px;padding:1.2mm}
+  .tile .img{height:9mm;border-radius:4px;margin-bottom:.8mm}
+  .tile p{margin:0;font-weight:600;font-size:5.8pt}
+  .tile small{color:#8b919c;font-size:5pt}
+  .tile .row{display:flex;justify-content:space-between;align-items:center;margin-top:.4mm}
+  .tile i{font-style:normal;border:1px solid var(--char);border-radius:4px;padding:0 1.4mm;font-weight:700;font-size:5.2pt}
+  .i1{background:linear-gradient(135deg,#fff4c2,#ffe27a)}.i2{background:linear-gradient(135deg,#e9f5e1,#bfe0a8)}.i3{background:linear-gradient(135deg,#fde7d9,#f6b98f)}.i4{background:linear-gradient(135deg,#e3e8f7,#b9c5ec)}
+  .a-cart{position:absolute;left:2.4mm;right:2.4mm;bottom:2.4mm;background:var(--char);color:#fff;border-radius:7px;padding:1.8mm 2.2mm;display:flex;justify-content:space-between;font-size:6pt}
+  .a-cart b{color:var(--yellow)}
+  /* rider */
+  .r-scr{background:var(--char)!important;color:#fff!important}
+  .r-head{padding:5.5mm 2.6mm 1.6mm;display:flex;justify-content:space-between;align-items:center}
+  .r-head .on{background:#1f7a4d;color:#fff;border-radius:8px;padding:0 4px;font-size:5.4pt;font-weight:700}
+  .r-map{margin:0 2.4mm;border-radius:7px;overflow:hidden;height:30mm}
+  .r-card{margin:2mm 2.4mm;background:#191c24;border:1px solid #2c303b;border-radius:7px;padding:2mm}
+  .r-card .k{color:#9aa0ab;font-size:5.4pt}
+  .r-card b{font-size:7pt}
+  .r-btn{margin:0 2.4mm;background:var(--yellow);color:var(--char);text-align:center;font-weight:800;border-radius:7px;padding:2mm;font-size:7pt}
+  .r-sub{margin:1.6mm 2.4mm;text-align:center;color:#9aa0ab;font-size:5.4pt}
+  /* admin */
+  .laptop{border-radius:10px;background:#05060a;padding:2mm 2mm 2.6mm;margin:10px 0;break-inside:avoid}
+  .laptop .scr{background:var(--cloud);border-radius:6px;overflow:hidden;font-size:6.2pt;line-height:1.3}
+  .ad-top{background:var(--char);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:1.6mm 2.6mm}
+  .ad-top b{color:var(--yellow)}
+  .ad-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6mm;padding:2mm 2.4mm 0}
+  .ad-kpis div{background:#fff;border:1px solid var(--stone);border-radius:5px;padding:1.2mm 1.6mm}
+  .ad-kpis b{display:block;font-size:8pt}
+  .ad-kpis span{color:#8b919c;font-size:5.2pt}
+  .ad-board{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4mm;padding:2mm 2.4mm 2.4mm}
+  .ad-col h6{margin:0 0 1mm;font-size:5.6pt;text-transform:uppercase;letter-spacing:.05em;color:#6b7280}
+  .ad-card{background:#fff;border:1px solid var(--stone);border-radius:4px;padding:1mm 1.2mm;margin-bottom:1mm;font-size:5.4pt}
+  .ad-card b{display:block;font-size:5.8pt}
+  .ad-card.y{border-left:2px solid var(--yellow)}
+  .cap{font-size:8.5pt;color:var(--muted);text-align:center;margin-top:3px}
+  .duo{display:flex;gap:6mm;justify-content:center;margin:10px 0;break-inside:avoid}
+
+  /* Plans */
+  .plan{border:1.5px solid var(--line);border-radius:16px;padding:10px 13px;margin:9px 0;break-inside:avoid;background:#fff}
+  .plan .top{display:flex;justify-content:space-between;align-items:baseline}
+  .plan .pname{font-weight:800;font-size:13pt}
+  .plan .wk{font-size:8.8pt;color:var(--muted)}
+  .plan .price{font-weight:800;font-size:24pt;line-height:1.1;margin:3px 0 6px}
+  .plan .for{font-size:9.5pt;color:var(--muted);margin-bottom:6px}
+  .plan.star{background:var(--char);border-color:var(--char);color:#fff;position:relative}
+  .plan.star .price{color:var(--yellow)}
+  .plan.star .wk,.plan.star .for{color:#c9ccd3}
+  .plan.star .badge{position:absolute;top:-9px;right:14px;background:var(--yellow);color:var(--char);font-weight:800;font-size:8pt;border-radius:20px;padding:2px 10px}
+  .plan.star .checks li::after{border-color:var(--char)}
+  .plus{font-weight:700;font-size:9.5pt;margin:2px 0}
+  .plan .checks li{margin-bottom:2px;font-size:9.8pt}
+  .plan .price{font-size:22pt}
+
+  /* Timeline */
+  .tl{position:relative;margin:8px 0 6px 6px;padding-left:16px;border-left:2px solid var(--stone)}
+  .tl .it{position:relative;margin-bottom:9px;break-inside:avoid}
+  .tl .it::before{content:"";position:absolute;left:-23px;top:3px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--char)}
+  .tl .it.m::before{background:var(--yellow);border-color:var(--char)}
+  .tl .wkk{font-size:8.5pt;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .tl .it b{display:block}
+  .tl .it span{font-size:9.6pt;color:var(--muted)}
+  .tl .mtag{display:inline-block;background:var(--yellow);font-size:7.5pt;font-weight:700;border-radius:10px;padding:0 7px;margin-left:4px;vertical-align:1px}
+
+  /* Payment table */
+  .paygrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:8px 0}
+  .paygrid div{background:var(--cloud);border:1px solid var(--line);border-radius:10px;padding:8px 9px}
+  .paygrid b{display:block;font-size:15pt;font-weight:800}
+  .paygrid span{font-size:8.6pt;color:var(--muted)}
+  table{width:100%;border-collapse:separate;border-spacing:0;font-size:9.5pt;margin:6px 0 10px;border:1px solid var(--line);border-radius:10px;overflow:hidden;break-inside:avoid}
+  th{background:var(--char);color:#fff;text-align:left;font-weight:600;padding:6px 7px;font-size:8.8pt}
+  td{padding:6px 7px;border-top:1px solid var(--line)}
+  tr.hl td{background:#fff8d6;font-weight:600}
+  .small{font-size:9pt;color:var(--muted)}
+  .two{display:grid;grid-template-columns:1fr;gap:8px}
+  .box{border:1px solid var(--line);border-radius:14px;padding:10px 13px;break-inside:avoid}
+  .box h3{margin-top:0}
+
+  /* CTA */
+  .cta{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.55),rgba(255,208,20,0) 50%),var(--char);color:#fff;border-radius:18px;padding:16px 15px;margin:14px 0 0;break-inside:avoid}
+  .cta h2{color:#fff;font-size:18pt}
+  .cta h2 em{font-style:normal;color:var(--yellow)}
+  .cta p{color:#c9ccd3}
+  .cta .contact{margin-top:10px;border-top:1px solid #2c303b;padding-top:10px;font-size:10.5pt;line-height:1.8}
+  .cta .contact b{color:var(--yellow)}
 </style>
+</head>
+<body>
+
+<!-- Reusable logo mark -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="mark" viewBox="-6 -6 112 112">
+      <path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+        d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z
+           M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/>
+    </symbol>
+  </defs>
+</svg>
 
 <div class="cover">
-  <div class="wordmark"><b>Outgrid</b>Labs <span class="small" style="margin-left:6px">outgridlabs.com</span></div>
-  <div>
-    <div class="module-badge">Proposal</div>
-    <h1>Your own quick-delivery app.</h1>
-    <p class="lede">A customer app, a delivery app and an admin panel, under your brand. Your customers order from their phone; you pack; your rider delivers. No commission to anyone, and you own all of it.</p>
-    <div class="bar"></div>
+  <svg class="pattern" viewBox="0 0 300 260" fill="none">
+    <g stroke="#3a3f4b" stroke-width="3">
+      <path d="M40,10 h70 q10,0 10,10 v50 l-40,40 h-50 q-10,0 -10,-10 v-50 z"/>
+      <path d="M170,0 h70 q10,0 10,10 v50 l-40,40 h-50 q-10,0 -10,-10 v-50 z"/>
+      <path d="M210,140 h70 q10,0 10,10 v50 l-40,40 h-50 q-10,0 -10,-10 v-50 z"/>
+      <path d="M20,160 h70 q10,0 10,10 v50 l-40,40 h-50 q-10,0 -10,-10 v-50 z"/>
+    </g>
+    <path d="M115,90 h70 q10,0 10,10 v50 l-40,40 h-50 q-10,0 -10,-10 v-50 z" stroke="#FFD014" stroke-width="4"/>
+  </svg>
+
+  <div class="logo" style="color:#fff">
+    <svg fill="#fff" stroke="#fff"><use href="#mark"/></svg>
+    <div class="div"></div>
+    <div class="word"><b>Outgrid</b><span>Labs</span></div>
   </div>
-  <div class="meta">
-    <span><b>Prepared for:</b> ______________________</span>
-    <span><b>Date:</b> __________ · <b>Valid for 7 days</b></span>
-    <span><b>Prepared by:</b> Outgrid Labs · outgridlabs.com</span>
+
+  <div><span class="tag">APP PROPOSAL</span></div>
+  <h1>Your own <em>quick-delivery</em> app.</h1>
+  <p class="sub">Your brand. Your customers. Your riders. Orders straight to your store, with no commission to anyone.</p>
+
+  <div class="phonewrap">
+    <div class="phone"><div class="scr">
+      <div class="notch"></div>
+      <div class="a-top"><div class="r"><b>YourStore</b><span class="eta">25 MIN</span></div><div class="addr">Deliver to Home · Kothrud</div></div>
+      <div class="a-search">Search atta, milk, fruits…</div>
+      <div class="a-banner"><b>Flat ₹50 off</b><br>on your first order</div>
+      <div class="a-cats"><span>Fruits</span><span>Dairy</span><span>Snacks</span></div>
+      <div class="a-grid">
+        <div class="tile"><div class="img i1"></div><p>Fresh Milk</p><small>500 ml</small><div class="row"><b>₹28</b><i>ADD</i></div></div>
+        <div class="tile"><div class="img i2"></div><p>Bananas</p><small>1 dozen</small><div class="row"><b>₹60</b><i>ADD</i></div></div>
+      </div>
+      <div class="a-cart"><span>2 items · ₹156</span><b>View cart ›</b></div>
+    </div></div>
+    <div class="meta">
+      <b>Prepared for</b><br>______________________<br>
+      <b>Date</b><br>______________<br>
+      <b>By</b><br>Outgrid Labs<br>outgridlabs.com
+    </div>
   </div>
 </div>
 
-<section>
-  <div class="eyebrow">1 · In one minute</div>
-  <h2>What you get</h2>
-  <ul class="feat">
-    <li><b>Customer app</b> on Android and iPhone, with your name and logo.</li>
-    <li><b>Delivery app</b> for your riders (Android).</li>
-    <li><b>Admin panel</b> on any laptop or phone browser, to run everything.</li>
-    <li><b>Up to 1,000 products loaded for you.</b> We give you a simple Excel sheet; you fill names and prices; we upload it.</li>
-    <li><b>100% yours:</b> the code, the apps, the store accounts and your customer data.</li>
-  </ul>
+<!-- 1 -->
+<div class="eyebrow first">01 · What you get</div>
+<h2>Three apps. <span class="hl">One business.</span></h2>
+<p class="lede">Everything you need to take orders online and deliver them yourself, built for your store and owned by you.</p>
+<div class="stats">
+  <div class="stat dark"><b>3 apps</b><span>Customer, delivery and admin</span></div>
+  <div class="stat"><b>2 platforms</b><span>Android and iPhone</span></div>
+  <div class="stat"><b>1,000</b><span>Products loaded for you</span></div>
+  <div class="stat dark"><b>100%</b><span>Yours: code, apps, data</span></div>
+</div>
 
-  <div style="break-inside:avoid"><h3>How an order works</h3>
-  <div class="flow">
-    <div class="step"><span class="n">1</span><div>Customer opens your app, picks products and pays by UPI, card or cash on delivery.</div></div>
-    <div class="step"><span class="n">2</span><div>The order appears instantly on your admin panel. Your staff packs it.</div></div>
-    <div class="step"><span class="n">3</span><div>A rider gets the order on the delivery app, picks it up and heads out.</div></div>
-    <div class="step"><span class="n">4</span><div>Customer gives the rider a delivery OTP. Done, and the sale shows in your reports.</div></div>
+<h3>How an order flows</h3>
+<div class="steps">
+  <div class="stepx"><span class="n">1</span><div><b>Customer orders</b><span>Browses your products, adds to cart, pays by UPI, card or cash on delivery.</span></div></div>
+  <div class="stepx"><span class="n">2</span><div><b>You see it instantly</b><span>The order pops up on your admin panel. Your staff packs it.</span></div></div>
+  <div class="stepx"><span class="n">3</span><div><b>Rider picks it up</b><span>The delivery app alerts a rider, with the address and one-tap navigation.</span></div></div>
+  <div class="stepx"><span class="n">4</span><div><b>Delivered and recorded</b><span>Customer shares an OTP, the order closes, and the sale lands in your reports.</span></div></div>
+</div>
+
+<div class="callout">
+  <b>You control delivery</b> from the admin panel, any time:
+  <div class="chips"><span>Instant delivery</span><span>Time slots</span><span>Delivery fee</span><span>Minimum order</span><span>Free delivery above ₹__</span><span>Delivery area</span></div>
+</div>
+<p class="note">A realistic promise: Blinkit's 10 minutes runs on warehouses and riders on standby. With your store and riders, customers typically get fast local delivery in 20–40 minutes.</p>
+
+<!-- 2 -->
+<div class="eyebrow">02 · Inside the apps</div>
+<h2>Built for how <span class="hl">your store works.</span></h2>
+
+<div class="laptop"><div class="scr">
+  <div class="ad-top"><span><b>YourStore</b> · Admin</span><span>Today, 6:42 pm</span></div>
+  <div class="ad-kpis"><div><b>₹38,420</b><span>Sales today</span></div><div><b>126</b><span>Orders</span></div><div><b>6</b><span>Riders online</span></div></div>
+  <div class="ad-board">
+    <div class="ad-col"><h6>New</h6><div class="ad-card y"><b>#1046</b>₹412 · UPI</div><div class="ad-card y"><b>#1045</b>₹98 · COD</div></div>
+    <div class="ad-col"><h6>Packing</h6><div class="ad-card"><b>#1044</b>₹265 · UPI</div><div class="ad-card"><b>#1043</b>₹730 · Card</div></div>
+    <div class="ad-col"><h6>On the way</h6><div class="ad-card"><b>#1042</b>Rahul · 12 min</div></div>
+    <div class="ad-col"><h6>Delivered</h6><div class="ad-card"><b>#1041</b>₹184</div><div class="ad-card"><b>#1040</b>₹522</div></div>
+  </div>
+</div></div>
+<p class="cap">Admin panel: every order, live, on one screen (sample data)</p>
+<div class="duo">
+  <div class="phone"><div class="scr r-scr">
+    <div class="notch"></div>
+    <div class="r-head"><b style="font-size:7.4pt">Deliveries</b><span class="on">ONLINE</span></div>
+    <div class="r-map">
+      <svg viewBox="0 0 150 100" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <rect width="150" height="100" fill="#20242e"/>
+        <g stroke="#2e3341" stroke-width="7"><path d="M0,30 H150"/><path d="M0,72 H150"/><path d="M40,0 V100"/><path d="M105,0 V100"/></g>
+        <path d="M22,88 L40,72 L105,72 L105,30 L128,14" stroke="#FFD014" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="22" cy="88" r="5" fill="#fff"/><circle cx="128" cy="14" r="6" fill="#FFD014"/>
+      </svg>
+    </div>
+    <div class="r-card"><span class="k">NEW ORDER #1042 · 1.8 km</span><br><b>Shivaji Nagar, Lane 4</b><br><span class="k">₹156 · Cash on delivery</span></div>
+    <div class="r-btn">ACCEPT ORDER</div>
+    <div class="r-sub">Today: 14 deliveries · ₹2,180 collected</div>
   </div></div>
-  <div class="box blue"><b>You decide how delivery works,</b> from the admin panel, any time: instant delivery or time slots, delivery fee, minimum order, free delivery above an amount, and delivery area.</div>
-  <p class="small">Honest note: Blinkit's 10-minute delivery runs on dedicated warehouses and riders on standby. With one store and your own riders, plan for fast local delivery, usually 20–40 minutes depending on distance and riders.</p>
-</section>
+  <div class="phone"><div class="scr">
+    <div class="notch"></div>
+    <div class="a-top"><div class="r"><b>Order #1042</b><span class="eta">ON THE WAY</span></div><div class="addr">Arriving in 12 min</div></div>
+    <div style="margin:2mm 2.4mm;border-radius:7px;overflow:hidden;height:30mm">
+      <svg viewBox="0 0 150 100" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <rect width="150" height="100" fill="#EEF0F3"/>
+        <g stroke="#fff" stroke-width="7"><path d="M0,30 H150"/><path d="M0,72 H150"/><path d="M40,0 V100"/><path d="M105,0 V100"/></g>
+        <path d="M22,88 L40,72 L105,72 L105,30 L128,14" stroke="#0B0D12" stroke-width="3" fill="none" stroke-dasharray="5 4" stroke-linecap="round"/>
+        <circle cx="105" cy="58" r="6" fill="#FFD014" stroke="#0B0D12" stroke-width="2"/><circle cx="128" cy="14" r="5" fill="#0B0D12"/>
+      </svg>
+    </div>
+    <div style="margin:0 2.4mm;font-size:6pt">
+      <div style="display:flex;justify-content:space-between;padding:1mm 0;border-bottom:1px solid #E5E7EB"><span>Packed</span><b>✓</b></div>
+      <div style="display:flex;justify-content:space-between;padding:1mm 0;border-bottom:1px solid #E5E7EB"><span>Picked up by Rahul</span><b>✓</b></div>
+      <div style="display:flex;justify-content:space-between;padding:1mm 0"><span>Delivery OTP</span><b>4 8 2 1</b></div>
+    </div>
+    <div class="a-cart"><span>Need help?</span><b>Call rider ›</b></div>
+  </div></div>
+</div>
+<p class="cap">Delivery app for riders · live tracking for customers (Growth plan)</p>
 
-<section>
-  <div class="eyebrow">2 · The three apps</div>
-  <h2>Customer app <span class="small">Android + iPhone</span></h2>
-  <ul class="feat">
+
+<div class="appcard">
+  <div class="head"><h3>Customer app</h3><span class="pill y">Android + iPhone</span></div>
+  <ul class="checks">
     <li>Login with mobile number (OTP)</li>
-    <li>Save addresses with a map pin; app checks if you deliver there</li>
-    <li>Home screen with categories, offer banners and search</li>
-    <li>Product sizes and variants (500 g, 1 kg…)</li>
-    <li>Cart with minimum order and delivery fee shown clearly</li>
+    <li>Saved addresses with map pin and delivery-area check</li>
+    <li>Categories, offer banners and fast search</li>
+    <li>Product sizes like 500 g and 1 kg</li>
+    <li>Cart with minimum order and delivery fee shown upfront</li>
     <li>Coupons and offers</li>
-    <li>Pay by UPI, card or cash on delivery</li>
-    <li>Order status updates and notifications</li>
-    <li>Order history and one-tap reorder</li>
-    <li>Ratings and feedback</li>
+    <li>UPI, card or cash on delivery</li>
+    <li>Order tracking, history and one-tap reorder</li>
+    <li>Ratings and notifications</li>
   </ul>
+</div>
 
-  <h2 style="margin-top:16px">Delivery app <span class="small">Android</span></h2>
-  <ul class="feat">
-    <li>Go online / offline</li>
-    <li>New order alert, with pickup and delivery address</li>
+
+
+<div class="appcard">
+  <div class="head"><h3>Delivery app</h3><span class="pill">Android</span></div>
+  <ul class="checks">
+    <li>Go online or offline</li>
+    <li>New-order alerts with pickup and drop address</li>
     <li>One-tap navigation to the customer</li>
     <li>Delivery confirmed with customer OTP</li>
     <li>Cash collected recorded per order</li>
     <li>Today's deliveries and earnings</li>
   </ul>
+</div>
 
-  <h2 style="margin-top:16px">Admin panel <span class="small">Web</span></h2>
-  <ul class="feat">
-    <li>Live order board: new → packing → out for delivery → delivered</li>
-    <li>Products, categories and prices; bulk upload by Excel</li>
-    <li>Stock: quantity and in/out of stock</li>
+
+
+<div class="appcard">
+  <div class="head"><h3>Admin panel</h3><span class="pill">Web · laptop or phone</span></div>
+  <ul class="checks">
+    <li>Live order board: new → packing → on the way → delivered</li>
+    <li>Products, categories and prices, with bulk upload from Excel</li>
+    <li>Stock: quantities and in or out of stock</li>
     <li>Assign orders to riders</li>
     <li>Delivery settings: instant or slots, fee, minimum order, area</li>
     <li>Coupons and banners</li>
     <li>Customers and order history</li>
     <li>Reports: daily sales, cash collected, rider deliveries</li>
-    <li>Staff logins with different access</li>
+    <li>Staff logins with different access levels</li>
   </ul>
-</section>
+</div>
 
-<section>
-  <div class="eyebrow">3 · Choose your plan</div>
-  <h2>Three plans. Start where it makes sense.</h2>
+<!-- 3 -->
+<div class="eyebrow">03 · Plans</div>
+<h2>Pick your <span class="hl">starting point.</span></h2>
+<p class="lede">All three include everything in section 02. Bigger plans add tools that bring customers back and save your team time.</p>
 
-  <div class="plan">
-    <div class="pname">Launch</div>
-    <div class="price">₹1,75,000</div>
-    <div class="meta2">Live in 8–10 weeks</div>
-    <ul>
-      <li>Everything in section 2</li>
-      <li>You assign riders from the admin panel</li>
-      <li>Customer sees order status updates</li>
+<div class="plan">
+  <div class="top"><span class="pname">Launch</span><span class="wk">Live in 8–10 weeks</span></div>
+  <div class="price">₹2,00,000</div>
+  <div class="for">For stores starting online orders.</div>
+  <ul class="checks">
+    <li>Customer, delivery and admin apps</li>
+    <li>You assign riders from the admin panel</li>
+    <li>Customers get order status updates</li>
+  </ul>
+</div>
+
+<div class="plan star">
+  <span class="badge">MOST POPULAR</span>
+  <div class="top"><span class="pname">Growth</span><span class="wk">Live in 10–12 weeks</span></div>
+  <div class="price">₹3,00,000</div>
+  <div class="for">For stores that want repeat customers and less manual work.</div>
+  <p class="plus">Everything in Launch, plus:</p>
+  <ul class="checks">
+    <li><b style="color:#fff">Live rider tracking</b> on a map</li>
+    <li><b style="color:#fff">Auto-assign</b> to the nearest free rider</li>
+    <li>Wallet and instant refunds</li>
+    <li>Loyalty points and referrals</li>
+    <li>Push-notification offers to customers</li>
+    <li>Low-stock alerts and detailed sales reports</li>
+    <li>App in Marathi and English</li>
+  </ul>
+</div>
+
+<div class="plan">
+  <div class="top"><span class="pname">Scale</span><span class="wk">Live in 14–16 weeks</span></div>
+  <div class="price">₹4,50,000</div>
+  <div class="for">For businesses with several stores in the city.</div>
+  <p class="plus">Everything in Growth, plus:</p>
+  <ul class="checks">
+    <li>Multiple stores, each order routed to the nearest</li>
+    <li>Live link with your billing software for stock and prices</li>
+    <li>Subscriptions for daily milk, bread and essentials</li>
+    <li>WhatsApp order updates and ordering</li>
+    <li>Delivery app on iPhone too</li>
+    <li>Advanced business analytics</li>
+  </ul>
+</div>
+<p class="small">Fixed price once we agree the scope. No GST is charged. Timelines include a buffer and start once we begin.</p>
+
+<!-- 4 -->
+<div class="eyebrow">04 · How we build it</div>
+<h2>You see progress <span class="hl">every week.</span></h2>
+<div class="tl">
+  <div class="it"><span class="wkk">Week 1</span><b>Kickoff and screen designs</b><span>Your logo, colours and app screens to approve. We share the product sheet.</span></div>
+  <div class="it"><span class="wkk">Weeks 2–5</span><b>Customer app and admin panel</b><span>A short progress video on WhatsApp every week.</span></div>
+  <div class="it m"><span class="wkk">Week 6</span><b>Working demo <span class="mtag">MILESTONE</span></b><span>Place real test orders on your phone and watch them arrive in your admin panel.</span></div>
+  <div class="it"><span class="wkk">Weeks 7–9</span><b>Delivery app, payments and the rest</b><span>Riders, online payments, offers and your plan's extras.</span></div>
+  <div class="it"><span class="wkk">Weeks 10–11</span><b>Testing with your team</b><span>Your staff and a few real customers try it. We fix what they find.</span></div>
+  <div class="it m"><span class="wkk">Week 12</span><b>Live on Play Store and App Store <span class="mtag">LAUNCH</span></b><span>Handed over to you, in your name. (Growth plan timeline shown.)</span></div>
+</div>
+
+<!-- 5 -->
+<div class="eyebrow">05 · Payment</div>
+<h2>Pay as you <span class="hl">see it work.</span></h2>
+<div class="paygrid">
+  <div><b>40%</b><span>To start the project</span></div>
+  <div><b>30%</b><span>At the working demo</span></div>
+  <div><b>30%</b><span>At launch</span></div>
+</div>
+<table>
+  <tr><th>Plan</th><th>Start</th><th>Demo</th><th>Launch</th></tr>
+  <tr><td>Launch</td><td>₹80,000</td><td>₹60,000</td><td>₹60,000</td></tr>
+  <tr class="hl"><td>Growth</td><td>₹1,20,000</td><td>₹90,000</td><td>₹90,000</td></tr>
+  <tr><td>Scale</td><td>₹1,80,000</td><td>₹1,35,000</td><td>₹1,35,000</td></tr>
+</table>
+
+<div class="two">
+  <div class="box">
+    <h3>After launch</h3>
+    <ul class="checks">
+      <li><b>30 days of free bug fixes</b>, included</li>
+      <li><b>Care plan, from ₹10,000/month</b> (optional): server care, fixes, small changes, store updates, monthly report. Stop any time.</li>
     </ul>
   </div>
-
-  <div class="plan star">
-    <div class="pname">Growth <span class="badge">Recommended</span></div>
-    <div class="price">₹2,50,000</div>
-    <div class="meta2">Live in 10–12 weeks</div>
-    <p style="margin:0"><b>Everything in Launch, plus:</b></p>
-    <ul>
-      <li><b>Live rider tracking</b> on a map for the customer</li>
-      <li><b>Auto-assign</b> each order to the nearest free rider</li>
-      <li><b>Wallet and instant refunds</b></li>
-      <li><b>Loyalty points and referrals</b>, so customers come back</li>
-      <li><b>Push notification offers</b> to all or selected customers</li>
-      <li>Low-stock alerts and detailed sales reports</li>
-      <li>App in <b>Marathi and English</b></li>
-    </ul>
+  <div class="box">
+    <h3>Paid by you directly</h3>
+    <p class="small" style="margin:0">Server hosting (a few thousand rupees a month at the start; we estimate it with you) · Google Play account $25 once · Apple developer account $99 a year · Razorpay fees on online payments (about 2%) · SMS for login OTPs · maps usage for live tracking (Growth and Scale)</p>
   </div>
+</div>
 
-  <div class="plan">
-    <div class="pname">Scale</div>
-    <div class="price">₹3,75,000</div>
-    <div class="meta2">Live in 14–16 weeks</div>
-    <p style="margin:0"><b>Everything in Growth, plus:</b></p>
-    <ul>
-      <li><b>Multiple stores</b> in your city, each order routed to the nearest one</li>
-      <li><b>Live connection to your billing software</b> for stock and prices</li>
-      <li><b>Subscriptions</b> for daily items like milk and bread</li>
-      <li><b>WhatsApp</b> order updates and ordering</li>
-      <li>Delivery app on iPhone too</li>
-      <li>Advanced business analytics</li>
-    </ul>
-  </div>
-  <p class="small">Prices are final. No GST is charged. Timelines include a buffer, and count from the day we receive the advance and your product sheet.</p>
-</section>
+<!-- 6 -->
+<div class="eyebrow">06 · Our promises</div>
+<h2>Why this is <span class="hl">safe for you.</span></h2>
+<ul class="checks">
+  <li><b>Fixed price in writing.</b> Anything new is priced before we build it.</li>
+  <li><b>Weekly progress video</b> and a live demo before every payment.</li>
+  <li><b>Launch date commitment.</b> If we're late because of us, your first 2 months of care are free.</li>
+  <li><b>You own everything:</b> code, apps, store accounts, domain and customer data.</li>
+  <li><b>You talk to the person building it.</b> No sales middlemen.</li>
+</ul>
 
-<section>
-  <div class="eyebrow">4 · Payment</div>
-  <h2>Pay as you see progress.</h2>
-  <div class="pay"><b>40% to start</b><br>On signing. We begin within 3 working days.</div>
-  <div class="pay"><b>30% at working demo</b><br>When you can place real test orders on your phone and see them in your admin panel.</div>
-  <div class="pay"><b>30% at launch</b><br>When the apps are live on Play Store and App Store and handed over to you.</div>
-
-  <h3>Amounts by plan</h3>
-  <table>
-    <tr><th>Plan</th><th>Start (40%)</th><th>Demo (30%)</th><th>Launch (30%)</th></tr>
-    <tr><td>Launch · ₹1.75L</td><td>₹70,000</td><td>₹52,500</td><td>₹52,500</td></tr>
-    <tr><td>Growth · ₹2.5L</td><td>₹1,00,000</td><td>₹75,000</td><td>₹75,000</td></tr>
-    <tr><td>Scale · ₹3.75L</td><td>₹1,50,000</td><td>₹1,12,500</td><td>₹1,12,500</td></tr>
-  </table>
-
-  <h3>After launch</h3>
-  <ul class="feat">
-    <li><b>30 days of free bug fixes</b>, included.</li>
-    <li><b>Care plan (optional), from ₹10,000/month:</b> server management, fixes, small changes, app store updates and a monthly report. Stop any time.</li>
-  </ul>
-
-  <h3>Paid by you directly</h3>
-  <ul class="feat small">
-    <li>Server hosting (usually a few thousand rupees a month at the start; we'll set it up and estimate it with you)</li>
-    <li>Google Play account: $25, one time</li>
-    <li>Apple developer account: $99 a year</li>
-    <li>Razorpay fees on online payments (about 2% per payment)</li>
-    <li>SMS charges for login OTPs; maps usage for live tracking (Growth and Scale)</li>
-  </ul>
-</section>
-
-<section>
-  <div class="eyebrow">5 · Our promises</div>
-  <h2>What makes this safe for you.</h2>
-  <ul class="feat">
-    <li><b>Fixed price in writing.</b> The number here is the number you pay. Anything new is priced before we do it.</li>
-    <li><b>Weekly progress video</b> on WhatsApp, and a live demo at every payment milestone.</li>
-    <li><b>Launch date commitment.</b> If we miss it because of us, your first 2 months of the care plan are free.</li>
-    <li><b>You own everything:</b> code, apps, store accounts, domain and data are in your name.</li>
-    <li><b>You talk to the person who builds it.</b> No sales middlemen.</li>
-  </ul>
-
-  <div style="break-inside:avoid">
-  <h3>What we need from you</h3>
-  <ul class="feat">
-    <li>Your logo, brand colours and app name</li>
-    <li>Product names, prices and photos in our Excel sheet (up to 1,000 products)</li>
-    <li>Google Play and Apple developer accounts in your name. <b>Start the Apple account on day 1:</b> a company account needs a free D-U-N-S number, which can take one to a few weeks.</li>
-    <li>Razorpay account (KYC in your business name)</li>
+<div class="box" style="margin-top:10px">
+  <h3>What we'll need from you</h3>
+  <ul class="checks">
+    <li>Logo, brand colours and app name</li>
+    <li>Product names, prices and photos in our Excel sheet</li>
+    <li>Google Play and Apple developer accounts in your name. <b>Start Apple on day 1:</b> a company account needs a free D-U-N-S number, which can take one to a few weeks.</li>
+    <li>A Razorpay account in your business name</li>
     <li>Feedback on each demo within 3 days</li>
   </ul>
-  </div>
-</section>
+</div>
 
-<section class="cont">
-  <div class="eyebrow">6 · About us</div>
-  <h2>Outgrid Labs</h2>
-  <p>A Maharashtra-based studio building custom apps, websites and AI automation for businesses, end to end.</p>
-  <ul class="feat">
-    <li>We built a <b>multi-vendor booking marketplace for a European company</b>: vendors, catalogue, orders, payments and dashboards, the same engine behind your app.</li>
-    <li>We built and run our own <b>loyalty platform</b>, the loyalty points in your Growth plan come from this experience.</li>
-    <li>One codebase for Android and iPhone, so you get both without paying twice.</li>
+<div class="box" style="margin-top:10px">
+  <div class="logo" style="color:var(--char);margin-bottom:8px">
+    <svg fill="#0B0D12" stroke="#0B0D12"><use href="#mark"/></svg>
+    <div class="div"></div>
+    <div class="word"><b>Outgrid</b><span>Labs</span></div>
+  </div>
+  <p style="margin-bottom:4px">A Maharashtra studio building custom apps, websites and AI automation for businesses, end to end.</p>
+  <ul class="checks" style="margin-bottom:0">
+    <li>Built a <b>multi-vendor booking marketplace</b> for a European company: vendors, catalogue, orders, payments, dashboards</li>
+    <li>Built and run our own <b>loyalty platform</b>, the engine behind your loyalty points</li>
+    <li>One codebase for Android and iPhone, so you don't pay twice</li>
   </ul>
+</div>
 
-  <h3>Next step</h3>
-  <div class="flow">
-    <div class="step"><span class="n">1</span><div>Choose your plan.</div></div>
-    <div class="step"><span class="n">2</span><div>Pay the 40% advance. You get the agreement and an invoice the same day.</div></div>
-    <div class="step"><span class="n">3</span><div>Kickoff call within 24 hours. Your first screen designs arrive in week 1.</div></div>
+<div class="cta">
+  <h2>Next step: a <em>20-minute call.</em></h2>
+  <p>We'll show you a live demo, answer every question, and shape the plan around your store. No commitment needed.</p>
+  <div class="contact">
+    <b>Call / WhatsApp</b> &nbsp;______________<br>
+    <b>Email</b> &nbsp;______________<br>
+    <b>Web</b> &nbsp;outgridlabs.com
   </div>
+</div>
 
-  <div class="box blue contact" style="break-inside:avoid">
-    <b>Outgrid Labs</b><br>
-    <span class="site">outgridlabs.com</span><br>
-    Call / WhatsApp: ______________<br>
-    Email: ______________
-  </div>
-</section>
+</body>
+</html>
