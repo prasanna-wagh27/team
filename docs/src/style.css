@@ -58,3 +58,4 @@ table.plain td:first-child{font-weight:400}
 .cover .meta{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:8px;color:var(--muted);font-size:8.5pt}
 .module-badge{display:inline-block;border:1px solid var(--blue);color:var(--blue);border-radius:20px;padding:2px 12px;font-size:8.5pt;font-weight:600;margin-bottom:14px}
 section.dense table{font-size:8.1pt}section.dense td,section.dense th{padding:3.5px 6px}
+section.dense .script{padding:5px 10px;margin:4px 0}section.dense .script .mr{font-size:8.7pt;margin:2px 0}section.dense .script .en{font-size:8.1pt}
