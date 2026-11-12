@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Sales Playbook</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../docs/src/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../docs/src/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../docs/src/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../docs/src/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../docs/src/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../docs/src/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../docs/src/fonts/poppins-latin-ext-700-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:400;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-400-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:600;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-600-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:700;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-700-normal.woff2)}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#3f4552}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{width:110mm;font-family:Poppins,PoppinsX,NotoDeva,sans-serif;color:var(--char);font-size:9.6pt;line-height:1.5}
+  b{font-weight:700}
+  section{padding:0 6mm 8mm}
+  .head{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.6),rgba(255,208,20,0) 55%),var(--char);color:#fff;padding:7mm 6mm 6mm;margin:0 -6mm 5mm}
+  .logo{display:flex;align-items:center;gap:8px}
+  .logo svg{width:24px;height:24px}
+  .logo .div{width:1.5px;height:22px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:12pt;line-height:1}
+  .logo span{display:block;font-size:8pt;letter-spacing:.3em}
+  .head .tag{display:inline-block;margin-top:5mm;background:var(--yellow);color:var(--char);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .head h1{margin:2mm 0 1mm;font-size:18pt;line-height:1.15}
+  .head h1 em{font-style:normal;color:var(--yellow)}
+  .head p{margin:0;color:#d6d9df;font-size:9pt}
+  .sh{margin:7mm -6mm 4mm;padding:6mm 6mm 0;border-top:6px solid var(--yellow)}
+  .sh .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .sh h1{margin:2mm 0 0;font-size:16pt;line-height:1.2}
+  h3{font-size:11pt;margin:5mm 0 2mm;line-height:1.25}
+
+  .step{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .step .top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .step .d{flex:0 0 24px;height:24px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;font-size:9.5pt;display:flex;align-items:center;justify-content:center}
+  .step .top b{font-size:11pt}
+  .row{display:flex;gap:6px;margin:3px 0;font-size:9.2pt}
+  .row .k{flex:0 0 58px;font-weight:600;color:var(--muted);font-size:8.3pt;text-transform:uppercase;letter-spacing:.04em;padding-top:1px}
+  .row div{flex:1}
+  .done{margin-top:5px;background:#fff8d6;border-radius:7px;padding:4px 8px;font-size:8.8pt}
+  .done b{font-size:8.5pt}
+  .say{background:var(--char);color:#fff;border-radius:9px;padding:7px 10px;margin:5px 0}
+  .say .mr{font-size:9.6pt;font-weight:600}
+  .say .en{color:#b9bec8;font-size:8.4pt}
+  ul{margin:2px 0 4px;padding-left:16px}
+  li{margin-bottom:2px}
+
+  .prod{border:1px solid var(--stone);border-radius:12px;margin-bottom:7px;overflow:hidden}
+  .prod .t{display:flex;justify-content:space-between;align-items:baseline;background:var(--cloud);padding:7px 11px;border-bottom:1px solid var(--stone)}
+  .prod .t b{font-size:10.2pt}
+  .prod .t span{font-weight:700;white-space:nowrap}
+  .prod .b{padding:6px 11px 8px;font-size:9pt}
+  .prod .in b,.prod .out b{display:block;font-size:8.2pt;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .prod .out{margin-top:4px}
+  .fees{background:var(--char);color:#fff;border-radius:12px;padding:9px 12px;font-size:9pt}
+  .fees b{color:var(--yellow)}
+
+  .pf{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .pf b{font-size:10.2pt}
+  .pf .how{color:var(--muted);font-size:8.8pt;margin-top:2px}
+  .pf .line{margin-top:4px;background:var(--cloud);border-left:3px solid var(--yellow);border-radius:0 7px 7px 0;padding:4px 8px;font-size:9pt}
+
+  .ag{display:flex;gap:9px;padding:7px 0;border-bottom:1px dashed var(--stone)}
+  .ag:last-child{border-bottom:0}
+  .ag .n{flex:0 0 22px;height:22px;border-radius:6px;background:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .ag b{display:block}
+  .ag span{color:var(--muted);font-size:9pt}
+  .note{background:var(--cloud);border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.8pt;margin-top:6px}
+  .foot{margin-top:6mm;color:var(--muted);font-size:7.5pt;text-align:center}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+
+<!-- 1 · PROCESS -->
+<section>
+  <div class="head">
+    <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+    <span class="tag">SALES PLAYBOOK · 1 OF 4</span>
+    <h1>The six steps to <em>the advance.</em></h1>
+    <p>What to do at each step, and how you know it's done. Prices and customer types are on the Sales Sheet.</p>
+  </div>
+
+  <div class="step"><div class="top"><span class="d">1</span><b>Chat</b></div>
+    <div class="row"><span class="k">Where</span><div>The same channel they came from. DM stays in DM, WhatsApp stays on WhatsApp.</div></div>
+    <div class="row"><span class="k">Do</span><div>Ask Q1 and Q2 from the Sales Sheet. Once you know what they want, share the price range from the price list.</div></div>
+    <div class="done"><b>Done when:</b> you know their customer type, what they want, and they're fine with the price range.</div></div>
+
+  <div class="step"><div class="top"><span class="d">2</span><b>Call</b></div>
+    <div class="row"><span class="k">Where</span><div>Phone or WhatsApp call.</div></div>
+    <div class="row"><span class="k">Find out</span><div>
+      <b>Running business:</b> how it works today, the biggest headache, volume (orders, bookings, team size), who decides, when they want it live.<br>
+      <b>New idea:</b> what they've done so far, their capital, who their first users are.</div></div>
+    <div class="row"><span class="k">End with</span><div>Fix the Google Meet: day and time.</div></div>
+    <div class="done"><b>Done when:</b> you can write the proposal and the Meet is booked.</div></div>
+
+  <div class="step"><div class="top"><span class="d">3</span><b>Proposal</b></div>
+    <div class="row"><span class="k">Do</span><div>Start from the proposal template. Prices come from the price list. Give 3 plans where possible. If the scope is above ₹4L, split it into phases.</div></div>
+    <div class="row"><span class="k">Send</span><div>Before the Meet as a preview, always with the Meet time already fixed. Never as a standalone attachment.</div></div>
+    <div class="done"><b>Done when:</b> they have the proposal and the Meet is confirmed.</div></div>
+
+  <div class="step"><div class="top"><span class="d">4</span><b>Google Meet</b></div>
+    <div class="row"><span class="k">Order</span><div>
+      1. Repeat back their need in their words<br>
+      2. Show the demo app on screen<br>
+      3. Walk through the proposal, page by page<br>
+      4. Answer their questions<br>
+      5. Ask which plan fits them</div></div>
+    <div class="done"><b>Done when:</b> they've picked a plan, or you know exactly what's stopping them.</div></div>
+
+  <div class="step"><div class="top"><span class="d">5</span><b>Close</b></div>
+    <div class="row"><span class="k">If yes</span><div>Send the UPI link and agreement the same day, while you're still on the Meet if possible.</div></div>
+    <div class="row"><span class="k">If not yet</span><div>Fix the next Meet date before you hang up. Follow up only with the serious ones.</div></div>
+    <div class="done"><b>Done when:</b> the advance is paid, or the next Meet is booked.</div></div>
+
+  <div class="step"><div class="top"><span class="d">6</span><b>Advance and kickoff</b></div>
+    <div class="row"><span class="k">Do</span><div>40% by UPI link, then the agreement, then a kickoff call within 24 hours. After that, a progress update every week.</div></div>
+    <div class="done"><b>Done when:</b> money is in the bank and the kickoff date is fixed.</div></div>
+
+  <h3>When they're not a fit</h3>
+  <div class="say">
+    <div class="mr">सध्या हे आमच्यासाठी योग्य वाटत नाही, पण तुमचा business तयार झाला की नक्की msg करा.</div>
+    <div class="en">This doesn't look like the right fit right now, but message us once your business is ready.</div>
+  </div>
+</section>
+
+<!-- 2 · WHAT EACH PRICE INCLUDES -->
+<section>
+  <div class="sh"><span class="tag">2 OF 4</span><h1>What each price includes.</h1></div>
+
+  <div class="prod"><div class="t"><b>Online store website</b><span>₹1.15L</span></div><div class="b">
+    <div class="in"><b>Includes</b>Ordering website, product catalogue, cart, online payments, admin panel for orders, products and stock.</div>
+    <div class="out"><b>Not included</b>Mobile app, delivery rider app, WhatsApp agent.</div></div></div>
+
+  <div class="prod"><div class="t"><b>+ WhatsApp order agent</b><span>₹1.5L total</span></div><div class="b">
+    <div class="in"><b>Includes</b>Everything above, plus WhatsApp orders landing in the admin panel automatically, and auto-replies to customers.</div>
+    <div class="out"><b>Not included</b>Meta's WhatsApp message charges (client pays).</div></div></div>
+
+  <div class="prod"><div class="t"><b>Booking website</b><span>₹1L</span></div><div class="b">
+    <div class="in"><b>Includes</b>Booking website, time slots, reminders, online payments, admin panel.</div>
+    <div class="out"><b>Not included</b>Mobile app, staff app.</div></div></div>
+
+  <div class="prod"><div class="t"><b>One app (Android + iPhone)</b><span>₹2L</span></div><div class="b">
+    <div class="in"><b>Includes</b>One customer app on both platforms (store or booking), admin panel, payments, notifications, app store launch.</div>
+    <div class="out"><b>Not included</b>A second app (rider, staff or seller).</div></div></div>
+
+  <div class="prod"><div class="t"><b>Delivery app set</b><span>₹2L / 3L / 4.5L</span></div><div class="b">
+    <div class="in"><b>Includes</b>Customer app + rider app + admin panel.<br><b style="display:inline;text-transform:none;letter-spacing:0;color:var(--char)">Full (₹3L)</b> adds live tracking, auto-assign rider, wallet, loyalty, offers. <b style="display:inline;text-transform:none;letter-spacing:0;color:var(--char)">Multi-store (₹4.5L)</b> adds multiple stores, billing software link, subscriptions.</div>
+    <div class="out"><b>Not included</b>Rider app on iPhone (Android only, except multi-store).</div></div></div>
+
+  <div class="prod"><div class="t"><b>Marketplace</b><span>₹4L</span></div><div class="b">
+    <div class="in"><b>Includes</b>Customer app, seller app, rider app, admin panel, commissions, seller payouts.</div>
+    <div class="out"><b>Not included</b>Anything beyond one city's setup in phase 1.</div></div></div>
+
+  <div class="prod"><div class="t"><b>CRM or business system</b><span>₹2.5–4L / phase</span></div><div class="b">
+    <div class="in"><b>Includes</b>Lead tracking, documents, approvals, team roles, reports, optional customer app. Scope is fixed per phase.</div>
+    <div class="out"><b>Not included</b>Anything outside the agreed phase. That becomes the next phase.</div></div></div>
+
+  <div class="prod"><div class="t"><b>School or hospital system</b><span>₹3–4L</span></div><div class="b">
+    <div class="in"><b>Includes</b>Records, fees or billing, reminders, parent or patient app, admin panel.</div>
+    <div class="out"><b>Not included</b>Hardware, data migration from old software beyond one import.</div></div></div>
+
+  <div class="prod"><div class="t"><b>Monthly care</b><span>₹8–10k / 15–20k</span></div><div class="b">
+    <div class="in"><b>Basic</b>Server management, bug fixes, small text and image changes.</div>
+    <div class="out"><b>Advanced</b>Everything in basic, plus small new features and priority support.</div></div></div>
+
+  <div class="fees"><b>Always included:</b> server setup and app store launch.<br><b>Client pays directly:</b> server hosting, Google Play ($25 once), Apple ($99 a year), WhatsApp API charges, SMS, payment gateway fees.</div>
+</section>
+
+<!-- 3 · PROOF -->
+<section>
+  <div class="sh"><span class="tag">3 OF 4</span><h1>Proof to show.</h1></div>
+  <p>People ask for a demo or past examples before they trust you. These three answer it.</p>
+
+  <div class="pf"><b>1 · Delivery demo app</b>
+    <div class="how">Android APK: one app with a role switch (customer / rider), plus the admin panel on the web. Show it on the Google Meet, and install it on their phone if you meet in person.</div>
+    <div class="line">"This is a working delivery app we built. Your version will have your name, products and settings."</div></div>
+
+  <div class="pf"><b>2 · European booking marketplace</b>
+    <div class="how">Screenshots or a short screen recording of the dashboards. Don't name the client.</div>
+    <div class="line">"I built a multi-vendor booking platform for a company in Europe: vendors, bookings, payments, dashboards."</div></div>
+
+  <div class="pf"><b>3 · Our own loyalty platform</b>
+    <div class="how">Screenshots of the merchant dashboard and customer view.</div>
+    <div class="line">"We built and run our own loyalty platform. The points system in your app comes from it."</div></div>
+
+  <div class="note"><b>Keep ready in one folder on your phone:</b> the demo APK, the admin panel link, the booking platform recording, and the loyalty screenshots.</div>
+</section>
+
+<!-- 4 · AGREEMENT -->
+<section>
+  <div class="sh"><span class="tag">4 OF 4</span><h1>What the agreement must cover.</h1></div>
+  <p>One or two pages, sent the same day the client says yes.</p>
+
+  <div class="ag"><span class="n">1</span><div><b>Scope</b><span>The chosen plan, what's included, and what's not included (copy from page 2).</span></div></div>
+  <div class="ag"><span class="n">2</span><div><b>Payment</b><span>40% to start, 30% at the working demo, 30% at launch. Each milestone is defined, with payment due within 3 days of it.</span></div></div>
+  <div class="ag"><span class="n">3</span><div><b>Timeline</b><span>Launch date, plus what the client must give and when: logo, products, accounts, feedback within 3 days.</span></div></div>
+  <div class="ag"><span class="n">4</span><div><b>Changes</b><span>Anything new is priced in writing before work starts.</span></div></div>
+  <div class="ag"><span class="n">5</span><div><b>Ownership</b><span>Code and apps transfer to the client on full payment. Store accounts, domain and data are in the client's name from day one.</span></div></div>
+  <div class="ag"><span class="n">6</span><div><b>Support</b><span>30 days of free bug fixes after launch, then the monthly care plan if they choose it.</span></div></div>
+  <div class="ag"><span class="n">7</span><div><b>Third-party fees</b><span>Hosting, store accounts, WhatsApp API, SMS and payment gateway fees are paid by the client.</span></div></div>
+
+  <div class="note"><b>Payment:</b> UPI link to the account in your name for now. No GST is charged while you're not registered.</div>
+  <div class="foot">Outgrid Labs · outgridlabs.com</div>
+</section>
+</body>
+</html>
