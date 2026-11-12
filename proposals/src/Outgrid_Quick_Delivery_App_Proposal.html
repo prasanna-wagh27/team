@@ -187,6 +187,40 @@
   .cta p{color:#c9ccd3}
   .cta .contact{margin-top:10px;border-top:1px solid #2c303b;padding-top:10px;font-size:10.5pt;line-height:1.8}
   .cta .contact b{color:var(--yellow)}
+
+  .cover-list{display:flex;flex-direction:column;gap:5mm;padding-bottom:4mm}
+  .cover-list div{border-left:3px solid var(--yellow);padding-left:9px}
+  .cover-list b{display:block;font-size:11pt;color:#fff}
+  .cover-list span{font-size:8.5pt;color:#c9ccd3}
+  .cover-list .cdate{margin:3mm 0 0;font-size:9pt;color:#c9ccd3}
+  /* every section starts on a new page */
+  .eyebrow{display:table;break-before:page}
+  .eyebrow.first{break-before:auto}
+  /* more breathing room */
+  body{line-height:1.65}
+  p{margin:0 0 10px}
+  h2{margin-bottom:10px}
+  .lede{margin-bottom:12px}
+  .stats{gap:9px;margin:12px 0 14px}
+  .stat{padding:11px 13px}
+  .stepx{padding:11px 0;gap:12px}
+  .checks li{margin-bottom:8px;line-height:1.5}
+  .appcard{padding:13px 15px;margin:14px 0}
+  .callout{padding:14px 16px;margin:14px 0}
+  .callout .chips{gap:7px;margin-top:9px}
+  .note{padding:9px 12px;line-height:1.6}
+  .plan{padding:11px 14px;margin:10px 0}
+  .plan .checks li{margin-bottom:3px;font-size:9.8pt}
+  .plan .for{margin-bottom:9px}
+  .tl .it{margin-bottom:9px}
+  .tl .it span{line-height:1.55}
+  .paygrid{gap:8px;margin:8px 0}
+  .paygrid div{padding:10px}
+  td,th{padding:8px 8px}
+  .box{padding:13px 15px}
+  .small{line-height:1.65}
+  .cta{padding:18px 17px}
+  .cap{margin:6px 0 14px}
 </style>
 </head>
 <body>
@@ -233,13 +267,15 @@
       <div class="a-grid">
         <div class="tile"><div class="img i1"></div><p>Fresh Milk</p><small>500 ml</small><div class="row"><b>₹28</b><i>ADD</i></div></div>
         <div class="tile"><div class="img i2"></div><p>Bananas</p><small>1 dozen</small><div class="row"><b>₹60</b><i>ADD</i></div></div>
+        <div class="tile"><div class="img i3"></div><p>Wheat Atta</p><small>5 kg</small><div class="row"><b>₹245</b><i>ADD</i></div></div>
+        <div class="tile"><div class="img i4"></div><p>Tomatoes</p><small>1 kg</small><div class="row"><b>₹40</b><i>ADD</i></div></div>
       </div>
-      <div class="a-cart"><span>2 items · ₹156</span><b>View cart ›</b></div>
     </div></div>
-    <div class="meta">
-      <b>Prepared for</b><br>______________________<br>
-      <b>Date</b><br>______________<br>
-      <b>By</b><br>Outgrid Labs<br>outgridlabs.com
+    <div class="cover-list">
+      <div><b>Customer app</b><span>Android + iPhone</span></div>
+      <div><b>Delivery app</b><span>For your riders</span></div>
+      <div><b>Admin panel</b><span>Run it all from one screen</span></div>
+      <p class="cdate">Date: ______________</p>
     </div>
   </div>
 </div>
@@ -268,11 +304,7 @@
   <div class="chips"><span>Instant delivery</span><span>Time slots</span><span>Delivery fee</span><span>Minimum order</span><span>Free delivery above ₹__</span><span>Delivery area</span></div>
 </div>
 <p class="note">A realistic promise: Blinkit's 10 minutes runs on warehouses and riders on standby. With your store and riders, customers typically get fast local delivery in 20–40 minutes.</p>
-
-<!-- 2 -->
-<div class="eyebrow">02 · Inside the apps</div>
-<h2>Built for how <span class="hl">your store works.</span></h2>
-
+<h3>A peek at your admin panel</h3>
 <div class="laptop"><div class="scr">
   <div class="ad-top"><span><b>YourStore</b> · Admin</span><span>Today, 6:42 pm</span></div>
   <div class="ad-kpis"><div><b>₹38,420</b><span>Sales today</span></div><div><b>126</b><span>Orders</span></div><div><b>6</b><span>Riders online</span></div></div>
@@ -284,6 +316,12 @@
   </div>
 </div></div>
 <p class="cap">Admin panel: every order, live, on one screen (sample data)</p>
+
+<!-- 2 -->
+<div class="eyebrow">02 · Inside the apps</div>
+<h2>Built for how <span class="hl">your store works.</span></h2>
+
+
 <div class="duo">
   <div class="phone"><div class="scr r-scr">
     <div class="notch"></div>
@@ -371,7 +409,6 @@
 <!-- 3 -->
 <div class="eyebrow">03 · Plans</div>
 <h2>Pick your <span class="hl">starting point.</span></h2>
-<p class="lede">All three include everything in section 02. Bigger plans add tools that bring customers back and save your team time.</p>
 
 <div class="plan">
   <div class="top"><span class="pname">Launch</span><span class="wk">Live in 8–10 weeks</span></div>
@@ -419,32 +456,29 @@
 
 <!-- 4 -->
 <div class="eyebrow">04 · How we build it</div>
-<h2>You see progress <span class="hl">every week.</span></h2>
+<h2>Progress <span class="hl">every week.</span></h2>
+<p class="small" style="margin-top:-4px">Growth plan timeline shown.</p>
 <div class="tl">
-  <div class="it"><span class="wkk">Week 1</span><b>Kickoff and screen designs</b><span>Your logo, colours and app screens to approve. We share the product sheet.</span></div>
-  <div class="it"><span class="wkk">Weeks 2–5</span><b>Customer app and admin panel</b><span>A short progress video on WhatsApp every week.</span></div>
-  <div class="it m"><span class="wkk">Week 6</span><b>Working demo <span class="mtag">MILESTONE</span></b><span>Place real test orders on your phone and watch them arrive in your admin panel.</span></div>
-  <div class="it"><span class="wkk">Weeks 7–9</span><b>Delivery app, payments and the rest</b><span>Riders, online payments, offers and your plan's extras.</span></div>
-  <div class="it"><span class="wkk">Weeks 10–11</span><b>Testing with your team</b><span>Your staff and a few real customers try it. We fix what they find.</span></div>
-  <div class="it m"><span class="wkk">Week 12</span><b>Live on Play Store and App Store <span class="mtag">LAUNCH</span></b><span>Handed over to you, in your name. (Growth plan timeline shown.)</span></div>
+  <div class="it"><span class="wkk">Week 1</span><b>Kickoff and screen designs</b><span>Your logo, colours and screens to approve.</span></div>
+  <div class="it"><span class="wkk">Weeks 2–5</span><b>Customer app and admin panel</b><span>Progress video on WhatsApp every week.</span></div>
+  <div class="it m"><span class="wkk">Week 6</span><b>Working demo <span class="mtag">MILESTONE</span></b><span>Place test orders on your phone; see them in your admin panel.</span></div>
+  <div class="it"><span class="wkk">Weeks 7–9</span><b>Delivery app, payments and the rest</b><span>Riders, online payments, offers and plan extras.</span></div>
+  <div class="it"><span class="wkk">Weeks 10–11</span><b>Testing with your team</b><span>Your staff and a few customers try it; we fix what they find.</span></div>
+  <div class="it m"><span class="wkk">Week 12</span><b>Live on Play Store and App Store <span class="mtag">LAUNCH</span></b><span>Handed over to you, in your name.</span></div>
 </div>
 
 <!-- 5 -->
 <div class="eyebrow">05 · Payment</div>
 <h2>Pay as you <span class="hl">see it work.</span></h2>
-<div class="paygrid">
-  <div><b>40%</b><span>To start the project</span></div>
-  <div><b>30%</b><span>At the working demo</span></div>
-  <div><b>30%</b><span>At launch</span></div>
-</div>
+<p class="lede">40% to start, 30% when you see a working demo, 30% at launch.</p>
 <table>
-  <tr><th>Plan</th><th>Start</th><th>Demo</th><th>Launch</th></tr>
+  <tr><th>Plan</th><th>Start 40%</th><th>Demo 30%</th><th>Launch 30%</th></tr>
   <tr><td>Launch</td><td>₹80,000</td><td>₹60,000</td><td>₹60,000</td></tr>
   <tr class="hl"><td>Growth</td><td>₹1,20,000</td><td>₹90,000</td><td>₹90,000</td></tr>
   <tr><td>Scale</td><td>₹1,80,000</td><td>₹1,35,000</td><td>₹1,35,000</td></tr>
 </table>
 
-<div class="two">
+<div class="two" style="gap:6px">
   <div class="box">
     <h3>After launch</h3>
     <ul class="checks">
@@ -462,10 +496,10 @@
 <div class="eyebrow">06 · Our promises</div>
 <h2>Why this is <span class="hl">safe for you.</span></h2>
 <ul class="checks">
-  <li><b>Fixed price in writing.</b> Anything new is priced before we build it.</li>
+  <li><b>Fixed price in writing.</b> Anything new is priced first.</li>
   <li><b>Weekly progress video</b> and a live demo before every payment.</li>
-  <li><b>Launch date commitment.</b> If we're late because of us, your first 2 months of care are free.</li>
-  <li><b>You own everything:</b> code, apps, store accounts, domain and customer data.</li>
+  <li><b>Launch date commitment.</b> Late because of us? 2 months of care free.</li>
+  <li><b>You own everything:</b> code, apps, accounts and data.</li>
   <li><b>You talk to the person building it.</b> No sales middlemen.</li>
 </ul>
 
@@ -474,12 +508,13 @@
   <ul class="checks">
     <li>Logo, brand colours and app name</li>
     <li>Product names, prices and photos in our Excel sheet</li>
-    <li>Google Play and Apple developer accounts in your name. <b>Start Apple on day 1:</b> a company account needs a free D-U-N-S number, which can take one to a few weeks.</li>
+    <li>Google Play and Apple accounts in your name. <b>Start Apple on day 1</b>: its D-U-N-S check can take a few weeks.</li>
     <li>A Razorpay account in your business name</li>
     <li>Feedback on each demo within 3 days</li>
   </ul>
 </div>
 
+<div class="eyebrow">07 · About us and next step</div>
 <div class="box" style="margin-top:10px">
   <div class="logo" style="color:var(--char);margin-bottom:8px">
     <svg fill="#0B0D12" stroke="#0B0D12"><use href="#mark"/></svg>
@@ -490,12 +525,11 @@
   <ul class="checks" style="margin-bottom:0">
     <li>Built a <b>multi-vendor booking marketplace</b> for a European company: vendors, catalogue, orders, payments, dashboards</li>
     <li>Built and run our own <b>loyalty platform</b>, the engine behind your loyalty points</li>
-    <li>One codebase for Android and iPhone, so you don't pay twice</li>
   </ul>
 </div>
 
 <div class="cta">
-  <h2>Next step: a <em>20-minute call.</em></h2>
+  <h2>Next: a <em>20-minute call.</em></h2>
   <p>We'll show you a live demo, answer every question, and shape the plan around your store. No commitment needed.</p>
   <div class="contact">
     <b>Call / WhatsApp</b> &nbsp;______________<br>
