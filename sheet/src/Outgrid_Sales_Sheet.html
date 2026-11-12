@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Sales Sheet</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../docs/src/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../docs/src/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../docs/src/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../docs/src/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../docs/src/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../docs/src/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../docs/src/fonts/poppins-latin-ext-700-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:400;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-400-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:600;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-600-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:700;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-700-normal.woff2)}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#3f4552}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{width:110mm;font-family:Poppins,PoppinsX,NotoDeva,sans-serif;color:var(--char);font-size:9.6pt;line-height:1.45}
+  .wrap{padding:0 6mm 7mm}
+  b{font-weight:700}
+
+  .head{background:var(--char);color:#fff;padding:7mm 6mm 6mm;margin-bottom:5mm;
+    background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.6),rgba(255,208,20,0) 55%),var(--char)}
+  .logo{display:flex;align-items:center;gap:8px}
+  .logo svg{width:26px;height:26px}
+  .logo .div{width:1.5px;height:24px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:13pt;line-height:1}
+  .logo span{display:block;font-size:8.5pt;letter-spacing:.3em}
+  .head h1{margin:5mm 0 1mm;font-size:20pt;line-height:1.1}
+  .head h1 em{font-style:normal;color:var(--yellow)}
+  .head p{margin:0;color:#d6d9df;font-size:9pt}
+
+  h2{display:flex;align-items:center;gap:7px;font-size:12pt;margin:6mm 0 2.5mm;line-height:1.2}
+  h2 .n{flex:0 0 20px;height:20px;border-radius:6px;background:var(--yellow);font-size:9pt;display:flex;align-items:center;justify-content:center}
+
+  .card{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;margin-bottom:5px}
+  .card .t{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+  .card .t b{font-size:10pt}
+  .card .p{font-weight:700;white-space:nowrap;font-size:9.5pt}
+  .card .s{color:var(--muted);font-size:8.8pt;margin-top:1px}
+  .card .s i{font-style:normal;font-weight:600;color:var(--char)}
+
+  .q{background:var(--char);color:#fff;border-radius:10px;padding:8px 11px;margin-bottom:5px}
+  .q .k{display:inline-block;background:var(--yellow);color:var(--char);font-weight:700;font-size:7.5pt;border-radius:4px;padding:0 5px;margin-bottom:3px}
+  .q .mr{font-size:10pt;font-weight:600;line-height:1.4}
+  .q .en{color:#b9bec8;font-size:8.5pt;margin-top:2px}
+
+  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--stone);border-radius:10px;overflow:hidden;font-size:9pt}
+  td{padding:5px 9px;border-top:1px solid var(--stone);vertical-align:top}
+  tr:first-child td{border-top:0}
+  td.r{text-align:right;font-weight:700;white-space:nowrap}
+  td small{display:block;color:var(--muted);font-size:8pt}
+  tr.sub td{background:#fff8d6}
+
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:5px}
+  .rules div{background:var(--cloud);border:1px solid var(--stone);border-radius:8px;padding:6px 8px;font-size:8.5pt;line-height:1.35}
+  .rules b{display:block;font-size:9pt}
+
+  .flow{display:flex;flex-direction:column;gap:0}
+  .st{display:flex;gap:9px;align-items:flex-start;padding:5px 0}
+  .st .d{flex:0 0 22px;height:22px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .st b{display:block;font-size:9.8pt}
+  .st span{color:var(--muted);font-size:8.8pt}
+
+  .no{border:1.5px solid var(--char);border-radius:10px;padding:7px 10px}
+  .no li{margin-bottom:3px}
+  ul{margin:0;padding-left:16px}
+  .proof{background:var(--yellow);border-radius:10px;padding:8px 11px;margin-top:5px}
+  .proof li{margin-bottom:2px}
+  .foot{margin-top:6mm;color:var(--muted);font-size:7.5pt;text-align:center}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+
+<div class="head">
+  <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+  <h1>Sales <em>Sheet</em></h1>
+  <p>Who we sell to, what to ask, what to quote, and the steps to the advance.</p>
+</div>
+
+<div class="wrap">
+
+<h2><span class="n">1</span>Who we sell to</h2>
+<div class="card"><div class="t"><b>Owner buried in manual orders</b><span class="p">₹1.15–3L</span></div>
+  <div class="s">Supermarket, distributor, wholesaler. <i>Says:</i> orders come on WhatsApp or phone, gives a daily count. <i>Buys:</i> order website or app + admin + WhatsApp agent.</div></div>
+<div class="card"><div class="t"><b>Owner who runs on bookings</b><span class="p">₹1–2L</span></div>
+  <div class="s">Clinic, coaching class, salon, tour operator. <i>Says:</i> appointments by phone, no-shows. <i>Buys:</i> booking website or app + reminders.</div></div>
+<div class="card"><div class="t"><b>Team running on Excel and WhatsApp</b><span class="p">₹2.5–4L / phase</span></div>
+  <div class="s">Real estate, loan and finance, insurance, multi-branch. <i>Says:</i> team, branches, can't track leads or files. <i>Buys:</i> CRM or business system.</div></div>
+<div class="card"><div class="t"><b>Founder with idea and money</b><span class="p">₹2–4L</span></div>
+  <div class="s">Any app. <i>Says:</i> his capital, what he has already done. Never says "franchise". <i>Buys:</i> first version of his app.</div></div>
+<div class="card"><div class="t"><b>Institutions</b><span class="p">₹3–4L+</span></div>
+  <div class="s">Schools, colleges, coaching chains, hospitals. <i>Buys:</i> management system with fees, records, reminders.</div></div>
+
+<h2><span class="n">2</span>First two questions</h2>
+<div class="q"><span class="k">Q1</span>
+  <div class="mr">तुमचा कोणता business आहे, की नवीन सुरू करायचा plan आहे?</div>
+  <div class="en">What kind of business do you have, or are you planning to start one?</div></div>
+<div class="q"><span class="k">Q2</span>
+  <div class="mr">तुम्हाला नक्की काय करायचं आहे: App, Website, WhatsApp orders automation, की team साठी software?</div>
+  <div class="en">What do you want to get done? Not sure? Just tell me the problem.</div></div>
+
+<h2><span class="n">3</span>Price list</h2>
+<table>
+  <tr><td>Online store website<small>Ordering website, admin panel, payments</small></td><td class="r">₹1.15L</td></tr>
+  <tr class="sub"><td>+ WhatsApp order agent<small>WhatsApp orders land in the admin panel, auto-replies</small></td><td class="r">₹1.5L</td></tr>
+  <tr><td>Booking website<small>Bookings, slots, reminders, payments, admin</small></td><td class="r">₹1L</td></tr>
+  <tr><td>One app, Android + iPhone<small>Store or booking app + admin panel</small></td><td class="r">₹2L</td></tr>
+  <tr><td>Delivery app set<small>Customer + rider + admin · basic / full / multi-store</small></td><td class="r">₹2L / 3L / 4.5L</td></tr>
+  <tr><td>Marketplace<small>Customer + seller + rider apps + admin</small></td><td class="r">₹4L</td></tr>
+  <tr><td>CRM or business system<small>Leads, documents, approvals, team, customer app</small></td><td class="r">₹2.5–4L / phase</td></tr>
+  <tr><td>School or hospital system<small>Fees, records, reminders, parent or patient app</small></td><td class="r">₹3–4L</td></tr>
+  <tr><td>Monthly care<small>Hosting, fixes, small changes · basic / advanced</small></td><td class="r">₹8–10k / 15–20k</td></tr>
+</table>
+<div class="rules">
+  <div><b>40 · 30 · 30</b>Start · working demo · launch</div>
+  <div><b>Setup included</b>Server setup and app store launch</div>
+  <div><b>Client pays fees</b>Servers, store accounts, WhatsApp API, SMS</div>
+  <div><b>Big scope?</b>Split into phases, each ₹4L or less</div>
+</div>
+
+<h2><span class="n">4</span>Steps to the advance</h2>
+<div class="flow">
+  <div class="st"><span class="d">1</span><div><b>Chat</b><span>Same channel they came from: DM or WhatsApp. Ask Q1 and Q2, share the price range.</span></div></div>
+  <div class="st"><span class="d">2</span><div><b>Call</b><span>Phone or WhatsApp call to get full clarity.</span></div></div>
+  <div class="st"><span class="d">3</span><div><b>Proposal</b><span>Prepare it. Don't send it alone.</span></div></div>
+  <div class="st"><span class="d">4</span><div><b>Google Meet</b><span>Walk through the proposal and show the demo app.</span></div></div>
+  <div class="st"><span class="d">5</span><div><b>Close</b><span>On this Meet, or the next one.</span></div></div>
+  <div class="st"><span class="d">6</span><div><b>40% advance</b><span>UPI link → agreement → kickoff.</span></div></div>
+</div>
+
+<h2><span class="n">5</span>We don't take</h2>
+<div class="no"><ul>
+  <li>Dreamers with no money</li>
+  <li>Franchise-seekers: we build their business, we don't sell one</li>
+  <li>Ride apps like Ola/Uber: licence costs ~₹3L in fees + ~₹15L in deposits</li>
+</ul></div>
+
+<div class="proof"><b>Proof to show</b><ul>
+  <li>Our delivery demo app (Android)</li>
+  <li>Booking marketplace built for a European company</li>
+  <li>Our own loyalty platform</li>
+</ul></div>
+
+<div class="foot">Outgrid Labs · outgridlabs.com</div>
+</div>
+</body>
+</html>
