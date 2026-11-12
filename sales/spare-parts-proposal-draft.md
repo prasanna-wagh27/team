@@ -50,7 +50,7 @@ Launching every buyer type in every city at once is the most common reason marke
 
 ## 4. Options
 
-| | **Pilot** | **Standard (recommended)** | **Growth** |
+| | **Launch** | **Growth (recommended)** | **Scale** |
 |---|---|---|---|
 | Buyer | Web app (works on phone) | Android app + web | Android + iOS + web |
 | Seller panel + admin | ✓ | ✓ | ✓ |
@@ -66,7 +66,7 @@ Prices are exclusive of GST [confirm whether GST applies].
 
 ## 5. Payment milestones
 
-| Milestone | When | Amount (Standard) |
+| Milestone | When | Amount (Growth) |
 |---|---|---|
 | 40%: Kick-off | On signing | ₹[1,18,000] |
 | 30%: Working beta | Buyer, seller and admin flows usable on test data | ₹[88,500] |
