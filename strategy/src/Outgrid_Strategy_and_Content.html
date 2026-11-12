@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Strategy + Content</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../docs/src/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../docs/src/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../docs/src/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../docs/src/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../docs/src/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../docs/src/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../docs/src/fonts/poppins-latin-ext-700-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:400;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-400-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:600;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-600-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:700;src:url(../../docs/src/fonts/noto-sans-devanagari-devanagari-700-normal.woff2)}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#3f4552}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{width:110mm;font-family:Poppins,PoppinsX,NotoDeva,sans-serif;color:var(--char);font-size:9.6pt;line-height:1.5}
+  b{font-weight:700}
+  section{padding:0 6mm 8mm}
+  .head{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.6),rgba(255,208,20,0) 55%),var(--char);color:#fff;padding:7mm 6mm 6mm;margin:0 -6mm 5mm}
+  .logo{display:flex;align-items:center;gap:8px}
+  .logo svg{width:24px;height:24px}
+  .logo .div{width:1.5px;height:22px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:12pt;line-height:1}
+  .logo span{display:block;font-size:8pt;letter-spacing:.3em}
+  .head .tag{display:inline-block;margin-top:5mm;background:var(--yellow);color:var(--char);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .head h1{margin:2mm 0 1mm;font-size:18pt;line-height:1.15}
+  .head h1 em{font-style:normal;color:var(--yellow)}
+  .head p{margin:0;color:#d6d9df;font-size:9pt}
+  .sh{margin:7mm -6mm 4mm;padding:6mm 6mm 0;border-top:6px solid var(--yellow)}
+  .sh .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .sh h1{margin:2mm 0 0;font-size:16pt;line-height:1.2}
+  h3{font-size:11pt;margin:5mm 0 2mm;line-height:1.25}
+
+  .step{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .step .top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .step .d{flex:0 0 24px;height:24px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;font-size:9.5pt;display:flex;align-items:center;justify-content:center}
+  .step .top b{font-size:11pt}
+  .row{display:flex;gap:6px;margin:3px 0;font-size:9.2pt}
+  .row .k{flex:0 0 58px;font-weight:600;color:var(--muted);font-size:8.3pt;text-transform:uppercase;letter-spacing:.04em;padding-top:1px}
+  .row div{flex:1}
+  .done{margin-top:5px;background:#fff8d6;border-radius:7px;padding:4px 8px;font-size:8.8pt}
+  .done b{font-size:8.5pt}
+  .say{background:var(--char);color:#fff;border-radius:9px;padding:7px 10px;margin:5px 0}
+  .say .mr{font-size:9.6pt;font-weight:600}
+  .say .en{color:#b9bec8;font-size:8.4pt}
+  ul{margin:2px 0 4px;padding-left:16px}
+  li{margin-bottom:2px}
+
+  .prod{border:1px solid var(--stone);border-radius:12px;margin-bottom:7px;overflow:hidden}
+  .prod .t{display:flex;justify-content:space-between;align-items:baseline;background:var(--cloud);padding:7px 11px;border-bottom:1px solid var(--stone)}
+  .prod .t b{font-size:10.2pt}
+  .prod .t span{font-weight:700;white-space:nowrap}
+  .prod .b{padding:6px 11px 8px;font-size:9pt}
+  .prod .in b,.prod .out b{display:block;font-size:8.2pt;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .prod .out{margin-top:4px}
+  .fees{background:var(--char);color:#fff;border-radius:12px;padding:9px 12px;font-size:9pt}
+  .fees b{color:var(--yellow)}
+
+  .pf{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .pf b{font-size:10.2pt}
+  .pf .how{color:var(--muted);font-size:8.8pt;margin-top:2px}
+  .pf .line{margin-top:4px;background:var(--cloud);border-left:3px solid var(--yellow);border-radius:0 7px 7px 0;padding:4px 8px;font-size:9pt}
+
+  .ag{display:flex;gap:9px;padding:7px 0;border-bottom:1px dashed var(--stone)}
+  .ag:last-child{border-bottom:0}
+  .ag .n{flex:0 0 22px;height:22px;border-radius:6px;background:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .ag b{display:block}
+  .ag span{color:var(--muted);font-size:9pt}
+  .note{background:var(--cloud);border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.8pt;margin-top:6px}
+  .foot{margin-top:6mm;color:var(--muted);font-size:7.5pt;text-align:center}
+</style>
+
+<style>
+  .goal{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;margin-bottom:5px;font-size:9.4pt}
+  .goal .gk{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:7.5pt;border-radius:4px;padding:0 6px;margin-right:5px;vertical-align:1px}
+  .mini{display:flex;flex-direction:column;border-left:3px solid var(--yellow);padding:2px 0 2px 9px;margin-bottom:6px}
+  .mini b{font-size:9.8pt}
+  .mini span{color:var(--muted);font-size:8.8pt}
+  .dec{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;margin-bottom:6px}
+  .dec b{display:block;font-size:10pt}
+  .dec span{color:var(--muted);font-size:9pt}
+  .reel{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--stone);border-radius:10px;padding:7px 10px;margin-bottom:5px}
+  .reel b{display:block;font-size:9.6pt}
+  .reel span{color:var(--muted);font-size:8.6pt}
+  .reel em{font-style:normal;font-weight:700;font-size:12pt}
+  .reel.hl{background:#fff8d6;border-color:var(--yellow)}
+  .rule{background:var(--char);color:#fff;border-radius:12px;padding:10px 12px}
+  .rule b{display:block;color:var(--yellow);font-size:11pt}
+  .rule span{display:block;color:#d6d9df;font-size:9pt;margin-top:2px}
+  .rule .ex{margin-top:7px;background:#1b1f28;border-radius:8px;padding:6px 9px;font-size:9.4pt;font-weight:600}
+  .rule .ex s{color:#8b919c;font-weight:400}
+  .rl{display:flex;gap:9px;padding:6px 0;border-bottom:1px dashed var(--stone)}
+  .rl .n{flex:0 0 22px;height:22px;border-radius:6px;background:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .rl b{display:block;font-size:9.8pt;line-height:1.4}
+  .rl span{color:var(--muted);font-size:8.6pt}
+  .later{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;margin-bottom:5px}
+  .later b{display:block;font-size:9.8pt}
+  .later span{color:var(--muted);font-size:8.8pt}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+
+<!-- 1 · GOALS AND WHO -->
+<section>
+  <div class="head">
+    <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+    <span class="tag">STRATEGY + CONTENT · 1 OF 4</span>
+    <h1>Where we're going, and <em>who we serve.</em></h1>
+  </div>
+
+  <h3>Goals</h3>
+  <div class="goal"><span class="gk">Next 20 days</span><b>Close 1 project.</b> Advance in the bank.</div>
+  <div class="goal"><span class="gk">Month 6</span><b>₹5L a month.</b> A mix of big custom projects and medium projects, with several apps launched.</div>
+  <div class="goal"><span class="gk">Market</span><b>Maharashtra first.</b> Pan-India once we have 10–20 projects. Europe and international outreach starts after 60 days.</div>
+  <div class="goal"><span class="gk">Capacity</span><b>3 projects at a time solo.</b> More projects means hiring freelancers at about ₹30k a month each.</div>
+
+  <h3>Who we sell to</h3>
+  <div class="mini"><b>1 · Owner buried in manual orders</b><span>Supermarket, distributor, wholesaler</span></div>
+  <div class="mini"><b>2 · Owner who runs on bookings</b><span>Clinic, coaching class, salon, tour operator</span></div>
+  <div class="mini"><b>3 · Team running on Excel and WhatsApp</b><span>Real estate, loan and finance, insurance, multi-branch</span></div>
+  <div class="mini"><b>4 · Founder with idea and money</b><span>Any app, with capital and groundwork done</span></div>
+  <div class="mini"><b>5 · Institutions</b><span>Schools, colleges, coaching chains, hospitals</span></div>
+  <div class="note">Signals, prices and the first two questions are on the Sales Sheet.</div>
+
+  <h3>Who we don't</h3>
+  <ul>
+    <li>Dreamers with no money. Most of the Blinkit-reel crowd: 90% under ₹3L, most under ₹1L.</li>
+    <li>Franchise-seekers.</li>
+    <li>Ride apps: licence fees ~₹3L plus deposits ~₹15L for one district.</li>
+  </ul>
+</section>
+
+<!-- 2 · DECISIONS -->
+<section>
+  <div class="sh"><span class="tag">2 OF 4</span><h1>Decisions we made, and why.</h1></div>
+  <p>Settled. Reopen only if real results say otherwise.</p>
+
+  <div class="dec"><b>₹4L cap per project or phase</b><span>That's what our clients can realistically spend. Bigger scope is split into phases. The delivery multi-store plan (₹4.5L) is the one exception.</span></div>
+  <div class="dec"><b>Lower prices now, for results</b><span>Real launched apps and demos matter more than margin in the first months.</span></div>
+  <div class="dec"><b>No founding-client discount</b><span>A discount signals inexperience and makes ₹3–4L harder to trust.</span></div>
+  <div class="dec"><b>No ready-made "launch kit"</b><span>It only has value if the buyer actively runs it. Most won't, and they'd blame us.</span></div>
+  <div class="dec"><b>No agencies as partners</b><span>They'd see how it's done and build it themselves with AI.</span></div>
+  <div class="dec"><b>No ride apps</b><span>Licence costs make them unviable for our clients.</span></div>
+  <div class="dec"><b>Setup and app store launch included</b><span>Feels premium, costs us little. The client pays third-party fees directly.</span></div>
+  <div class="dec"><b>Inbound only, for now</b><span>Leads come from the Outgrid Labs page. Meetings in person only in Pune or Mumbai. Paid ads start after the first project's money comes in.</span></div>
+</section>
+
+<!-- 3 · CONTENT: WHAT WORKED + RULE -->
+<section>
+  <div class="sh"><span class="tag">3 OF 4</span><h1>Content: what worked, and the rule.</h1></div>
+
+  <h3>What our reels showed</h3>
+  <div class="reel"><div><b>Blinkit-type business in your town</b><span>Pulled dreamers and franchise-seekers</span></div><em>107K</em></div>
+  <div class="reel"><div><b>Zomato-type app in your town</b><span>Pulled people wanting to start a food app</span></div><em>12.1K</em></div>
+  <div class="reel hl"><div><b>Wholesale ordering app</b><span>Pulled real business owners</span></div><em>10.3K</em></div>
+  <div class="reel"><div><b>Ola-Uber in your town</b><span>Dreamers, and licence-heavy anyway</span></div><em>4.5K</em></div>
+  <div class="reel"><div><b>Clinic automation</b><span>Too new to judge</span></div><em>—</em></div>
+
+  <h3>The rule</h3>
+  <div class="rule">
+    <b>Famous app in the hook. Aimed at owners.</b>
+    <span>The famous name gets the reach. Talking to owners gets the right people. Avoid "start a business in your town"; that's what pulls dreamers.</span>
+    <div class="ex"><s>तुमच्या शहरात Blinkit सारखा business</s><br>तुमच्या Supermarket साठी Blinkit सारखं App</div>
+  </div>
+
+  <h3>How we make them</h3>
+  <ul>
+    <li>AI-generated explainer videos with your Marathi voiceover. You write the script, record the voice, AI does the visuals.</li>
+    <li>On the separate <b>Outgrid Labs</b> page (about 500 followers, up from 330 in 3–4 reels).</li>
+    <li>At least 1 reel a day.</li>
+  </ul>
+
+  <h3>How we judge a reel</h3>
+  <p>By the number of DMs from customer types 1–5, not by views. Note it in the tracker for each reel.</p>
+</section>
+
+<!-- 4 · REEL PLAN + LATER -->
+<section>
+  <div class="sh"><span class="tag">4 OF 4</span><h1>Next reels, and what comes later.</h1></div>
+
+  <h3>Next 7–9 days</h3>
+  <div class="rl"><span class="n">1</span><div><b>Site visit चे leads हरवतात? Builder आणि agents साठी पूर्ण CRM</b><span>Type 3 · Real estate</span></div></div>
+  <div class="rl"><span class="n">2</span><div><b>PhysicsWallah सारखं App तुमच्या Class साठी</b><span>Type 2 · Coaching classes</span></div></div>
+  <div class="rl"><span class="n">3</span><div><b>Branches अनेक, पण सगळं Excel आणि WhatsApp वर?</b><span>Type 3 · Multi-branch business</span></div></div>
+  <div class="rl"><span class="n">4</span><div><b>₹50,000 चं App आणि ₹3 लाखाचं App, फरक काय?</b><span>All types · Price clarity, filters budgets</span></div></div>
+  <div class="rl"><span class="n">5</span><div><b>Loan files कुठपर्यंत आल्या, हे रोज फोन करून विचारता?</b><span>Type 3 · Loan, finance, insurance</span></div></div>
+  <div class="rl"><span class="n">6</span><div><b>पालकांना fees reminder फोन करून थकलात?</b><span>Type 5 · Schools</span></div></div>
+  <div class="rl"><span class="n">7</span><div><b>Practo सारखं Booking तुमच्या Hospital साठी</b><span>Type 5 · Hospitals</span></div></div>
+  <div class="rl"><span class="n">8</span><div><b>रात्री 11 वाजता आलेला WhatsApp order कोण घेतो?</b><span>Type 1 · WhatsApp order agent</span></div></div>
+  <div class="rl"><span class="n">9</span><div><b>Delivery App मध्ये नक्की काय काय मिळतं?</b><span>Proof · Tour of the demo app. Never mention build time.</span></div></div>
+
+  <h3>Later</h3>
+  <div class="later"><b>Marathi voice AI agent</b><span>An AI taking an order on the phone in Marathi. An attention-grabber for content, after this round of reels.</span></div>
+  <div class="later"><b>Paid ads</b><span>After the first project's money comes in. Aimed at owners, not aspiring founders.</span></div>
+  <div class="later"><b>Pan-India</b><span>After 10–20 projects in Maharashtra.</span></div>
+  <div class="later"><b>Europe and international</b><span>Cold DMs and emails to founders, after 60 days.</span></div>
+
+  <div class="foot">Outgrid Labs · outgridlabs.com</div>
+</section>
+
+</body>
+</html>
