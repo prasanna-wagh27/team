@@ -19,10 +19,15 @@ const variants = [
   fs.mkdirSync(PRINT, { recursive: true });
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  const files = fs.readdirSync(SRC).filter(f => /^\d\d_.*\.html$/.test(f)).sort();
-  for (const v of variants) {
+  // Optional: node build.js <file.html> <outDir>  -> builds only that file, phone-sized only
+  const only = process.argv[2];
+  const onlyOut = process.argv[3] ? path.resolve(process.argv[3]) : null;
+  const files = only ? [path.basename(only)] : fs.readdirSync(SRC).filter(f => /^\d\d_.*\.html$/.test(f)).sort();
+  const runVariants = only ? [{ ...variants[0], dir: onlyOut || OUT }] : variants;
+  if (onlyOut) fs.mkdirSync(onlyOut, { recursive: true });
+  for (const v of runVariants) {
     for (const f of files) {
-      const body = fs.readFileSync(path.join(SRC, f), 'utf8');
+      const body = fs.readFileSync(only ? path.resolve(only) : path.join(SRC, f), 'utf8');
       const title = (body.match(/<!--\s*title:\s*(.*?)\s*-->/) || [, f])[1];
       const links = v.css.map(c => `<link rel="stylesheet" href="${c}">`).join('');
       const html = `<!doctype html><html lang="en" class="${v.name}"><head><meta charset="utf-8"><title>${title}</title>${links}</head><body>${body}</body></html>`;
