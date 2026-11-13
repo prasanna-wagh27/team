@@ -13,6 +13,7 @@
 | Proposal | Prices |
 |---|---|
 | [Quick-delivery app](proposals/Outgrid_Quick_Delivery_App_Proposal.pdf) | Launch ₹2L · Growth ₹3L · Scale ₹4.5L |
+| [Online kirana store website](proposals/Outgrid_Kirana_Store_Website_Proposal.pdf) | Launch ₹75k · Growth ₹1.15L · Growth + WhatsApp ₹1.5L |
 
 Fill in the date on the cover and your phone and email on the last page before sending.
 
@@ -31,6 +32,7 @@ cd sheet/src && node build.js
 cd playbook/src && node build.js Outgrid_Sales_Playbook.html
 cd strategy/src && node build.js Outgrid_Strategy_and_Content.html
 cd proposals/src && node build.js Outgrid_Quick_Delivery_App_Proposal.html
+cd proposals/src && node build-pages.js Outgrid_Kirana_Store_Website_Proposal.html
 ```
 
 Fonts live in `assets/fonts/`. Commit both the source and the PDF.

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Online Kirana Store Proposal</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../assets/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../assets/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../assets/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../assets/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../assets/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../assets/fonts/poppins-latin-ext-700-normal.woff2)}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#3f4552;--soft:#fff8d6}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{width:110mm;font-family:Poppins,PoppinsX,sans-serif;color:var(--char);font-size:9.6pt;line-height:1.5}
+  b{font-weight:700}
+  section{padding:0 6mm 8mm}
+  ul{margin:2px 0 0;padding-left:16px}
+  li{margin-bottom:2px}
+
+  /* headers */
+  .head{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.6),rgba(255,208,20,0) 55%),var(--char);color:#fff;padding:7mm 6mm 6mm;margin:0 -6mm 5mm}
+  .logo{display:flex;align-items:center;gap:8px}
+  .logo svg{width:24px;height:24px}
+  .logo .div{width:1.5px;height:22px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:12pt;line-height:1}
+  .logo span{display:block;font-size:8pt;letter-spacing:.3em}
+  .head .tag{display:inline-block;margin-top:6mm;background:var(--yellow);color:var(--char);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .head h1{margin:2mm 0 1.5mm;font-size:21pt;line-height:1.12}
+  .head h1 em{font-style:normal;color:var(--yellow)}
+  .head p{margin:0;color:#d6d9df;font-size:9.2pt}
+  .head .date{margin-top:4mm;font-size:8.5pt;color:#b9bec8}
+  .sh{margin:0 -6mm 4mm;padding:6mm 6mm 0;border-top:6px solid var(--yellow)}
+  .sh .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .sh h1{margin:2mm 0 1mm;font-size:16pt;line-height:1.2}
+  .sh p{margin:0;color:var(--muted);font-size:9pt}
+  h3{font-size:11pt;margin:6mm 0 2.5mm;line-height:1.25}
+
+  /* how it works */
+  .flow .st{display:flex;gap:9px;align-items:flex-start;padding:5px 0}
+  .flow .d{flex:0 0 24px;height:24px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;font-size:9.5pt;display:flex;align-items:center;justify-content:center}
+  .flow b{display:block;font-size:10pt}
+  .flow span{color:var(--muted);font-size:8.8pt}
+
+  /* mockups */
+  .mocks{display:flex;gap:4mm;align-items:flex-start;margin-top:2mm}
+  .phone{flex:0 0 43mm;border:5px solid var(--char);border-radius:20px;overflow:hidden;background:#fff;font-size:6.6pt;line-height:1.3}
+  .phone .bar{background:var(--char);color:#fff;padding:6px 8px 7px}
+  .phone .bar b{font-size:8pt;display:block}
+  .phone .slot{display:inline-block;margin-top:3px;background:var(--yellow);color:var(--char);border-radius:10px;padding:0 6px;font-weight:600;font-size:6.2pt}
+  .phone .srch{margin:6px 7px 4px;border:1px solid var(--stone);border-radius:8px;padding:3px 7px;color:#8a909c;background:var(--cloud)}
+  .phone .chips{display:flex;gap:3px;padding:0 7px 4px;flex-wrap:wrap}
+  .phone .chips span{border:1px solid var(--stone);border-radius:9px;padding:0 5px;font-size:6pt}
+  .phone .chips span.on{background:var(--char);color:#fff;border-color:var(--char)}
+  .phone .it{display:flex;align-items:center;gap:5px;padding:4px 7px;border-top:1px solid var(--stone)}
+  .phone .it i{flex:0 0 18px;height:18px;border-radius:5px;background:var(--cloud);border:1px solid var(--stone)}
+  .phone .it div{flex:1}
+  .phone .it small{display:block;color:var(--muted);font-size:5.8pt}
+  .phone .it em{font-style:normal;font-weight:700;border:1px solid var(--char);border-radius:5px;padding:0 5px;font-size:6.2pt}
+  .phone .cp{margin:4px 7px 7px;background:var(--soft);border:1px dashed #c9a400;border-radius:6px;padding:3px 6px;font-size:6.2pt}
+  .admin{flex:1;border:1px solid var(--stone);border-radius:12px;overflow:hidden;font-size:6.8pt;line-height:1.3}
+  .admin .top{background:var(--cloud);border-bottom:1px solid var(--stone);padding:5px 8px;display:flex;justify-content:space-between}
+  .admin .top b{font-size:7.5pt}
+  .admin .kpi{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:6px 7px 2px}
+  .admin .kpi div{background:var(--char);color:#fff;border-radius:7px;padding:4px 6px}
+  .admin .kpi b{display:block;font-size:9pt;color:var(--yellow)}
+  .admin .chart{display:flex;align-items:flex-end;gap:3px;height:34px;padding:4px 9px 0;border-bottom:1px solid var(--stone);margin:0 7px}
+  .admin .chart span{flex:1;background:var(--stone);border-radius:2px 2px 0 0}
+  .admin .chart span.t{background:var(--yellow)}
+  .admin .days{display:flex;gap:3px;padding:1px 16px 4px;color:var(--muted);font-size:5.4pt}
+  .admin .days span{flex:1;text-align:center}
+  .admin .o{display:flex;justify-content:space-between;gap:4px;padding:4px 8px;border-top:1px solid var(--stone)}
+  .admin .o .s{font-weight:600;border-radius:8px;padding:0 5px;font-size:6pt;white-space:nowrap}
+  .s.new{background:var(--yellow)}
+  .s.as{background:var(--char);color:#fff}
+  .s.dn{background:var(--stone)}
+  .cap{color:var(--muted);font-size:7.5pt;text-align:center;margin-top:2mm}
+
+  /* feature groups */
+  .grp{border:1px solid var(--stone);border-radius:12px;margin-bottom:7px;overflow:hidden}
+  .grp .t{display:flex;justify-content:space-between;align-items:baseline;gap:6px;background:var(--cloud);padding:7px 11px;border-bottom:1px solid var(--stone)}
+  .grp .t b{font-size:10.5pt}
+  .grp .t span{color:var(--muted);font-size:8pt}
+  .grp ul{padding:7px 11px 8px 26px;margin:0;font-size:9.2pt}
+
+  /* plans */
+  .plan{border:1px solid var(--stone);border-radius:12px;margin-bottom:8px;overflow:hidden}
+  .plan.pop{border:2px solid var(--char)}
+  .plan .t{padding:9px 11px 8px;border-bottom:1px solid var(--stone)}
+  .plan.pop .t{background:var(--char);color:#fff;border-bottom:0}
+  .plan .nm{display:flex;justify-content:space-between;align-items:center}
+  .plan .nm b{font-size:11pt}
+  .plan .badge{background:var(--yellow);color:var(--char);font-weight:700;font-size:6.8pt;border-radius:20px;padding:1px 8px;letter-spacing:.05em}
+  .plan .pr{font-size:17pt;font-weight:700;line-height:1.2;margin-top:1px}
+  .plan.pop .pr{color:var(--yellow)}
+  .plan .fr{font-size:8.6pt;color:var(--muted)}
+  .plan.pop .fr{color:#c9cdd5}
+  .plan .b{padding:7px 11px 9px;font-size:9.1pt}
+  .plan .plus{font-weight:600;font-size:8.6pt;background:var(--soft);border-radius:6px;padding:2px 7px;display:inline-block;margin-bottom:3px}
+  .plan ul{padding-left:16px}
+
+  /* timeline + payment */
+  .tl{border-left:2px solid var(--stone);margin-left:11px;padding-left:14px}
+  .tl .w{position:relative;padding:3px 0 8px}
+  .tl .w:before{content:"";position:absolute;left:-21px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--yellow);border:2px solid var(--char)}
+  .tl .w b{display:block;font-size:9.8pt}
+  .tl .w span{color:var(--muted);font-size:8.8pt}
+  .wk{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4mm}
+  .wk div{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.6pt;color:var(--muted)}
+  .wk b{display:block;font-size:15pt;color:var(--char);line-height:1.15}
+  .wk div.dk{background:var(--char);border-color:var(--char);color:#c9cdd5}
+  .wk div.dk b{color:var(--yellow)}
+  table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--stone);border-radius:10px;overflow:hidden;font-size:8.8pt}
+  th{background:var(--char);color:#fff;font-weight:600;font-size:8pt;padding:5px 7px;text-align:right}
+  th:first-child{text-align:left}
+  td{padding:5px 7px;border-top:1px solid var(--stone);text-align:right;white-space:nowrap}
+  td:first-child{text-align:left;font-weight:600}
+  tr.lbl td{background:var(--cloud);color:var(--muted);font-size:7.8pt;font-weight:400;border-top:0;padding:3px 7px}
+  .fees{background:var(--char);color:#fff;border-radius:12px;padding:9px 12px;font-size:9pt;margin-top:6px}
+  .fees b{color:var(--yellow)}
+  .note{background:var(--cloud);border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.9pt;margin-top:6px}
+
+  /* promises + about */
+  .pm{display:flex;gap:9px;padding:6px 0;border-bottom:1px dashed var(--stone)}
+  .pm:last-child{border-bottom:0}
+  .pm .n{flex:0 0 22px;height:22px;border-radius:6px;background:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .pm span{font-size:9.2pt}
+  .about{background:var(--cloud);border:1px solid var(--stone);border-radius:12px;padding:9px 12px;font-size:9pt}
+  .about b.h{font-size:10.5pt}
+  .next{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.55),rgba(255,208,20,0) 60%),var(--char);color:#fff;border-radius:14px;padding:11px 13px;margin-top:7px}
+  .next h2{margin:0 0 2px;font-size:14pt;line-height:1.2}
+  .next h2 em{font-style:normal;color:var(--yellow)}
+  .next p{margin:0 0 7px;color:#d6d9df;font-size:9pt}
+  .next .c{font-size:9pt;padding:3px 0;border-top:1px solid rgba(255,255,255,.15)}
+  .next .c span{color:#b9bec8;display:inline-block;width:30mm}
+  .foot{margin-top:6mm;color:var(--muted);font-size:7.5pt;text-align:center}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+
+<!-- 1 · OVERVIEW -->
+<section>
+  <div class="head">
+    <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+    <span class="tag">PROPOSAL · ONLINE KIRANA STORE</span>
+    <h1>Your kirana store, <em>online.</em></h1>
+    <p>Customers order from their phone and pay online. You see every order in one place, and your delivery person knows exactly where to go.</p>
+    <div class="date">Date: ______________</div>
+  </div>
+
+  <h3>How it works</h3>
+  <div class="flow">
+    <div class="st"><span class="d">1</span><div><b>Customer orders</b><span>Opens your website on their phone, searches, adds to cart, picks a delivery time, pays.</span></div></div>
+    <div class="st"><span class="d">2</span><div><b>You get the order</b><span>It shows up in your admin panel with every detail, and you get a notification.</span></div></div>
+    <div class="st"><span class="d">3</span><div><b>You assign it</b><span>Pick a delivery person. They see the order and address on their own login.</span></div></div>
+    <div class="st"><span class="d">4</span><div><b>Delivered</b><span>They mark it delivered. The customer gets a notification at each step.</span></div></div>
+  </div>
+
+  <h3>What it looks like</h3>
+  <div class="mocks">
+    <div class="phone">
+      <div class="bar"><b>YourStore</b><span class="slot">Delivery today · 6–8 pm</span></div>
+      <div class="srch">Search atta, milk, oil…</div>
+      <div class="chips"><span class="on">All</span><span>Dairy</span><span>Atta</span><span>Oil</span></div>
+      <div class="it"><i></i><div>Toned milk<small>500 ml · ₹28</small></div><em>ADD</em></div>
+      <div class="it"><i></i><div>Wheat atta<small>5 kg · ₹265</small></div><em>ADD</em></div>
+      <div class="it"><i></i><div>Tur dal<small>1 kg · ₹158</small></div><em>ADD</em></div>
+      <div class="it"><i></i><div>Sunflower oil<small>1 L · ₹145</small></div><em>ADD</em></div>
+      <div class="cp"><b>SAVE50</b> · ₹50 off on orders above ₹499</div>
+    </div>
+    <div class="admin">
+      <div class="top"><b>Admin panel</b><span>Today</span></div>
+      <div class="kpi"><div><b>₹18,450</b>Sales</div><div><b>42</b>Orders</div></div>
+      <div class="chart"><span style="height:45%"></span><span style="height:60%"></span><span style="height:52%"></span><span style="height:70%"></span><span style="height:64%"></span><span style="height:88%"></span><span class="t" style="height:100%"></span></div>
+      <div class="days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+      <div class="o"><span>#212 · ₹412 UPI</span><span class="s new">New</span></div>
+      <div class="o"><span>#211 · ₹265 COD</span><span class="s as">Ramesh</span></div>
+      <div class="o"><span>#210 · ₹730 UPI</span><span class="s as">Sunil</span></div>
+      <div class="o"><span>#209 · ₹184 Card</span><span class="s dn">Delivered</span></div>
+    </div>
+  </div>
+  <div class="cap">Customer website and admin panel (sample data)</div>
+</section>
+
+<!-- 2 · WHAT'S INSIDE -->
+<section>
+  <div class="sh"><span class="tag">WHAT'S INSIDE</span><h1>Three parts, one system.</h1>
+    <p>Works on any phone or laptop. No app download needed.</p></div>
+
+  <div class="grp"><div class="t"><b>Your customers</b><span>Website</span></div><ul>
+    <li>Search and product categories</li>
+    <li>Product details: photo, size, price</li>
+    <li>Cart and checkout</li>
+    <li>Online payment by UPI or card, or cash on delivery</li>
+    <li>Delivery time: pick a slot, or get it as soon as possible</li>
+    <li>Coupons</li>
+    <li>Notifications</li>
+  </ul></div>
+
+  <div class="grp"><div class="t"><b>You</b><span>Admin panel</span></div><ul>
+    <li>Every order with full details and status</li>
+    <li>Who each order is assigned to</li>
+    <li>Products, prices and stock</li>
+    <li>Delivery slots and timings</li>
+    <li>Coupons</li>
+    <li>Statistics: sales and orders</li>
+  </ul></div>
+
+  <div class="grp"><div class="t"><b>Your delivery staff</b><span>Staff login</span></div><ul>
+    <li>Their own login on their phone</li>
+    <li>Orders assigned to them, with address and phone number</li>
+    <li>Mark an order delivered in one tap</li>
+  </ul></div>
+
+  <div class="note"><b>Your products.</b> Have a product list? We load it for you. No list yet? You add products from the admin panel, and we show you how.</div>
+</section>
+
+<!-- 3 · PLANS -->
+<section>
+  <div class="sh"><span class="tag">PLANS</span><h1>Pick your starting point.</h1>
+    <p>Every plan includes setup and launch.</p></div>
+
+  <div class="plan"><div class="t">
+    <div class="nm"><b>Launch</b></div>
+    <div class="pr">₹75,000</div>
+    <div class="fr">Everything to start taking orders online.</div></div>
+    <div class="b"><ul>
+      <li>Customer website: search, categories, product details, cart</li>
+      <li>Online payment and cash on delivery</li>
+      <li>Delivery slots or as-soon-as-possible</li>
+      <li>Coupons and notifications</li>
+      <li>Admin panel: orders, products, stock, assign delivery</li>
+      <li>Delivery staff login</li>
+      <li>Statistics: today's sales and orders</li>
+    </ul></div></div>
+
+  <div class="plan pop"><div class="t">
+    <div class="nm"><b>Growth</b><span class="badge">MOST POPULAR</span></div>
+    <div class="pr">₹1,15,000</div>
+    <div class="fr">For stores that want repeat customers and clear numbers.</div></div>
+    <div class="b"><span class="plus">Everything in Launch, plus</span><ul>
+      <li>Charts and reports: daily, weekly, monthly sales, top products, best customers</li>
+      <li>Download reports to Excel</li>
+      <li>Customer accounts: order history, saved addresses, one-tap reorder</li>
+      <li>Offer banners and coupon rules: first order, minimum order, one use per customer</li>
+      <li>Send offer notifications to all your customers</li>
+      <li>Delivery areas, delivery charges and minimum order</li>
+      <li>Low-stock alerts</li>
+      <li>Staff roles: owner, manager, delivery</li>
+    </ul></div></div>
+
+  <div class="plan"><div class="t">
+    <div class="nm"><b>Growth + WhatsApp</b></div>
+    <div class="pr">₹1,50,000</div>
+    <div class="fr">For stores that already get orders on WhatsApp.</div></div>
+    <div class="b"><span class="plus">Everything in Growth, plus</span><ul>
+      <li>Orders typed on WhatsApp land in your admin panel as orders</li>
+      <li>Auto-replies: welcome, store link, order confirmed</li>
+      <li>Order updates sent on WhatsApp</li>
+    </ul></div></div>
+</section>
+
+<!-- 4 · TIMELINE AND PAYMENT -->
+<section>
+  <div class="sh"><span class="tag">TIMELINE AND PAYMENT</span><h1>Live in 3 to 6 weeks.</h1></div>
+
+  <div class="wk">
+    <div><b>3 weeks</b>Launch and Growth</div>
+    <div class="dk"><b>6 weeks</b>Growth + WhatsApp</div>
+  </div>
+  <div class="tl">
+    <div class="w"><b>Week 1</b><span>Design in your store's look. Products loaded.</span></div>
+    <div class="w"><b>Week 2</b><span>Working demo of the website and admin panel. You try it.</span></div>
+    <div class="w"><b>Week 3</b><span>Your changes, payments switched on, launch.</span></div>
+    <div class="w"><b>Weeks 4–6</b><span>WhatsApp plan only: WhatsApp Business approval from Meta, setup, testing.</span></div>
+  </div>
+
+  <h3>Payment: 40 · 30 · 30</h3>
+  <table>
+    <tr><th>Plan</th><th>To start</th><th>At demo</th><th>At launch</th></tr>
+    <tr><td>Launch</td><td>₹30,000</td><td>₹22,500</td><td>₹22,500</td></tr>
+    <tr><td>Growth</td><td>₹46,000</td><td>₹34,500</td><td>₹34,500</td></tr>
+    <tr><td>+ WhatsApp</td><td>₹60,000</td><td>₹45,000</td><td>₹45,000</td></tr>
+  </table>
+
+  <div class="fees"><b>Paid by you, directly to the provider:</b> domain, server, payment gateway charges (about 2% per online payment), and WhatsApp charges on the WhatsApp plan. We set it all up and tell you the exact amounts before we start.</div>
+  <div class="note"><b>After launch:</b> optional monthly care from ₹8,000/month. Hosting checks, fixes and small changes.</div>
+</section>
+
+<!-- 5 · PROMISES, NEEDS, NEXT STEP -->
+<section>
+  <div class="sh"><span class="tag">WHY US AND NEXT STEP</span><h1>Why this is safe for you.</h1></div>
+
+  <div class="pm"><span class="n">1</span><span>Fixed price in writing. Anything new is priced first.</span></div>
+  <div class="pm"><span class="n">2</span><span>A working demo before you pay the second part.</span></div>
+  <div class="pm"><span class="n">3</span><span>You own everything: website, data and accounts.</span></div>
+  <div class="pm"><span class="n">4</span><span>You talk to the person building it. No middlemen.</span></div>
+
+  <h3>What we'll need from you</h3>
+  <ul>
+    <li>Store name and logo</li>
+    <li>Product list, if you have one</li>
+    <li>Delivery area and timings</li>
+    <li>Payment gateway account (Razorpay) in your business name</li>
+    <li>A WhatsApp number for the business (WhatsApp plan)</li>
+    <li>Feedback on the demo within 3 days</li>
+  </ul>
+
+  <h3>About us</h3>
+  <div class="about"><b class="h">Outgrid Labs</b><br>
+    A Maharashtra studio building custom apps, websites and AI automation for businesses, end to end.
+    <ul style="margin-top:4px">
+      <li>Built a booking marketplace for a European company: vendors, catalogue, orders, payments, dashboards</li>
+      <li>Built and run our own loyalty platform</li>
+    </ul></div>
+
+  <div class="next">
+    <h2>Next: a <em>20-minute call.</em></h2>
+    <p>We'll show you a live demo, answer every question, and help you pick the right plan. No commitment needed.</p>
+    <div class="c"><span>Call / WhatsApp</span>______________</div>
+    <div class="c"><span>Email</span>______________</div>
+    <div class="c"><span>Web</span>outgridlabs.com</div>
+  </div>
+  <div class="foot">Outgrid Labs · outgridlabs.com</div>
+</section>
+</body>
+</html>
