@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Agri Marketplace Proposal</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../assets/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../assets/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../assets/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../assets/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../assets/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../assets/fonts/poppins-latin-ext-700-normal.woff2)}
+  @page{size:1280px 720px;margin:0}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#4a505c;--soft:#fff8d6}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{font-family:Poppins,PoppinsX,sans-serif;color:var(--char);font-size:18px;line-height:1.45}
+  b{font-weight:700}
+  ul{margin:0;padding-left:20px}
+  li{margin-bottom:5px}
+
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;padding:52px 72px 70px;break-after:page;background:#fff}
+  .slide:last-child{break-after:auto}
+  .slide.dark{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.55),rgba(255,208,20,0) 50%),var(--char);color:#fff}
+  .ft{position:absolute;left:72px;right:72px;bottom:26px;display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+  .dark .ft{color:#9aa0ab}
+  .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:13px;border-radius:20px;padding:3px 13px;letter-spacing:.06em}
+  .dark .tag{background:var(--yellow);color:var(--char)}
+  h2{font-size:40px;line-height:1.15;margin:12px 0 6px}
+  h2 em{font-style:normal;background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+  .lede{color:var(--muted);font-size:19px;margin:0 0 22px;max-width:980px}
+
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo svg{width:40px;height:40px}
+  .logo .div{width:2px;height:36px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:21px;line-height:1}
+  .logo span{display:block;font-size:13px;letter-spacing:.3em}
+
+  /* cover */
+  .cover h1{font-size:64px;line-height:1.08;margin:18px 0 16px;max-width:900px}
+  .cover h1 em{font-style:normal;color:var(--yellow)}
+  .cover p{font-size:21px;color:#d6d9df;max-width:760px;margin:0}
+  .cover .chips{display:flex;gap:10px;margin-top:30px}
+  .cover .chips span{border:1px solid #3a3f4b;background:#171a22;border-radius:30px;padding:7px 16px;font-size:16px}
+  .cover .date{position:absolute;left:72px;bottom:60px;color:#b9bec8;font-size:16px}
+
+  /* flow */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fs{border:1px solid var(--stone);border-radius:16px;padding:16px 18px;min-height:150px}
+  .fs .n{width:34px;height:34px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+  .fs b{display:block;font-size:19px;line-height:1.25}
+  .fs span{color:var(--muted);font-size:15.5px}
+  .fs.earn{background:var(--yellow);border-color:var(--yellow)}
+  .fs.earn .n{background:var(--char)}
+  .fs.earn span{color:var(--char)}
+
+  /* columns */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .col{border:1px solid var(--stone);border-radius:16px;overflow:hidden}
+  .col .t{background:var(--cloud);border-bottom:1px solid var(--stone);padding:12px 18px;display:flex;justify-content:space-between;align-items:baseline}
+  .col .t b{font-size:21px}
+  .col .t span{color:var(--muted);font-size:14px}
+  .col.dk .t{background:var(--char);color:#fff;border-color:var(--char)}
+  .col.dk .t span{color:#b9bec8}
+  .col ul{padding:14px 18px 10px 38px;font-size:16.5px}
+  .col li{margin-bottom:6px}
+  .strip{margin-top:18px;background:var(--cloud);border:1px solid var(--stone);border-radius:14px;padding:12px 18px;font-size:16.5px}
+  .strip b{margin-right:6px}
+
+  /* trust grid */
+  .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tc{border:1px solid var(--stone);border-radius:16px;padding:18px 20px}
+  .tc .i{width:42px;height:42px;border-radius:12px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin-bottom:10px}
+  .tc b{display:block;font-size:19px}
+  .tc span{color:var(--muted);font-size:15.5px}
+
+  /* earn options */
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .op{border:1px solid var(--stone);border-radius:16px;padding:18px 20px;position:relative}
+  .op.rec{border:2.5px solid var(--char)}
+  .op .badge{position:absolute;top:-13px;right:16px;background:var(--yellow);font-weight:700;font-size:12.5px;border-radius:20px;padding:3px 12px;letter-spacing:.05em}
+  .op .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .op b.h{display:block;font-size:21px;line-height:1.25;margin:2px 0 8px}
+  .op p{margin:0 0 10px;font-size:16px}
+  .op .pc{font-size:15px;border-top:1px dashed var(--stone);padding-top:8px}
+  .op .pc div{margin-bottom:3px}
+  .op .pc .y{font-weight:600}
+  .op .pc .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
+  .op .pc .x:before{content:"− ";color:#c0392b;font-weight:700}
+
+  /* fee slabs */
+  .fee{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .slab{border:1px solid var(--stone);border-radius:16px;overflow:hidden}
+  .slab .r{display:flex;justify-content:space-between;padding:11px 20px;border-top:1px solid var(--stone);font-size:18px}
+  .slab .r:first-child{border-top:0;background:var(--char);color:#fff;font-size:14px;font-weight:600;padding:9px 20px}
+  .slab .r b{font-size:20px}
+  .slab .r.hl{background:var(--soft)}
+  .slab .cap{padding:8px 20px;font-size:13.5px;color:var(--muted);background:var(--cloud);border-top:1px solid var(--stone)}
+  .ex{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:18px;padding:20px 24px}
+  .ex .k{color:#b9bec8;font-size:15px}
+  .ex .rt{font-size:24px;font-weight:700;margin:2px 0 12px}
+  .ex .ln{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #2f3440;font-size:17px}
+  .ex .ln.t{font-weight:700;font-size:20px;color:var(--yellow)}
+  .mini{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .mini div{border:1px solid var(--stone);border-radius:14px;padding:12px 16px;font-size:15px;color:var(--muted)}
+  .mini b{display:block;color:var(--char);font-size:17px}
+
+  /* pay options */
+  .po{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pc2{border:1px solid var(--stone);border-radius:18px;padding:20px 24px}
+  .pc2 .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .pc2 b.h{display:block;font-size:24px;margin:2px 0 12px}
+  .pc2 .mv{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:16.5px}
+  .pc2 .mv .a{flex:0 0 auto;background:var(--char);color:var(--yellow);font-weight:700;border-radius:8px;padding:3px 10px;font-size:15px;min-width:64px;text-align:center}
+  .pc2 .pp{border-top:1px dashed var(--stone);margin-top:10px;padding-top:8px;font-size:15.5px}
+  .pc2 .pp div{margin-bottom:3px}
+  .pc2 .pp .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
+  .pc2 .pp .x:before{content:"− ";color:#c0392b;font-weight:700}
+
+  /* flowchart */
+  .fc .rw{display:flex;align-items:stretch;gap:0;margin-bottom:12px}
+  .fc .lb{flex:0 0 112px;display:flex;flex-direction:column;justify-content:center;font-weight:700;font-size:15px;line-height:1.2}
+  .fc .lb span{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+  .fc .nd{flex:1;border:1.5px solid var(--char);border-radius:11px;padding:8px 10px;font-size:14px;line-height:1.25;text-align:center;display:flex;flex-direction:column;justify-content:center;background:#fff}
+  .fc .nd small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+  .fc .nd.q{border:2px solid #d4a800;background:var(--soft)}
+  .fc .nd.q:before{content:"◆ ";color:#d4a800;font-size:11px}
+  .fc .nd.pay{background:var(--char);color:#fff;border-color:var(--char)}
+  .fc .nd.pay small{color:#c9cdd5}
+  .fc .nd.who{flex:0 0 auto;border:0;background:var(--cloud);font-weight:700;font-size:13px;padding:8px 10px;border-radius:9px}
+  .fc .ar{flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+  .fc .gap{flex:0 0 24px}
+  .fc .dn{margin:-6px 0 6px 112px;font-weight:700;font-size:15px;color:var(--muted)}
+
+  /* price */
+  .pgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start}
+  .pbox{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:22px;padding:28px 32px}
+  .pbox .l{color:#b9bec8;font-size:16px}
+  .pbox .p{font-size:66px;font-weight:700;color:var(--yellow);line-height:1.05;margin:4px 0 6px}
+  .pbox .s{font-size:17px;color:#e3e5ea}
+  .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .pay div{background:#1b1f28;border:1px solid #333845;border-radius:12px;padding:10px 12px;font-size:14px;color:#c9cdd5}
+  .pay b{display:block;color:#fff;font-size:20px}
+  .lst b.h{display:block;font-size:19px;margin-bottom:6px}
+  .lst ul{font-size:17px;margin-bottom:18px}
+  .lst .no li{color:var(--muted)}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:10px}
+  .tl:before{content:"";position:absolute;left:20px;right:20px;top:20px;height:3px;background:var(--stone)}
+  .tl .w{position:relative;padding-right:22px}
+  .tl .dot{width:42px;height:42px;border-radius:50%;background:#fff;border:3px solid var(--char);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;position:relative}
+  .tl .w.m .dot{background:var(--yellow)}
+  .tl .d{font-weight:700;color:var(--muted);font-size:14px;letter-spacing:.05em;margin-top:14px}
+  .tl b{display:block;font-size:19px;line-height:1.25;margin:2px 0 4px}
+  .tl span{color:var(--muted);font-size:15.5px}
+  .callout{margin-top:34px;background:var(--char);color:#fff;border-radius:16px;padding:16px 22px;font-size:16.5px;display:flex;gap:18px;align-items:flex-start}
+  .callout b{color:var(--yellow)}
+  .callout .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--yellow);color:var(--char);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:20px}
+
+  /* costs */
+  .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cc{border:1px solid var(--stone);border-radius:16px;padding:16px 20px}
+  .cc .w{font-size:15px;color:var(--muted)}
+  .cc b{display:block;font-size:24px;line-height:1.2;margin:2px 0}
+  .cc span{font-size:15px;color:var(--muted)}
+
+  /* next */
+  .next{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;margin-top:8px}
+  .ns{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #2a2e38}
+  .ns:last-child{border-bottom:0}
+  .ns .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--char);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:17px}
+  .ns b{display:block;font-size:21px}
+  .ns span{color:#c9cdd5;font-size:16px}
+  .ab{background:#171a22;border:1px solid #333845;border-radius:18px;padding:20px 24px;font-size:16px;color:#d6d9df}
+  .ab b.h{font-size:20px;color:#fff;display:block;margin-bottom:4px}
+  .ab ul{margin-top:8px}
+  .ab .c{margin-top:14px;padding-top:10px;border-top:1px solid #333845}
+  .ab .c div{padding:3px 0}
+  .ab .c span{display:inline-block;width:150px;color:#9aa0ab}
+
+  /* agri extras */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+  .pl{border:1px solid var(--stone);border-radius:18px;padding:18px 20px;position:relative}
+  .pl.star{background:var(--char);color:#fff;border-color:var(--char)}
+  .pl .badge{position:absolute;top:-13px;right:16px;background:var(--yellow);color:var(--char);font-weight:700;font-size:12.5px;border-radius:20px;padding:3px 12px;letter-spacing:.05em}
+  .pl .nm{display:flex;justify-content:space-between;align-items:baseline}
+  .pl .nm b{font-size:22px}
+  .pl .nm span{font-size:13.5px;color:var(--muted)}
+  .pl.star .nm span{color:#b9bec8}
+  .pl .pr{font-size:36px;font-weight:700;line-height:1.15;margin:2px 0 2px}
+  .pl.star .pr{color:var(--yellow)}
+  .pl .for{font-size:15px;color:var(--muted);margin-bottom:10px}
+  .pl.star .for{color:#c9cdd5}
+  .pl .plus{display:inline-block;font-weight:600;font-size:13.5px;background:var(--soft);color:var(--char);border-radius:6px;padding:2px 8px;margin-bottom:6px}
+  .pl ul{font-size:15px;padding-left:18px}
+  .pl li{margin-bottom:4px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .bx{border:1px solid var(--stone);border-radius:18px;padding:18px 22px}
+  .bx.dk{background:var(--char);color:#fff;border-color:var(--char)}
+  .bx .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .bx.dk .k{color:var(--yellow)}
+  .bx b.h{display:block;font-size:23px;margin:2px 0 10px}
+  .bx ul{font-size:16.5px}
+  .money{display:flex;align-items:stretch;gap:0;margin-top:8px}
+  .money .m{flex:1;border:1.5px solid var(--char);border-radius:14px;padding:14px 16px;text-align:center}
+  .money .m .a{font-size:30px;font-weight:700;line-height:1.1}
+  .money .m span{color:var(--muted);font-size:15px}
+  .money .m.y{background:var(--yellow);border-color:var(--yellow)}
+  .money .m.y span{color:var(--char)}
+  .money .m.d{background:var(--char);color:#fff}
+  .money .m.d .a{color:var(--yellow)}
+  .money .m.d span{color:#c9cdd5}
+  .money .ar{flex:0 0 44px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700}
+  table.pt{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--stone);border-radius:14px;overflow:hidden;font-size:17px}
+  table.pt th{background:var(--char);color:#fff;font-weight:600;font-size:14.5px;padding:10px 16px;text-align:right}
+  table.pt th:first-child,table.pt td:first-child{text-align:left}
+  table.pt td{padding:10px 16px;border-top:1px solid var(--stone);text-align:right}
+  table.pt td:first-child{font-weight:700}
+  table.pt tr.hl td{background:var(--soft)}
+  .wkt{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+  .wkt div{border:1px solid var(--stone);border-radius:14px;padding:12px 18px;color:var(--muted);font-size:15px}
+  .wkt b{display:block;color:var(--char);font-size:26px;line-height:1.15}
+  .wkt div.dk{background:var(--char);border-color:var(--char);color:#c9cdd5}
+  .wkt div.dk b{color:var(--yellow)}
+  .pm2{display:flex;gap:14px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--stone);font-size:17px}
+  .pm2:last-child{border-bottom:0}
+  .pm2 .n{flex:0 0 34px;height:34px;border-radius:9px;background:var(--yellow);font-weight:700;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+<div class="slide dark cover">
+  <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+  <div style="margin-top:70px"><span class="tag">PROPOSAL · AGRI MARKETPLACE</span></div>
+  <h1>Your own agri marketplace, <em>built for farmers.</em></h1>
+  <p>Sell your seeds, crop protection, nutrients and equipment online, and let licensed sellers sell with you. You earn on every sale.</p>
+  <div class="chips"><span>Website</span><span>Android + iPhone</span><span>Seller panel</span><span>Licence checks</span><span>Marathi + English</span></div>
+  <div class="date">Date: ______________</div>
+</div>
+
+<div class="slide">
+  <span class="tag">01 · HOW IT WORKS</span>
+  <h2>Your products and trusted sellers, <em>one store.</em></h2>
+  <p class="lede">Farmers shop in Marathi or English. Sellers manage their own products and orders. You control who sells and earn on every sale.</p>
+  <div class="flow">
+    <div class="fs"><div class="n">1</div><b>Seller signs up</b><span>With GST and licence documents.</span></div>
+    <div class="fs"><div class="n">2</div><b>You approve</b><span>Licence verified before they can sell.</span></div>
+    <div class="fs"><div class="n">3</div><b>Seller lists products</b><span>Each product goes live after your approval.</span></div>
+    <div class="fs"><div class="n">4</div><b>Farmer shops</b><span>By crop or category, on website or app.</span></div>
+    <div class="fs"><div class="n">5</div><b>Farmer pays</b><span>Online, or cash on delivery.</span></div>
+    <div class="fs"><div class="n">6</div><b>Order split by seller</b><span>Each seller packs and ships their part.</span></div>
+    <div class="fs"><div class="n">7</div><b>Courier delivers</b><span>Tracking up to the farmer's village.</span></div>
+    <div class="fs earn"><div class="n">₹</div><b>You earn on every sale</b><span>Commission from sellers; 100% on your own products.</span></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>2</span></div></div>
+
+<div class="slide">
+  <span class="tag">02 · WHAT'S INSIDE</span>
+  <h2>Three parts, <em>one system.</em></h2>
+  <p class="lede">What farmers, sellers and your team each get.</p>
+  <div class="cols">
+    <div class="col"><div class="t"><b>Farmers</b><span>Website + apps</span></div><ul>
+      <li>Login with mobile OTP</li>
+      <li>Marathi and English</li>
+      <li>Shop by crop or category, search</li>
+      <li>Product page: dose, crop, pest, pack sizes, seller and licence</li>
+      <li>Pincode check: delivery days and charge</li>
+      <li>Online payment or cash on delivery, coupons</li>
+      <li>Order tracking and history</li>
+    </ul></div>
+    <div class="col"><div class="t"><b>Sellers</b><span>Seller panel</span></div><ul>
+      <li>Sign up with GST and licences</li>
+      <li>Licence expiry dates tracked</li>
+      <li>Products, pack sizes, prices, stock</li>
+      <li>Bulk upload from Excel</li>
+      <li>Orders: accept, pack, print label</li>
+      <li>Returns</li>
+      <li>Sales and payout report</li>
+    </ul></div>
+    <div class="col dk"><div class="t"><b>Your team</b><span>Admin panel</span></div><ul>
+      <li>Your own products and stock</li>
+      <li>Approve sellers and products</li>
+      <li>Licence expiry alerts</li>
+      <li>Commission per seller or category</li>
+      <li>All orders, returns, cash on delivery</li>
+      <li>What each seller is owed</li>
+      <li>Banners, coupons, reports</li>
+    </ul></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>3</span></div></div>
+
+<div class="slide">
+  <span class="tag">03 · LICENCES AND TRUST</span>
+  <h2>Only licensed sellers, <em>checked by you.</em></h2>
+  <p class="lede">Indian rules ask the platform to verify a seller's pesticide licence before they sell online. It's built in from day one.</p>
+  <div class="tg">
+    <div class="tc"><div class="i">1</div><b>Licences at sign-up</b><span>Pesticide, fertiliser and seed licences, plus GST, uploaded with numbers and expiry dates.</span></div>
+    <div class="tc"><div class="i">2</div><b>You verify first</b><span>No seller can list anything until your team approves their documents.</span></div>
+    <div class="tc"><div class="i">3</div><b>Product approval</b><span>Every new product is checked by your team before farmers see it.</span></div>
+    <div class="tc"><div class="i">!</div><b>Expiry alerts</b><span>You and the seller are alerted before a licence expires.</span></div>
+    <div class="tc"><div class="i">II</div><b>Auto-pause</b><span>When a licence expires, that seller's products are hidden until it's renewed.</span></div>
+    <div class="tc"><div class="i">✓</div><b>Shown to farmers</b><span>Seller name and licence on the product page. Farmers know who they buy from.</span></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>4</span></div></div>
+
+<div class="slide">
+  <span class="tag">04 · DELIVERY</span>
+  <h2>Couriers now, <em>your own delivery later.</em></h2>
+  <p class="lede">Start with courier partners that reach village pincodes. Add your own delivery team when you're ready, without rebuilding.</p>
+  <div class="two">
+    <div class="bx dk"><div class="k">NOW · INCLUDED</div><b class="h">Courier partners</b><ul>
+      <li>Pincode check before the farmer orders</li>
+      <li>Order split by seller automatically</li>
+      <li>Shipping label printed from the seller panel</li>
+      <li>Courier picks up from each seller</li>
+      <li>Tracking for the farmer</li>
+      <li>Cash on delivery collected by the courier</li>
+    </ul></div>
+    <div class="bx"><div class="k">LATER · PHASE 2</div><b class="h">Your own delivery</b><ul>
+      <li>Delivery app for your riders</li>
+      <li>Assign orders from the admin panel</li>
+      <li>Your own delivery areas and charges</li>
+      <li>Mix: your riders nearby, couriers further away</li>
+    </ul>
+    <p style="margin:12px 0 0;font-size:15px;color:var(--muted)">Priced when you need it.</p></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>5</span></div></div>
+
+<div class="slide">
+  <span class="tag">05 · HOW YOU EARN</span>
+  <h2>A commission <em>on every seller's sale.</em></h2>
+  <p class="lede">The farmer pays the platform. You keep your commission and pay the seller the rest, every week.</p>
+  <div class="money">
+    <div class="m"><div class="a">₹1,000</div><span>Farmer pays for a seller's product</span></div>
+    <div class="ar">→</div>
+    <div class="m y"><div class="a">₹100</div><span>You keep 10% commission</span></div>
+    <div class="ar">+</div>
+    <div class="m d"><div class="a">₹900</div><span>Seller is paid weekly</span></div>
+  </div>
+  <div class="mini" style="grid-template-columns:repeat(3,1fr);margin-top:20px">
+    <div><b>You set the %</b>Per seller or per category, from the admin panel. 10% is only an example.</div>
+    <div><b>Your own products</b>You keep the full amount.</div>
+    <div><b>Clear for sellers</b>Each seller sees every sale, the commission and what's coming to them.</div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>6</span></div></div>
+
+<div class="slide">
+  <span class="tag">06 · ORDER JOURNEY</span>
+  <h2>From order to payout, <em>step by step.</em></h2>
+  <div class="fc" style="margin-top:22px">
+    <div class="rw"><div class="lb">1 · Order</div>
+      <div class="nd">Farmer orders<small>Website or app</small></div><div class="ar">→</div>
+      <div class="nd q">Pays online or cash?<small>Cash → collected at delivery</small></div><div class="ar">→</div>
+      <div class="nd pay">Order split by seller<small>One shipment per seller</small></div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">2 · Ship</div>
+      <div class="nd">Seller accepts<small>Seller panel alert</small></div><div class="ar">→</div>
+      <div class="nd">Packs and prints label</div><div class="ar">→</div>
+      <div class="nd">Courier picks up</div><div class="ar">→</div>
+      <div class="nd">Farmer tracks it</div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">3 · Deliver</div>
+      <div class="nd">Delivered</div><div class="ar">→</div>
+      <div class="nd q">Return asked?<small>Yes → return to seller</small></div><div class="ar">→</div>
+      <div class="nd">Farmer rates<small>Growth and Scale</small></div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">4 · Payout</div>
+      <div class="nd">Cash remitted by courier</div><div class="ar">→</div>
+      <div class="nd">Commission kept</div><div class="ar">→</div>
+      <div class="nd pay">Seller paid weekly<small>Report in the seller panel</small></div></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>7</span></div></div>
+
+<div class="slide">
+  <span class="tag">07 · PLANS</span>
+  <h2>Pick your <em>starting point.</em></h2>
+  <div class="plans">
+    <div class="pl"><div class="nm"><b>Launch</b><span>5–6 weeks</span></div>
+      <div class="pr">₹1,20,000</div><div class="for">Website marketplace, ready to sell.</div>
+      <ul>
+        <li>Farmer website, Marathi + English</li>
+        <li>Seller panel with licence checks</li>
+        <li>Admin panel, commission per sale</li>
+        <li>Online payment and cash on delivery</li>
+        <li>Courier delivery, split by seller</li>
+        <li>Coupons, banners, basic reports</li>
+      </ul></div>
+    <div class="pl star"><span class="badge">MOST POPULAR</span><div class="nm"><b>Growth</b><span>8–9 weeks</span></div>
+      <div class="pr">₹1,75,000</div><div class="for">Website plus apps farmers keep on their phone.</div>
+      <span class="plus">Everything in Launch, plus</span>
+      <ul>
+        <li><b>Android + iPhone apps</b></li>
+        <li>Notifications for offers and orders</li>
+        <li>One-tap reorder</li>
+        <li>Ratings and reviews</li>
+        <li>Wishlist</li>
+        <li>Crop guides</li>
+      </ul></div>
+    <div class="pl"><div class="nm"><b>Scale</b><span>10–11 weeks</span></div>
+      <div class="pr">₹2,25,000</div><div class="for">For a marketplace that runs itself.</div>
+      <span class="plus">Everything in Growth, plus</span>
+      <ul>
+        <li><b>AI crop doctor:</b> farmer clicks a photo, gets the problem and the products to fix it</li>
+        <li>WhatsApp order updates</li>
+        <li>Automatic seller payouts</li>
+        <li>Detailed sales reports</li>
+      </ul></div>
+  </div>
+  <p style="margin:12px 0 0;font-size:14.5px;color:var(--muted)">Fixed price once we agree the scope. No GST. Not included: your own delivery system (phase 2), more languages, wholesale buying for retailers.</p>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>8</span></div></div>
+
+<div class="slide">
+  <span class="tag">08 · TIMELINE</span>
+  <h2>Progress you can <em>see every week.</em></h2>
+  <div class="wkt" style="margin-top:16px">
+    <div><b>5–6 weeks</b>Launch</div>
+    <div class="dk"><b>8–9 weeks</b>Growth</div>
+    <div><b>10–11 weeks</b>Scale</div>
+  </div>
+  <div class="tl">
+    <div class="w"><div class="dot">1</div><div class="d">WEEK 1</div><b>Plan and screens</b><span>Categories, crops, product details. Screens for you to approve.</span></div>
+    <div class="w m"><div class="dot">2</div><div class="d">WEEKS 2–5</div><b>Working demo</b><span>Website, seller panel, admin, payments and courier working.</span></div>
+    <div class="w"><div class="dot">3</div><div class="d">WEEKS 6–8</div><b>Apps and extras</b><span>Android and iPhone apps, plan extras. Growth and Scale.</span></div>
+    <div class="w m"><div class="dot">4</div><div class="d">LAST WEEK</div><b>Pilot, then launch</b><span>3–5 of your sellers try it first. We fix what they find.</span></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>9</span></div></div>
+
+<div class="slide">
+  <span class="tag">09 · PAYMENT</span>
+  <h2>Pay as you <em>see it work.</em></h2>
+  <div class="two" style="grid-template-columns:1.15fr 1fr;margin-top:18px">
+    <div>
+      <table class="pt">
+        <tr><th>Plan</th><th>40% to start</th><th>30% at demo</th><th>30% at launch</th></tr>
+        <tr><td>Launch</td><td>₹48,000</td><td>₹36,000</td><td>₹36,000</td></tr>
+        <tr class="hl"><td>Growth</td><td>₹70,000</td><td>₹52,500</td><td>₹52,500</td></tr>
+        <tr><td>Scale</td><td>₹90,000</td><td>₹67,500</td><td>₹67,500</td></tr>
+      </table>
+      <div class="strip" style="margin-top:14px"><b>After launch:</b> 1 month of free bug fixes.</div>
+    </div>
+    <div class="bx"><div class="k">PAID BY YOU, DIRECTLY</div><b class="h">Running costs</b><ul>
+      <li>Domain and server</li>
+      <li>Courier charges per shipment</li>
+      <li>Online payments: about 2% (Razorpay)</li>
+      <li>Google Play $25 once, Apple $99 a year (apps)</li>
+      <li>WhatsApp and AI usage (Scale)</li>
+    </ul><p style="margin:10px 0 0;font-size:14.5px;color:var(--muted)">We set it all up and share exact amounts before launch.</p></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>10</span></div></div>
+
+<div class="slide dark">
+  <span class="tag">NEXT STEP</span>
+  <h2 style="font-size:46px">Why this is <span style="color:var(--yellow)">safe for you.</span></h2>
+  <div class="next">
+    <div>
+      <div class="ns"><span class="n">1</span><div><b>Fixed price in writing</b><span>Anything new is priced before we build it</span></div></div>
+      <div class="ns"><span class="n">2</span><div><b>Working demo before the second payment</b><span>Try it yourself before you pay more</span></div></div>
+      <div class="ns"><span class="n">3</span><div><b>You own everything</b><span>Code, apps, data and accounts, in your name</span></div></div>
+      <div class="ns"><span class="n">4</span><div><b>Pilot with your sellers first</b><span>Real orders from a few sellers before opening up</span></div></div>
+    </div>
+    <div class="ab"><b class="h">Outgrid Labs</b>
+      A Maharashtra studio building custom apps, websites and AI automation for businesses, end to end. You talk directly to the people building it.
+      <div class="c">
+        <div><span>Start</span>40% advance → agreement → kickoff</div>
+        <div><span>Call / WhatsApp</span>______________</div>
+        <div><span>Web</span>outgridlabs.com</div>
+      </div>
+    </div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>11</span></div></div>
+</body>
+</html>
