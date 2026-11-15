@@ -89,6 +89,50 @@
   .op .pc .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
   .op .pc .x:before{content:"− ";color:#c0392b;font-weight:700}
 
+  /* fee slabs */
+  .fee{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .slab{border:1px solid var(--stone);border-radius:16px;overflow:hidden}
+  .slab .r{display:flex;justify-content:space-between;padding:11px 20px;border-top:1px solid var(--stone);font-size:18px}
+  .slab .r:first-child{border-top:0;background:var(--char);color:#fff;font-size:14px;font-weight:600;padding:9px 20px}
+  .slab .r b{font-size:20px}
+  .slab .r.hl{background:var(--soft)}
+  .slab .cap{padding:8px 20px;font-size:13.5px;color:var(--muted);background:var(--cloud);border-top:1px solid var(--stone)}
+  .ex{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:18px;padding:20px 24px}
+  .ex .k{color:#b9bec8;font-size:15px}
+  .ex .rt{font-size:24px;font-weight:700;margin:2px 0 12px}
+  .ex .ln{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #2f3440;font-size:17px}
+  .ex .ln.t{font-weight:700;font-size:20px;color:var(--yellow)}
+  .mini{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .mini div{border:1px solid var(--stone);border-radius:14px;padding:12px 16px;font-size:15px;color:var(--muted)}
+  .mini b{display:block;color:var(--char);font-size:17px}
+
+  /* pay options */
+  .po{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pc2{border:1px solid var(--stone);border-radius:18px;padding:20px 24px}
+  .pc2 .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .pc2 b.h{display:block;font-size:24px;margin:2px 0 12px}
+  .pc2 .mv{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:16.5px}
+  .pc2 .mv .a{flex:0 0 auto;background:var(--char);color:var(--yellow);font-weight:700;border-radius:8px;padding:3px 10px;font-size:15px;min-width:64px;text-align:center}
+  .pc2 .pp{border-top:1px dashed var(--stone);margin-top:10px;padding-top:8px;font-size:15.5px}
+  .pc2 .pp div{margin-bottom:3px}
+  .pc2 .pp .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
+  .pc2 .pp .x:before{content:"− ";color:#c0392b;font-weight:700}
+
+  /* flowchart */
+  .fc .rw{display:flex;align-items:stretch;gap:0;margin-bottom:12px}
+  .fc .lb{flex:0 0 112px;display:flex;flex-direction:column;justify-content:center;font-weight:700;font-size:15px;line-height:1.2}
+  .fc .lb span{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+  .fc .nd{flex:1;border:1.5px solid var(--char);border-radius:11px;padding:8px 10px;font-size:14px;line-height:1.25;text-align:center;display:flex;flex-direction:column;justify-content:center;background:#fff}
+  .fc .nd small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+  .fc .nd.q{border:2px solid #d4a800;background:var(--soft)}
+  .fc .nd.q:before{content:"◆ ";color:#d4a800;font-size:11px}
+  .fc .nd.pay{background:var(--char);color:#fff;border-color:var(--char)}
+  .fc .nd.pay small{color:#c9cdd5}
+  .fc .nd.who{flex:0 0 auto;border:0;background:var(--cloud);font-weight:700;font-size:13px;padding:8px 10px;border-radius:9px}
+  .fc .ar{flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+  .fc .gap{flex:0 0 24px}
+  .fc .dn{margin:-6px 0 6px 112px;font-weight:700;font-size:15px;color:var(--muted)}
+
   /* price */
   .pgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start}
   .pbox{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:22px;padding:28px 32px}
@@ -166,8 +210,9 @@
     <div class="fs"><div class="n">5</div><b>Live tracking</b><span>Sender watches the parcel move on the map.</span></div>
     <div class="fs"><div class="n">6</div><b>Delivery with OTP</b><span>Receiver's code confirms the parcel arrived.</span></div>
     <div class="fs"><div class="n">7</div><b>Both rate each other</b><span>Good carriers and senders rise to the top.</span></div>
-    <div class="fs earn"><div class="n">₹</div><b>You earn a commission</b><span>On every parcel. See "How you earn".</span></div>
+    <div class="fs earn"><div class="n">₹</div><b>You earn a booking fee</b><span>A fixed fee on every parcel, by distance.</span></div>
   </div>
+  <div class="strip" style="margin-top:16px"><b>Others trying this in India:</b> Kootr · Carrify · Shipter</div>
   <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>2</span></div>
 </div>
 
@@ -228,29 +273,93 @@
 <!-- 5 HOW YOU EARN -->
 <div class="slide">
   <span class="tag">04 · HOW YOU EARN</span>
-  <h2>Three ways to take <em>your commission.</em></h2>
-  <p class="lede">Let's pick one together. In every option, numbers stay hidden and chat stays in the app until your commission is paid, so deals don't move to WhatsApp.</p>
-  <div class="opts">
-    <div class="op rec"><span class="badge">WE RECOMMEND</span>
-      <div class="k">OPTION A</div><b class="h">Sender pays a booking fee</b>
-      <p>When a carrier accepts, the sender pays your commission online. The carrier gets the agreed price directly at delivery.</p>
-      <div class="pc"><div class="y">Carriers join free, so you get more of them</div><div class="y">You're paid before the trip</div><div class="x">Carrier's money is cash or UPI outside the app</div></div></div>
-    <div class="op">
-      <div class="k">OPTION B</div><b class="h">Carrier wallet</b>
-      <p>Carriers top up a wallet by UPI. Your commission is deducted each time they accept a parcel.</p>
-      <div class="pc"><div class="y">Nothing extra for senders to pay</div><div class="y">Commission is automatic</div><div class="x">Carriers pay before they earn</div></div></div>
-    <div class="op">
-      <div class="k">OPTION C · LATER</div><b class="h">Full payment in the app</b>
-      <p>Sender pays the full amount in the app. The carrier is paid after delivery OTP, minus your commission.</p>
-      <div class="pc"><div class="y">Most trust, no cash</div><div class="x">Needs carrier bank details and payouts</div><div class="x">More setup: priced separately</div></div></div>
+  <h2>A fixed booking fee <em>for each distance.</em></h2>
+  <p class="lede">The sender pays a small booking fee when a carrier accepts. You set the fees from the admin panel.</p>
+  <div class="fee">
+    <div class="slab">
+      <div class="r"><span>Distance</span><span>Booking fee</span></div>
+      <div class="r"><span>Up to 50 km</span><b>₹20</b></div>
+      <div class="r hl"><span>51–200 km</span><b>₹30</b></div>
+      <div class="r"><span>201–400 km</span><b>₹50</b></div>
+      <div class="r"><span>Above 400 km</span><b>₹80</b></div>
+      <div class="cap">Example fees. You set your own.</div>
+    </div>
+    <div>
+      <div class="ex">
+        <div class="k">Example</div>
+        <div class="rt">Mumbai → Pune · about 150 km</div>
+        <div class="ln"><span>Carrier's price</span><span>₹300</span></div>
+        <div class="ln"><span>Booking fee (your earning)</span><span>₹30</span></div>
+        <div class="ln t"><span>Sender pays</span><span>₹330</span></div>
+      </div>
+      <div class="mini">
+        <div><b>Free launch period</b>Keep the fee off at launch, switch it on later from the admin panel.</div>
+        <div><b>Numbers stay hidden</b>Phone numbers unlock only after booking, so deals stay in the app.</div>
+      </div>
+    </div>
   </div>
-  <div class="strip"><b>Included in the price:</b> option A or option B. You set the commission (a % or a fixed amount) from the admin panel.</div>
   <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>5</span></div>
+</div>
+
+<!-- 6 HOW THE SENDER PAYS -->
+<div class="slide">
+  <span class="tag">05 · HOW THE SENDER PAYS</span>
+  <h2>Two ways to pay. <em>You pick one.</em></h2>
+  <p class="lede">Same Mumbai → Pune example: carrier's price ₹300, your booking fee ₹30.</p>
+  <div class="po">
+    <div class="pc2">
+      <div class="k">OPTION 1</div><b class="h">Pay the carrier directly</b>
+      <div class="mv"><span class="a">₹30</span><span>Sender pays the booking fee in the app</span></div>
+      <div class="mv"><span class="a">₹300</span><span>Sender pays the carrier at delivery, by cash or UPI</span></div>
+      <div class="pp"><div class="y">Simple: the app only collects your fee</div><div class="y">No payouts for you to manage</div><div class="x">Carrier's money is outside the app</div></div>
+    </div>
+    <div class="pc2">
+      <div class="k">OPTION 2</div><b class="h">Pay the app</b>
+      <div class="mv"><span class="a">₹330</span><span>Sender pays the full amount in the app</span></div>
+      <div class="mv"><span class="a">₹300</span><span>After the delivery OTP, the carrier is paid. You keep ₹30</span></div>
+      <div class="pp"><div class="y">Most trust: carrier is sure to get paid</div><div class="y">No cash between strangers</div><div class="x">You pay carriers from the admin panel</div></div>
+    </div>
+  </div>
+  <div class="strip"><b>Both are included.</b> Start with one, switch later. Automatic bank payouts to carriers can come later, when volume grows.</div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>6</span></div>
+</div>
+
+<!-- 7 FLOWCHART -->
+<div class="slide">
+  <span class="tag">06 · THE FULL JOURNEY</span>
+  <h2>From sign-up to delivered, <em>step by step.</em></h2>
+  <div class="fc" style="margin-top:18px">
+    <div class="rw"><div class="lb">1 · Get ready<span>Carrier</span></div>
+      <div class="nd">Signs up<small>Mobile OTP</small></div><div class="ar">→</div>
+      <div class="nd">Uploads ID</div><div class="ar">→</div>
+      <div class="nd q">Admin approves?<small>No → can't carry</small></div><div class="ar">→</div>
+      <div class="nd">Goes active<small>Route and date</small></div></div>
+    <div class="rw"><div class="lb"><span>Sender</span></div>
+      <div class="nd">Signs up<small>Mobile OTP</small></div><div class="ar">→</div>
+      <div class="nd" style="flex:2.2">Posts a parcel<small>Route, size, photo, price · ticks "no prohibited items"</small></div><div class="ar">→</div>
+      <div class="nd">Parcel is live<small>Seen by carriers on the route</small></div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">2 · Match</div>
+      <div class="nd">Carrier sees the parcel<small>Within a radius of the route</small></div><div class="ar">→</div>
+      <div class="nd">Accept or counter-offer<small>Chat in the app, numbers hidden</small></div><div class="ar">→</div>
+      <div class="nd q">Price agreed?<small>No → parcel stays open</small></div><div class="ar">→</div>
+      <div class="nd pay">Sender pays<small>Option 1: fee · Option 2: full amount</small></div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">3 · Deliver</div>
+      <div class="nd">Booking confirmed<small>Numbers unlock</small></div><div class="ar">→</div>
+      <div class="nd q">Pickup OTP</div><div class="ar">→</div>
+      <div class="nd">Live tracking<small>Sender watches the map</small></div><div class="ar">→</div>
+      <div class="nd q">Delivery OTP</div><div class="ar">→</div>
+      <div class="nd pay">Carrier paid<small>Opt 1: sender · Opt 2: app</small></div><div class="ar">→</div>
+      <div class="nd">Both rate</div></div>
+  </div>
+  <div class="strip" style="margin-top:6px"><b>At any step:</b> report a problem → it reaches the admin panel.</div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>7</span></div>
 </div>
 
 <!-- 6 PRICE -->
 <div class="slide">
-  <span class="tag">05 · PRICE</span>
+  <span class="tag">07 · PRICE</span>
   <h2>One fixed price, <em>pay as you see it work.</em></h2>
   <div class="pgrid" style="margin-top:22px">
     <div class="pbox">
@@ -274,17 +383,17 @@
       <b class="h">Not included</b>
       <ul class="no">
         <li>Insurance and marketing</li>
-        <li>Option C: full payment in the app</li>
+        <li>Automatic bank payouts to carriers</li>
         <li>New features after we agree the scope: priced first</li>
       </ul>
     </div>
   </div>
-  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>6</span></div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>8</span></div>
 </div>
 
 <!-- 7 TIMELINE -->
 <div class="slide">
-  <span class="tag">06 · TIMELINE</span>
+  <span class="tag">08 · TIMELINE</span>
   <h2>Ready for the stores in <em>20–30 days.</em></h2>
   <p class="lede">You see progress every few days, and a working app on your phone around day 10.</p>
   <div class="tl">
@@ -294,12 +403,12 @@
     <div class="w m"><div class="dot">4</div><div class="d">DAYS 20–30</div><b>Sent to the stores</b><span>Play Store and App Store, in your name.</span></div>
   </div>
   <div class="callout"><div class="ic">!</div><div><b>Start the store accounts this week, in your name.</b> On a new personal Google account, Google asks for a 14-day test with 12 testers before going public. We start it at the demo so it runs while we build. Apple and Google set their own review time.</div></div>
-  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>7</span></div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>9</span></div>
 </div>
 
 <!-- 8 RUNNING COSTS -->
 <div class="slide">
-  <span class="tag">07 · RUNNING COSTS</span>
+  <span class="tag">09 · RUNNING COSTS</span>
   <h2>Paid by you, <em>directly to the provider.</em></h2>
   <p class="lede">We set all of it up and give you the exact numbers before launch. Most are small until you have real users.</p>
   <div class="cg">
@@ -310,7 +419,7 @@
     <div class="cc"><div class="w">SMS for login OTP</div><b>Per message</b><span>Paise per SMS</span></div>
     <div class="cc"><div class="w">Online payments</div><b>About 2%</b><span>Razorpay, on each payment</span></div>
   </div>
-  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>8</span></div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>10</span></div>
 </div>
 
 <!-- 9 NEXT -->
@@ -335,7 +444,7 @@
       </div>
     </div>
   </div>
-  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>9</span></div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>11</span></div>
 </div>
 </body>
 </html>
