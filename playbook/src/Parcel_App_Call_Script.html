@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Parcel App Call Script</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../assets/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../assets/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../assets/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../assets/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../assets/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../assets/fonts/poppins-latin-ext-700-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:400;src:url(../../assets/fonts/noto-sans-devanagari-devanagari-400-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:600;src:url(../../assets/fonts/noto-sans-devanagari-devanagari-600-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:700;src:url(../../assets/fonts/noto-sans-devanagari-devanagari-700-normal.woff2)}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#3f4552}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{width:110mm;font-family:Poppins,PoppinsX,NotoDeva,sans-serif;color:var(--char);font-size:9.6pt;line-height:1.5}
+  b{font-weight:700}
+  section{padding:0 6mm 8mm}
+  .head{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.6),rgba(255,208,20,0) 55%),var(--char);color:#fff;padding:7mm 6mm 6mm;margin:0 -6mm 5mm}
+  .logo{display:flex;align-items:center;gap:8px}
+  .logo svg{width:24px;height:24px}
+  .logo .div{width:1.5px;height:22px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:12pt;line-height:1}
+  .logo span{display:block;font-size:8pt;letter-spacing:.3em}
+  .head .tag{display:inline-block;margin-top:5mm;background:var(--yellow);color:var(--char);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .head h1{margin:2mm 0 1mm;font-size:18pt;line-height:1.15}
+  .head h1 em{font-style:normal;color:var(--yellow)}
+  .head p{margin:0;color:#d6d9df;font-size:9pt}
+  .sh{margin:7mm -6mm 4mm;padding:6mm 6mm 0;border-top:6px solid var(--yellow)}
+  .sh .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .sh h1{margin:2mm 0 0;font-size:16pt;line-height:1.2}
+  h3{font-size:11pt;margin:5mm 0 2mm;line-height:1.25}
+
+  .step{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .step .top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .step .d{flex:0 0 24px;height:24px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;font-size:9.5pt;display:flex;align-items:center;justify-content:center}
+  .step .top b{font-size:11pt}
+  .row{display:flex;gap:6px;margin:3px 0;font-size:9.2pt}
+  .row .k{flex:0 0 58px;font-weight:600;color:var(--muted);font-size:8.3pt;text-transform:uppercase;letter-spacing:.04em;padding-top:1px}
+  .row div{flex:1}
+  .done{margin-top:5px;background:#fff8d6;border-radius:7px;padding:4px 8px;font-size:8.8pt}
+  .done b{font-size:8.5pt}
+  .say{background:var(--char);color:#fff;border-radius:9px;padding:7px 10px;margin:5px 0}
+  .say .mr{font-size:9.6pt;font-weight:600}
+  .say .en{color:#b9bec8;font-size:8.4pt}
+  ul{margin:2px 0 4px;padding-left:16px}
+  li{margin-bottom:2px}
+
+  .prod{border:1px solid var(--stone);border-radius:12px;margin-bottom:7px;overflow:hidden}
+  .prod .t{display:flex;justify-content:space-between;align-items:baseline;background:var(--cloud);padding:7px 11px;border-bottom:1px solid var(--stone)}
+  .prod .t b{font-size:10.2pt}
+  .prod .t span{font-weight:700;white-space:nowrap}
+  .prod .b{padding:6px 11px 8px;font-size:9pt}
+  .prod .in b,.prod .out b{display:block;font-size:8.2pt;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .prod .out{margin-top:4px}
+  .fees{background:var(--char);color:#fff;border-radius:12px;padding:9px 12px;font-size:9pt}
+  .fees b{color:var(--yellow)}
+
+  .pf{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .pf b{font-size:10.2pt}
+  .pf .how{color:var(--muted);font-size:8.8pt;margin-top:2px}
+  .pf .line{margin-top:4px;background:var(--cloud);border-left:3px solid var(--yellow);border-radius:0 7px 7px 0;padding:4px 8px;font-size:9pt}
+
+  .ag{display:flex;gap:9px;padding:7px 0;border-bottom:1px dashed var(--stone)}
+  .ag:last-child{border-bottom:0}
+  .ag .n{flex:0 0 22px;height:22px;border-radius:6px;background:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .ag b{display:block}
+  .ag span{color:var(--muted);font-size:9pt}
+  .note{background:var(--cloud);border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.8pt;margin-top:6px}
+  .foot{margin-top:6mm;color:var(--muted);font-size:7.5pt;text-align:center}
+  .nums{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+  .nums div{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.6pt;color:var(--muted)}
+  .nums b{display:block;font-size:14pt;color:var(--char);line-height:1.2}
+  .nums div.dk{background:var(--char);border-color:var(--char);color:#c9cdd5}
+  .nums div.dk b{color:var(--yellow)}
+  .if{border-left:3px solid var(--yellow);background:var(--cloud);border-radius:0 9px 9px 0;padding:6px 10px;margin-bottom:6px;font-size:9.1pt}
+  .if b{display:block}
+  .dont li{margin-bottom:3px}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+<section>
+  <div class="head">
+    <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+    <span class="tag">CALL SCRIPT · PARCEL APP</span>
+    <h1>Close on the call. <em>Advance today.</em></h1>
+    <p>Share the proposal slides on screen and go slide by slide. Keep this open on your phone.</p>
+  </div>
+
+  <div class="nums">
+    <div><b>₹75,000</b>Quote · advance ₹30,000</div>
+    <div class="dk"><b>₹70,000</b>Lowest · advance ₹28,000</div>
+  </div>
+
+  <div class="step"><div class="top"><span class="d">1</span><b>Open · slide 1</b></div>
+    <div class="row"><span class="k">Say</span><div>"Last time you said I got 80% of your idea. Let me show you the full picture. Stop me anywhere."</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">2</span><b>The idea · slide 2</b></div>
+    <div class="row"><span class="k">Ask</span><div>"Is this how you see it? What's the 20% I'm missing?"</div></div>
+    <div class="row"><span class="k">Do</span><div>Write down anything new. If it's a new feature: "Noted. Let's see if it fits now or in phase 2."</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">3</span><b>What's inside and trust · slides 3–4</b></div>
+    <div class="row"><span class="k">Say</span><div>Walk through Send, Carry and Admin. On trust: "Strangers carrying parcels only works if people feel safe."</div></div>
+    <div class="done"><b>Get:</b> a yes on the feature list.</div></div>
+
+  <div class="step"><div class="top"><span class="d">4</span><b>How you earn · slide 5</b></div>
+    <div class="row"><span class="k">Say</span><div>"If numbers are visible, they settle on WhatsApp and you earn zero. So numbers stay hidden until your commission is paid."</div></div>
+    <div class="row"><span class="k">Ask</span><div>"Which feels right for your users?" Push A: "Carriers are the hard side to get. Don't charge them to join."</div></div>
+    <div class="done"><b>Get:</b> A or B picked, or "decide by kickoff".</div></div>
+
+  <div class="step"><div class="top"><span class="d">5</span><b>Price · slide 6</b></div>
+    <div class="row"><span class="k">Say</span><div>"₹75,000, fixed. Android, iPhone, admin panel, store submission, and 1 month of fixes."</div></div>
+    <div class="row"><span class="k">Then</span><div><b>Stop talking.</b> Let him answer first.</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">6</span><b>Timeline and costs · slides 7–8</b></div>
+    <div class="row"><span class="k">Say</span><div>"Working app on your phone around day 10, sent to the stores in 20–30 days. Please open the store accounts this week, in your name."</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">7</span><b>Close · slide 9</b></div>
+    <div class="row"><span class="k">Say</span><div>"Shall we start? I'll send the UPI link for ₹30,000 now, the agreement today, and we kick off tomorrow."</div></div>
+    <div class="row"><span class="k">Do</span><div>Send the link while he's still on the call.</div></div>
+    <div class="done"><b>Done when:</b> advance paid, or the next call is booked before you hang up.</div></div>
+
+  <h3>If he says</h3>
+  <div class="if"><b>"Can you do lower?"</b>"I can do ₹70,000 if we start today." Move once, never below ₹70k.</div>
+  <div class="if"><b>"Everything is available with AI."</b>"Yes, we use AI too. That's why it's ₹75k and not ₹2 lakh. You're paying for me to make sure it all works: payments, tracking, OTP, store approval."</div>
+  <div class="if"><b>"Let me think."</b>"What's the one thing stopping you?" Solve it, or fix the next call date now.</div>
+
+  <h3>Don't</h3>
+  <ul class="dont">
+    <li>Compare with other developers</li>
+    <li>Promise a store launch date. Apple and Google decide review time</li>
+    <li>Promise discounts on his other ideas. "Let's do this one well first."</li>
+    <li>Add features on the call. "Noted, I'll price it as phase 2."</li>
+    <li>Take legal responsibility. Terms are his to get checked</li>
+  </ul>
+
+  <h3>After the call</h3>
+  <div class="note"><b>Paid:</b> agreement today, kickoff tomorrow, update the tracker.<br><b>Not paid:</b> send the proposal PDF on WhatsApp with the next call time.</div>
+  <div class="foot">Outgrid Labs · outgridlabs.com</div>
+</section>
+</body>
+</html>

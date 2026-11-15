@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Parcel App Proposal</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../assets/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../assets/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../assets/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../assets/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../assets/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../assets/fonts/poppins-latin-ext-700-normal.woff2)}
+  @page{size:1280px 720px;margin:0}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#4a505c;--soft:#fff8d6}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{font-family:Poppins,PoppinsX,sans-serif;color:var(--char);font-size:18px;line-height:1.45}
+  b{font-weight:700}
+  ul{margin:0;padding-left:20px}
+  li{margin-bottom:5px}
+
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;padding:52px 72px 70px;break-after:page;background:#fff}
+  .slide:last-child{break-after:auto}
+  .slide.dark{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.55),rgba(255,208,20,0) 50%),var(--char);color:#fff}
+  .ft{position:absolute;left:72px;right:72px;bottom:26px;display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+  .dark .ft{color:#9aa0ab}
+  .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:13px;border-radius:20px;padding:3px 13px;letter-spacing:.06em}
+  .dark .tag{background:var(--yellow);color:var(--char)}
+  h2{font-size:40px;line-height:1.15;margin:12px 0 6px}
+  h2 em{font-style:normal;background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+  .lede{color:var(--muted);font-size:19px;margin:0 0 22px;max-width:980px}
+
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo svg{width:40px;height:40px}
+  .logo .div{width:2px;height:36px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:21px;line-height:1}
+  .logo span{display:block;font-size:13px;letter-spacing:.3em}
+
+  /* cover */
+  .cover h1{font-size:64px;line-height:1.08;margin:18px 0 16px;max-width:900px}
+  .cover h1 em{font-style:normal;color:var(--yellow)}
+  .cover p{font-size:21px;color:#d6d9df;max-width:760px;margin:0}
+  .cover .chips{display:flex;gap:10px;margin-top:30px}
+  .cover .chips span{border:1px solid #3a3f4b;background:#171a22;border-radius:30px;padding:7px 16px;font-size:16px}
+  .cover .date{position:absolute;left:72px;bottom:60px;color:#b9bec8;font-size:16px}
+
+  /* flow */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fs{border:1px solid var(--stone);border-radius:16px;padding:16px 18px;min-height:150px}
+  .fs .n{width:34px;height:34px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+  .fs b{display:block;font-size:19px;line-height:1.25}
+  .fs span{color:var(--muted);font-size:15.5px}
+  .fs.earn{background:var(--yellow);border-color:var(--yellow)}
+  .fs.earn .n{background:var(--char)}
+  .fs.earn span{color:var(--char)}
+
+  /* columns */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .col{border:1px solid var(--stone);border-radius:16px;overflow:hidden}
+  .col .t{background:var(--cloud);border-bottom:1px solid var(--stone);padding:12px 18px;display:flex;justify-content:space-between;align-items:baseline}
+  .col .t b{font-size:21px}
+  .col .t span{color:var(--muted);font-size:14px}
+  .col.dk .t{background:var(--char);color:#fff;border-color:var(--char)}
+  .col.dk .t span{color:#b9bec8}
+  .col ul{padding:14px 18px 10px 38px;font-size:16.5px}
+  .col li{margin-bottom:6px}
+  .strip{margin-top:18px;background:var(--cloud);border:1px solid var(--stone);border-radius:14px;padding:12px 18px;font-size:16.5px}
+  .strip b{margin-right:6px}
+
+  /* trust grid */
+  .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tc{border:1px solid var(--stone);border-radius:16px;padding:18px 20px}
+  .tc .i{width:42px;height:42px;border-radius:12px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin-bottom:10px}
+  .tc b{display:block;font-size:19px}
+  .tc span{color:var(--muted);font-size:15.5px}
+
+  /* earn options */
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .op{border:1px solid var(--stone);border-radius:16px;padding:18px 20px;position:relative}
+  .op.rec{border:2.5px solid var(--char)}
+  .op .badge{position:absolute;top:-13px;right:16px;background:var(--yellow);font-weight:700;font-size:12.5px;border-radius:20px;padding:3px 12px;letter-spacing:.05em}
+  .op .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .op b.h{display:block;font-size:21px;line-height:1.25;margin:2px 0 8px}
+  .op p{margin:0 0 10px;font-size:16px}
+  .op .pc{font-size:15px;border-top:1px dashed var(--stone);padding-top:8px}
+  .op .pc div{margin-bottom:3px}
+  .op .pc .y{font-weight:600}
+  .op .pc .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
+  .op .pc .x:before{content:"− ";color:#c0392b;font-weight:700}
+
+  /* price */
+  .pgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start}
+  .pbox{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:22px;padding:28px 32px}
+  .pbox .l{color:#b9bec8;font-size:16px}
+  .pbox .p{font-size:66px;font-weight:700;color:var(--yellow);line-height:1.05;margin:4px 0 6px}
+  .pbox .s{font-size:17px;color:#e3e5ea}
+  .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .pay div{background:#1b1f28;border:1px solid #333845;border-radius:12px;padding:10px 12px;font-size:14px;color:#c9cdd5}
+  .pay b{display:block;color:#fff;font-size:20px}
+  .lst b.h{display:block;font-size:19px;margin-bottom:6px}
+  .lst ul{font-size:17px;margin-bottom:18px}
+  .lst .no li{color:var(--muted)}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:10px}
+  .tl:before{content:"";position:absolute;left:20px;right:20px;top:20px;height:3px;background:var(--stone)}
+  .tl .w{position:relative;padding-right:22px}
+  .tl .dot{width:42px;height:42px;border-radius:50%;background:#fff;border:3px solid var(--char);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;position:relative}
+  .tl .w.m .dot{background:var(--yellow)}
+  .tl .d{font-weight:700;color:var(--muted);font-size:14px;letter-spacing:.05em;margin-top:14px}
+  .tl b{display:block;font-size:19px;line-height:1.25;margin:2px 0 4px}
+  .tl span{color:var(--muted);font-size:15.5px}
+  .callout{margin-top:34px;background:var(--char);color:#fff;border-radius:16px;padding:16px 22px;font-size:16.5px;display:flex;gap:18px;align-items:flex-start}
+  .callout b{color:var(--yellow)}
+  .callout .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--yellow);color:var(--char);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:20px}
+
+  /* costs */
+  .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cc{border:1px solid var(--stone);border-radius:16px;padding:16px 20px}
+  .cc .w{font-size:15px;color:var(--muted)}
+  .cc b{display:block;font-size:24px;line-height:1.2;margin:2px 0}
+  .cc span{font-size:15px;color:var(--muted)}
+
+  /* next */
+  .next{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;margin-top:8px}
+  .ns{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #2a2e38}
+  .ns:last-child{border-bottom:0}
+  .ns .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--char);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:17px}
+  .ns b{display:block;font-size:21px}
+  .ns span{color:#c9cdd5;font-size:16px}
+  .ab{background:#171a22;border:1px solid #333845;border-radius:18px;padding:20px 24px;font-size:16px;color:#d6d9df}
+  .ab b.h{font-size:20px;color:#fff;display:block;margin-bottom:4px}
+  .ab ul{margin-top:8px}
+  .ab .c{margin-top:14px;padding-top:10px;border-top:1px solid #333845}
+  .ab .c div{padding:3px 0}
+  .ab .c span{display:inline-block;width:150px;color:#9aa0ab}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+
+<!-- 1 COVER -->
+<div class="slide dark cover">
+  <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+  <div style="margin-top:70px"><span class="tag">PROPOSAL · PARCEL APP</span></div>
+  <h1>Parcels carried by people <em>already going that way.</em></h1>
+  <p>One app where senders post parcels and travellers carry them, cheaper than a courier. You earn on every parcel.</p>
+  <div class="chips"><span>Android + iPhone</span><span>Live tracking</span><span>In-app chat</span><span>Admin panel</span></div>
+  <div class="date">Date: ______________</div>
+</div>
+
+<!-- 2 THE IDEA -->
+<div class="slide">
+  <span class="tag">01 · THE IDEA</span>
+  <h2>How it <em>works.</em></h2>
+  <p class="lede">Someone travelling from Mumbai to Pune turns on the app and sees parcels going the same way. They agree a price, carry it, and get paid.</p>
+  <div class="flow">
+    <div class="fs"><div class="n">1</div><b>Sender posts a parcel</b><span>From, to, date, size, photo and the price they offer.</span></div>
+    <div class="fs"><div class="n">2</div><b>Carrier goes active</b><span>Sets their route and sees parcels nearby going the same way.</span></div>
+    <div class="fs"><div class="n">3</div><b>They agree a price</b><span>Accept, or send a counter-offer. Chat inside the app.</span></div>
+    <div class="fs"><div class="n">4</div><b>Pickup with OTP</b><span>Sender shares a code; the parcel is handed over.</span></div>
+    <div class="fs"><div class="n">5</div><b>Live tracking</b><span>Sender watches the parcel move on the map.</span></div>
+    <div class="fs"><div class="n">6</div><b>Delivery with OTP</b><span>Receiver's code confirms the parcel arrived.</span></div>
+    <div class="fs"><div class="n">7</div><b>Both rate each other</b><span>Good carriers and senders rise to the top.</span></div>
+    <div class="fs earn"><div class="n">₹</div><b>You earn a commission</b><span>On every parcel. See "How you earn".</span></div>
+  </div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>2</span></div>
+</div>
+
+<!-- 3 WHAT'S INSIDE -->
+<div class="slide">
+  <span class="tag">02 · WHAT'S INSIDE</span>
+  <h2>One app, two modes, <em>one admin panel.</em></h2>
+  <p class="lede">Anyone can send and carry from the same app. Switch between Send and Carry with one tap.</p>
+  <div class="cols">
+    <div class="col"><div class="t"><b>Send</b><span>App</span></div><ul>
+      <li>Post a parcel: route, date, size, photo, price</li>
+      <li>See offers from carriers</li>
+      <li>Accept or counter-offer</li>
+      <li>Chat with the carrier</li>
+      <li>Live tracking on the map</li>
+      <li>Pickup and delivery OTP</li>
+      <li>Parcel history and ratings</li>
+    </ul></div>
+    <div class="col"><div class="t"><b>Carry</b><span>App</span></div><ul>
+      <li>Go active on a route: from, to, date</li>
+      <li>See parcels on the route within a radius</li>
+      <li>Accept or make an offer</li>
+      <li>Chat with the sender</li>
+      <li>Directions to pickup and drop</li>
+      <li>Location shared during the trip</li>
+      <li>Earnings history and ratings</li>
+    </ul></div>
+    <div class="col dk"><div class="t"><b>Admin panel</b><span>Web</span></div><ul>
+      <li>All users and carriers</li>
+      <li>ID checks: approve or reject carriers</li>
+      <li>Every parcel and its status</li>
+      <li>Commission settings</li>
+      <li>Payments and transactions</li>
+      <li>Complaints, block users</li>
+      <li>Dashboard: parcels, users, earnings</li>
+    </ul></div>
+  </div>
+  <div class="strip"><b>For everyone:</b> login with mobile OTP · notifications · Android and iPhone</div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>3</span></div>
+</div>
+
+<!-- 4 TRUST -->
+<div class="slide">
+  <span class="tag">03 · TRUST AND SAFETY</span>
+  <h2>Strangers carrying parcels <em>need trust.</em></h2>
+  <p class="lede">Built in from day one, so people feel safe handing over a parcel.</p>
+  <div class="tg">
+    <div class="tc"><div class="i">ID</div><b>ID check for carriers</b><span>Carriers upload an ID. You approve each one before they can carry.</span></div>
+    <div class="tc"><div class="i">1</div><b>Pickup OTP</b><span>The parcel changes hands only with the sender's code.</span></div>
+    <div class="tc"><div class="i">2</div><b>Delivery OTP</b><span>Marked delivered only with the receiver's code.</span></div>
+    <div class="tc"><div class="i">★</div><b>Ratings both ways</b><span>Every trip is rated. Low ratings are easy to spot and block.</span></div>
+    <div class="tc"><div class="i">✕</div><b>No prohibited items</b><span>Sender confirms on every parcel that nothing prohibited is inside.</span></div>
+    <div class="tc"><div class="i">T&amp;C</div><b>Terms at sign-up</b><span>Users accept that responsibility for the parcel is theirs, not the platform's.</span></div>
+  </div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>4</span></div>
+</div>
+
+<!-- 5 HOW YOU EARN -->
+<div class="slide">
+  <span class="tag">04 · HOW YOU EARN</span>
+  <h2>Three ways to take <em>your commission.</em></h2>
+  <p class="lede">Let's pick one together. In every option, numbers stay hidden and chat stays in the app until your commission is paid, so deals don't move to WhatsApp.</p>
+  <div class="opts">
+    <div class="op rec"><span class="badge">WE RECOMMEND</span>
+      <div class="k">OPTION A</div><b class="h">Sender pays a booking fee</b>
+      <p>When a carrier accepts, the sender pays your commission online. The carrier gets the agreed price directly at delivery.</p>
+      <div class="pc"><div class="y">Carriers join free, so you get more of them</div><div class="y">You're paid before the trip</div><div class="x">Carrier's money is cash or UPI outside the app</div></div></div>
+    <div class="op">
+      <div class="k">OPTION B</div><b class="h">Carrier wallet</b>
+      <p>Carriers top up a wallet by UPI. Your commission is deducted each time they accept a parcel.</p>
+      <div class="pc"><div class="y">Nothing extra for senders to pay</div><div class="y">Commission is automatic</div><div class="x">Carriers pay before they earn</div></div></div>
+    <div class="op">
+      <div class="k">OPTION C · LATER</div><b class="h">Full payment in the app</b>
+      <p>Sender pays the full amount in the app. The carrier is paid after delivery OTP, minus your commission.</p>
+      <div class="pc"><div class="y">Most trust, no cash</div><div class="x">Needs carrier bank details and payouts</div><div class="x">More setup: priced separately</div></div></div>
+  </div>
+  <div class="strip"><b>Included in the price:</b> option A or option B. You set the commission (a % or a fixed amount) from the admin panel.</div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>5</span></div>
+</div>
+
+<!-- 6 PRICE -->
+<div class="slide">
+  <span class="tag">05 · PRICE</span>
+  <h2>One fixed price, <em>pay as you see it work.</em></h2>
+  <div class="pgrid" style="margin-top:22px">
+    <div class="pbox">
+      <div class="l">Android + iPhone app and admin panel</div>
+      <div class="p">₹75,000</div>
+      <div class="s">Fixed price for everything on these slides. No GST.</div>
+      <div class="pay">
+        <div><b>₹30,000</b>40% to start</div>
+        <div><b>₹22,500</b>30% at working demo</div>
+        <div><b>₹22,500</b>30% at launch</div>
+      </div>
+    </div>
+    <div class="lst">
+      <b class="h">Included</b>
+      <ul>
+        <li>Setup of server, maps and payments</li>
+        <li>Submission to Play Store and App Store</li>
+        <li>1 month of free bug fixes after launch</li>
+        <li>You own the code, the apps and the data</li>
+      </ul>
+      <b class="h">Not included</b>
+      <ul class="no">
+        <li>Insurance and marketing</li>
+        <li>Option C: full payment in the app</li>
+        <li>New features after we agree the scope: priced first</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>6</span></div>
+</div>
+
+<!-- 7 TIMELINE -->
+<div class="slide">
+  <span class="tag">06 · TIMELINE</span>
+  <h2>Ready for the stores in <em>20–30 days.</em></h2>
+  <p class="lede">You see progress every few days, and a working app on your phone around day 10.</p>
+  <div class="tl">
+    <div class="w"><div class="dot">1</div><div class="d">DAYS 1–3</div><b>Screens</b><span>All screens designed. You approve them.</span></div>
+    <div class="w m"><div class="dot">2</div><div class="d">AROUND DAY 10</div><b>Working demo</b><span>Post, accept, chat and OTP working on your phone. Google testing starts.</span></div>
+    <div class="w"><div class="dot">3</div><div class="d">AROUND DAY 20</div><b>Everything working</b><span>iPhone, tracking, payments, admin. Your people test it.</span></div>
+    <div class="w m"><div class="dot">4</div><div class="d">DAYS 20–30</div><b>Sent to the stores</b><span>Play Store and App Store, in your name.</span></div>
+  </div>
+  <div class="callout"><div class="ic">!</div><div><b>Start the store accounts this week, in your name.</b> On a new personal Google account, Google asks for a 14-day test with 12 testers before going public. We start it at the demo so it runs while we build. Apple and Google set their own review time.</div></div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>7</span></div>
+</div>
+
+<!-- 8 RUNNING COSTS -->
+<div class="slide">
+  <span class="tag">07 · RUNNING COSTS</span>
+  <h2>Paid by you, <em>directly to the provider.</em></h2>
+  <p class="lede">We set all of it up and give you the exact numbers before launch. Most are small until you have real users.</p>
+  <div class="cg">
+    <div class="cc"><div class="w">Google Play</div><b>$25 once</b><span>Developer account</span></div>
+    <div class="cc"><div class="w">Apple</div><b>$99 a year</b><span>Developer account</span></div>
+    <div class="cc"><div class="w">Server</div><b>A few thousand ₹/month</b><span>At the start; grows with users</span></div>
+    <div class="cc"><div class="w">Google Maps</div><b>Pay per use</b><span>Monthly free credit first</span></div>
+    <div class="cc"><div class="w">SMS for login OTP</div><b>Per message</b><span>Paise per SMS</span></div>
+    <div class="cc"><div class="w">Online payments</div><b>About 2%</b><span>Razorpay, on each payment</span></div>
+  </div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>8</span></div>
+</div>
+
+<!-- 9 NEXT -->
+<div class="slide dark">
+  <span class="tag">NEXT STEP</span>
+  <h2 style="font-size:48px">Start <span style="color:var(--yellow)">today.</span></h2>
+  <div class="next">
+    <div>
+      <div class="ns"><span class="n">1</span><div><b>40% advance: ₹30,000</b><span>By UPI link</span></div></div>
+      <div class="ns"><span class="n">2</span><div><b>Agreement, same day</b><span>Scope, price, timeline and terms in writing</span></div></div>
+      <div class="ns"><span class="n">3</span><div><b>Kickoff tomorrow</b><span>Screens ready for you in 3 days</span></div></div>
+    </div>
+    <div class="ab"><b class="h">Outgrid Labs</b>
+      A Maharashtra studio building custom apps, websites and AI automation, end to end.
+      <ul>
+        <li>Built a booking marketplace for a European company</li>
+        <li>Built and run our own loyalty platform</li>
+      </ul>
+      <div class="c">
+        <div><span>Call / WhatsApp</span>______________</div>
+        <div><span>Web</span>outgridlabs.com</div>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>9</span></div>
+</div>
+</body>
+</html>
