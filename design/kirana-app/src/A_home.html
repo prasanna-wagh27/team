@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jhola · Home · Direction A</title>
+<style>
+/* Direction A: bold and quick (Zepto / Blinkit lean). Font: Geist. */
+@font-face{font-family:Rupee;src:url(fonts/geist-sans-latin-700-normal.woff2);unicode-range:U+20B9}
+@font-face{font-family:Geist;font-weight:400;src:url(fonts/geist-sans-latin-400-normal.woff2)}
+@font-face{font-family:Geist;font-weight:500;src:url(fonts/geist-sans-latin-500-normal.woff2)}
+@font-face{font-family:Geist;font-weight:600;src:url(fonts/geist-sans-latin-600-normal.woff2)}
+@font-face{font-family:Geist;font-weight:700;src:url(fonts/geist-sans-latin-700-normal.woff2)}
+@font-face{font-family:Geist;font-weight:800;src:url(fonts/geist-sans-latin-800-normal.woff2)}
+@font-face{font-family:Geist;font-weight:900;src:url(fonts/geist-sans-latin-900-normal.woff2)}
+:root{--p0:#1E0848;--p1:#3A0F86;--p2:#6A23D6;--pink:#FF2E63;--pink-d:#E61E52;--pink-s:#FFEAF0;
+  --ink:#15121C;--sub:#7A7584;--sub2:#A8A3B1;--line:#EEECF2;--bg:#fff;--tile:#F5F3F9;
+  --lime:#DBF86A;--green:#0B9150;--green-s:#E5F6EC}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E9E7EE}
+body{font-family:Rupee,Geist,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.screen{width:390px;height:844px;position:relative;overflow:hidden;background:var(--bg)}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* status bar */
+.sb{height:47px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px;letter-spacing:-.2px}
+.sb .r{display:flex;gap:6px;align-items:center}.sb svg{fill:currentColor}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:122px;height:35px;border-radius:20px;background:#000;z-index:20}
+
+/* header */
+.hdr{position:relative;color:#fff;background:
+  radial-gradient(70% 80% at 92% 8%,rgba(160,90,255,.55),transparent 70%),
+  radial-gradient(60% 60% at 0% 100%,rgba(255,46,99,.28),transparent 70%),
+  linear-gradient(180deg,var(--p0),var(--p1) 70%,#4512A0)}
+.hdr:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background-image:radial-gradient(#fff 1px,transparent 1.2px);background-size:14px 14px;
+  mask-image:linear-gradient(180deg,#000,transparent 75%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 75%)}
+.top{display:flex;align-items:flex-start;gap:10px;padding:6px 16px 0;position:relative;z-index:1}
+.eta{flex:1;min-width:0}
+.eta small{display:block;font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.eta h1{font-size:30px;font-weight:900;letter-spacing:-1.2px;line-height:1.05;margin-top:3px;display:flex;align-items:center;gap:6px}
+.eta h1 img{width:26px;height:26px}
+.addr{display:flex;align-items:center;gap:4px;margin-top:6px;font-size:13.5px;color:rgba(255,255,255,.78);white-space:nowrap}
+.addr b{color:#fff;font-weight:700}
+.addr .i{width:15px;height:15px;stroke-width:2.4}
+.wal{height:36px;display:flex;align-items:center;gap:6px;padding:0 11px 0 9px;border-radius:10px;font-weight:700;font-size:14px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);margin-top:12px}
+.wal .i{width:17px;height:17px;color:var(--lime)}
+.av{width:36px;height:36px;border-radius:50%;margin-top:12px;display:grid;place-items:center;font-weight:700;font-size:13px;
+  background:linear-gradient(135deg,#FFB86B,#FF5F8A);border:2px solid rgba(255,255,255,.35)}
+
+.search{position:relative;z-index:1;margin:16px 16px 0;height:48px;border-radius:12px;background:#fff;color:var(--ink);
+  display:flex;align-items:center;gap:10px;padding:0 14px;box-shadow:0 8px 24px -10px rgba(10,0,40,.6)}
+.search .i{color:var(--p1)}
+.search span{flex:1;font-size:15px;color:var(--sub)}
+.search span b{color:var(--ink);font-weight:600}
+.search .bar{width:1px;height:22px;background:var(--line)}
+
+.cats{position:relative;z-index:1;display:flex;justify-content:space-between;padding:14px 10px 0}
+.cats div{width:58px;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);padding-bottom:10px;position:relative}
+.cats img{width:30px;height:30px}
+.cats .on{color:#fff}
+.cats .on:after{content:"";position:absolute;bottom:0;left:10px;right:10px;height:3px;border-radius:3px 3px 0 0;background:#fff}
+
+/* banner */
+.banner{margin:16px 16px 0;height:114px;border-radius:14px;background:var(--lime);position:relative;overflow:hidden;padding:15px 16px}
+.banner:before{content:"";position:absolute;right:-40px;top:-50px;width:210px;height:210px;border-radius:50%;background:#C9EE3A}
+.banner .tag{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 8px;border-radius:6px;background:var(--ink);color:var(--lime);font-size:11px;font-weight:700;letter-spacing:.5px;position:relative}
+.banner h2{font-size:22px;font-weight:900;letter-spacing:-.8px;line-height:1.05;margin-top:9px;position:relative}
+.banner p{font-size:12.5px;font-weight:500;color:#3C4A12;margin-top:6px;position:relative}
+.banner .veg{position:absolute;right:6px;bottom:-4px;width:170px;height:118px}
+.banner .veg img{position:absolute;filter:drop-shadow(0 6px 8px rgba(40,60,0,.25))}
+.dots{display:flex;justify-content:center;gap:5px;margin-top:9px}
+.dots i{width:5px;height:5px;border-radius:3px;background:#DAD6E1}.dots i.on{width:16px;background:var(--p1)}
+
+/* section */
+.sec{display:flex;align-items:baseline;justify-content:space-between;padding:0 16px;margin-top:14px}
+.sec h3{font-size:18px;font-weight:800;letter-spacing:-.5px}
+.sec h3 small{display:block;font-size:12px;font-weight:500;color:var(--sub);letter-spacing:0;margin-top:2px}
+.sec a{font-size:13px;font-weight:700;color:var(--pink);display:flex;align-items:center;gap:2px}
+.sec a .i{width:14px;height:14px;stroke-width:2.6}
+
+/* product rail */
+.rail{display:flex;gap:10px;padding:12px 16px 0;width:max-content}
+.pc{width:114px}
+.pimg{height:114px;border-radius:12px;background:var(--tile);border:1px solid #EFECF4;position:relative;display:grid;place-items:center}
+.pimg img{width:74px;height:74px;filter:drop-shadow(0 6px 6px rgba(30,10,60,.12))}
+.off{position:absolute;top:0;left:8px;padding:4px 5px 5px;font-size:9.5px;font-weight:800;line-height:1.05;text-align:center;color:#fff;background:var(--p2);border-radius:0 0 5px 5px;letter-spacing:.2px}
+.add{position:absolute;right:6px;bottom:-12px;height:30px;min-width:62px;border-radius:8px;background:#fff;border:1px solid var(--pink);color:var(--pink);
+  font-size:13px;font-weight:800;letter-spacing:.4px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px -4px rgba(255,46,99,.45)}
+.add.q{background:var(--pink);color:#fff;justify-content:space-between;padding:0 9px;gap:10px}
+.add.q span{font-size:16px;font-weight:600;line-height:1}
+.pinfo{padding:18px 2px 0}
+.price{display:flex;align-items:baseline;gap:5px}
+.price b{font-size:15px;font-weight:800;letter-spacing:-.3px}
+.price s{font-size:12px;color:var(--sub2);font-weight:500}
+.pn{font-size:13px;font-weight:600;line-height:1.25;margin-top:3px;letter-spacing:-.1px}
+.pw{font-size:12px;color:var(--sub);margin-top:3px;display:flex;align-items:center;gap:4px}
+.pw .i{width:12px;height:12px;stroke-width:2.4;color:var(--green)}
+
+/* category grid */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 10px;padding:12px 16px 0}
+.cg .ct{height:80px;border-radius:12px;background:var(--tile);border:1px solid #EFECF4;display:grid;place-items:center;position:relative;overflow:hidden}
+.cg .ct img{width:52px;height:52px}
+.cg .ct img+img{position:absolute;width:34px;height:34px;right:5px;bottom:5px}
+.cg span{display:block;text-align:center;font-size:11.5px;font-weight:600;line-height:1.25;margin-top:6px;letter-spacing:-.1px}
+
+/* floating cart */
+.cart{position:absolute;left:50%;transform:translateX(-50%);bottom:98px;z-index:6;height:56px;border-radius:30px;background:var(--pink);color:#fff;
+  display:flex;align-items:center;gap:11px;padding:0 8px 0 8px;box-shadow:0 12px 28px -8px rgba(230,30,82,.6)}
+.thumbs{display:flex}
+.thumbs i{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;border:2px solid var(--pink)}
+.thumbs i+i{margin-left:-16px}
+.thumbs img{width:26px;height:26px}
+.cart .t{white-space:nowrap}.cart .t b{display:block;font-size:15px;font-weight:800;letter-spacing:-.2px}
+.cart .t small{font-size:12px;font-weight:500;opacity:.85}
+.cart .go{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;margin-left:6px}
+
+/* tab bar */
+.nav{position:absolute;left:0;right:0;bottom:0;height:86px;background:#fff;border-top:1px solid var(--line);z-index:7;display:flex;padding:9px 6px 0}
+.nav div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:var(--sub2)}
+.nav .i{width:24px;height:24px;stroke-width:1.9}
+.nav .on{color:var(--p1)}
+.nav .on .i{fill:#EFE7FF}
+.homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#15121C;z-index:8}
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <div class="hdr">
+    <div class="sb">
+      <span>9:41</span>
+      <span class="r">
+        <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0Z"/><path d="M3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.4 1.4a4.5 4.5 0 0 0-6.4 0Z"/><path d="M1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.4 1.4a7.6 7.6 0 0 0-10.8 0Z"/></svg>
+        <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2.5" y="2.5" width="17" height="8" rx="2"/><path d="M25 4.5v4a2 2 0 0 0 0-4Z" opacity=".45"/></svg>
+      </span>
+    </div>
+    <div class="island"></div>
+
+    <div class="top">
+      <div class="eta">
+        <small>Jhola delivers in</small>
+        <h1>9 minutes <img src="img/bolt.webp" alt=""></h1>
+        <div class="addr"><b>Home</b>&nbsp;· Flat 302, Shanti Niwas, Dadar W<svg class="i"><use href="#down"/></svg></div>
+      </div>
+      <div class="wal"><svg class="i"><use href="#wallet"/></svg>₹120</div>
+      <div class="av">RK</div>
+    </div>
+
+    <div class="search">
+      <svg class="i"><use href="#search"/></svg>
+      <span>Search for “<b>toor dal</b>”</span>
+      <i class="bar"></i>
+      <svg class="i"><use href="#mic"/></svg>
+    </div>
+
+    <div class="cats">
+      <div class="on"><img src="img/basket.webp" alt="">All</div>
+      <div><img src="img/leafy.webp" alt="">Fresh</div>
+      <div><img src="img/rice.webp" alt="">Kirana</div>
+      <div><img src="img/milk.webp" alt="">Dairy</div>
+      <div><img src="img/popcorn.webp" alt="">Snacks</div>
+      <div><img src="img/soap.webp" alt="">Home</div>
+    </div>
+  </div>
+
+  <div class="banner">
+    <span class="tag"><svg class="i" style="width:12px;height:12px;stroke-width:2.6"><use href="#sun"/></svg>PICKED THIS MORNING</span>
+    <h2>Sabzi at<br>mandi prices</h2>
+    <p>Up to 40% off on fresh veggies</p>
+    <div class="veg">
+      <img src="img/onion.webp" style="width:66px;right:80px;bottom:0" alt="">
+      <img src="img/potato.webp" style="width:60px;right:4px;bottom:4px" alt="">
+      <img src="img/tomato.webp" style="width:78px;right:36px;bottom:20px" alt="">
+      <img src="img/chilli.webp" style="width:44px;right:6px;bottom:62px;transform:rotate(-20deg)" alt="">
+      <img src="img/leafy.webp" style="width:42px;right:116px;bottom:56px;transform:rotate(-15deg)" alt="">
+    </div>
+  </div>
+  <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+
+  <div class="sec" style="margin-top:12px">
+    <h3>Kirana bestsellers</h3>
+    <a>See all<svg class="i"><use href="#right"/></svg></a>
+  </div>
+  <div class="rail">
+    <div class="pc">
+      <div class="pimg"><span class="off">20%<br>OFF</span><img src="img/tomato.webp" alt=""><div class="add">ADD</div></div>
+      <div class="pinfo"><div class="price"><b>₹32</b><s>₹40</s></div><div class="pn">Tomato, Hybrid</div><div class="pw">1 kg</div></div>
+    </div>
+    <div class="pc">
+      <div class="pimg"><img src="img/milk.webp" alt=""><div class="add q"><span>−</span>2<span>+</span></div></div>
+      <div class="pinfo"><div class="price"><b>₹68</b></div><div class="pn">Full Cream Milk</div><div class="pw">1 L pouch</div></div>
+    </div>
+    <div class="pc">
+      <div class="pimg"><span class="off">15%<br>OFF</span><img src="img/onion.webp" alt=""><div class="add">ADD</div></div>
+      <div class="pinfo"><div class="price"><b>₹38</b><s>₹45</s></div><div class="pn">Onion, Nashik</div><div class="pw">1 kg</div></div>
+    </div>
+    <div class="pc">
+      <div class="pimg"><img src="img/bread.webp" alt=""><div class="add">ADD</div></div>
+      <div class="pinfo"><div class="price"><b>₹45</b></div><div class="pn">Brown Bread</div><div class="pw">400 g</div></div>
+    </div>
+  </div>
+
+  <div class="sec" style="margin-top:18px">
+    <h3>Shop by category</h3>
+  </div>
+  <div class="grid">
+    <div class="cg"><div class="ct"><img src="img/carrot.webp" alt=""><img src="img/banana.webp" alt=""></div><span>Fruits &amp; Veggies</span></div>
+    <div class="cg"><div class="ct"><img src="img/rice.webp" alt=""></div><span>Atta, Rice &amp; Dal</span></div>
+    <div class="cg"><div class="ct"><img src="img/jar.webp" alt=""></div><span>Oil, Ghee &amp; Masala</span></div>
+    <div class="cg"><div class="ct"><img src="img/milk.webp" alt=""><img src="img/egg.webp" alt=""></div><span>Dairy, Bread &amp; Eggs</span></div>
+    <div class="cg"><div class="ct"><img src="img/popcorn.webp" alt=""></div><span>Snacks</span></div>
+    <div class="cg"><div class="ct"><img src="img/teapot.webp" alt=""></div><span>Tea &amp; Coffee</span></div>
+    <div class="cg"><div class="ct"><img src="img/sponge.webp" alt=""></div><span>Cleaning</span></div>
+    <div class="cg"><div class="ct"><img src="img/babybottle.webp" alt=""></div><span>Baby Care</span></div>
+  </div>
+
+  <div class="cart">
+    <div class="thumbs"><i><img src="img/milk.webp" alt=""></i><i><img src="img/rice.webp" alt=""></i><i><img src="img/egg.webp" alt=""></i></div>
+    <div class="t"><b>View cart</b><small>4 items · ₹247</small></div>
+    <div class="go"><svg class="i"><use href="#right"/></svg></div>
+  </div>
+
+  <div class="nav">
+    <div class="on"><svg class="i"><use href="#home"/></svg>Home</div>
+    <div><svg class="i"><use href="#grid"/></svg>Categories</div>
+    <div><svg class="i"><use href="#again"/></svg>Buy again</div>
+    <div><svg class="i"><use href="#user"/></svg>Account</div>
+  </div>
+  <div class="homebar"></div>
+</div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="wallet" viewBox="0 0 24 24"><path d="M19 7V5.5A1.5 1.5 0 0 0 17.5 4H5a2 2 0 0 0 0 4h14a1 1 0 0 1 1 1v3h-3a2 2 0 0 0 0 4h3v3a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V6"/><path d="M20 12v4"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1.5 1.5 0 0 1-1.5 1.5H15v-6H9v6H4.5A1.5 1.5 0 0 1 3 20Z"/></symbol>
+  <symbol id="grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></symbol>
+  <symbol id="again" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+</defs></svg>
+</body>
+</html>
