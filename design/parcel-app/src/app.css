@@ -309,3 +309,43 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stro
 .crr .who small{display:flex;align-items:center;gap:4px;color:var(--sub);font-size:12px;font-weight:500;white-space:nowrap}
 .crr .cbtn{width:38px;height:38px}
 .crr .cbtn .i{width:17px;height:17px}
+
+/* ---------- 05 carry mode ---------- */
+.hello small strong{color:var(--green);font-weight:600;font-variant-numeric:tabular-nums}
+.mytrip{margin:10px 16px 0;background:var(--card);border:1px solid var(--hair);border-radius:var(--r);padding:12px 14px}
+.mt1{display:flex;align-items:center;justify-content:space-between}
+.mt1 .lv{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--green)}
+.mt1 .lv i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--green-soft)}
+.mt1 a{font-size:13px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--ink);line-height:1.2}
+.mt2{display:flex;align-items:center;gap:8px;margin-top:8px}
+.mt2 b{font-size:18px;font-weight:600;letter-spacing:-.03em}
+.mt2 .i{width:16px;height:16px;color:var(--sub);stroke-width:2}
+.mt3{display:flex;gap:6px;margin-top:10px;flex-wrap:nowrap}
+.pill2{height:28px;border-radius:var(--r-sm);background:#FAFAFB;border:1px solid var(--hair);display:flex;align-items:center;gap:5px;padding:0 8px;font-size:12px;font-weight:500;white-space:nowrap}
+.pill2 .i{width:14px;height:14px;color:var(--sub)}
+
+.req{margin:0 16px 8px;background:var(--card);border:1px solid var(--hair);border-radius:var(--r);padding:12px 14px}
+.req.new{border-color:rgba(255,90,31,.45)}
+.rq1{display:flex;align-items:center;gap:10px}
+.rq1 .avatar{width:36px;height:36px;font-size:12px}
+.rq1 .who{flex:1;min-width:0}
+.rq1 .who b{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:600}
+.rq1 .who small{display:flex;align-items:center;gap:4px;color:var(--sub);font-size:12px;font-weight:500}
+.earn{text-align:right}
+.earn b{display:block;font-family:GeistMono,monospace;font-size:18px;font-weight:600;letter-spacing:-.03em;line-height:1.1;color:var(--green)}
+.earn small{font-size:11px;color:var(--sub);font-weight:500}
+.rq2{position:relative;margin-top:10px;padding:8px 10px 8px 30px;background:#FAFAFB;border:1px solid var(--hair);border-radius:var(--r-sm)}
+.rq2 div{font-size:13px;font-weight:600;line-height:1.3}
+.rq2 div + div{margin-top:6px}
+.rq2 div span{font-weight:500;color:var(--sub);font-size:12px}
+.rq2 .d1,.rq2 .d2{position:absolute;left:11px;width:9px;height:9px}
+.rq2 .d1{top:13px;border-radius:50%;border:2.5px solid var(--ink)}
+.rq2 .d2{bottom:13px;border-radius:2px;background:var(--ink)}
+.rq2 .ln{position:absolute;left:15px;top:24px;bottom:24px;border-left:1.5px dotted rgba(18,19,23,.3)}
+.rq3{display:flex;align-items:center;gap:6px;margin-top:10px}
+.rq3 .pill2{height:26px}
+.rq4{display:grid;grid-template-columns:1fr 1.6fr;gap:8px;margin-top:10px}
+.ob{height:40px;border-radius:var(--r);border:1px solid var(--hair);background:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.fb{height:40px;border-radius:var(--r);background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;font-weight:600}
+.fb .i{width:16px;height:16px;stroke-width:2.4;color:var(--primary)}
+.sec .addtrip{display:flex;align-items:center;gap:4px;border:none;color:var(--ink)}
