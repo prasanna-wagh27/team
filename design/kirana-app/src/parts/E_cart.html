@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jhola · Cart</title>
+<style>
+<!--KIT-->
+.screen{background:var(--bg)}
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.topbar{padding-bottom:10px}
+.wrap{padding:10px 12px 0}
+.yay{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:10px;background:linear-gradient(90deg,#E3F6EA,#F2FBF5);border:1px solid #CDEBD8;font-size:12.5px;font-weight:600;color:var(--g-dd)}
+.yay .ic{width:26px;height:26px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;flex:none}
+.yay .ic .i{width:14px;height:14px;stroke-width:2.6}
+.yay b{font-weight:800}
+
+.ship{margin-top:10px;padding:12px 12px 4px}
+.sh{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.sh .ic{width:36px;height:36px;border-radius:9px;background:var(--warm);display:grid;place-items:center;color:#B26B00}
+.sh .ic .i{width:19px;height:19px}
+.sh b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.4px}
+.sh small{font-size:11.5px;color:var(--sub)}
+.it{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #F3F4F2}
+.it:last-child{border-bottom:0}
+.it .th{width:48px;height:48px;border-radius:9px;background:#F7F8F6;border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.it .th .pk{width:30px;height:36px}
+.it .nm{flex:1;min-width:0}
+.it .nm b{display:block;font-size:12.5px;font-weight:600;letter-spacing:-.15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it .nm small{font-size:11.5px;color:var(--sub)}
+.step{height:30px;width:72px;border-radius:8px;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 8px;font-size:13px;font-weight:700;flex:none}
+.step span{font-size:16px;font-weight:500;line-height:1}
+.it .pr{width:52px;text-align:right;flex:none}
+.it .pr b{display:block;font-size:13px;font-weight:700}
+.it .pr s{font-size:11px;color:var(--sub2)}
+
+.more{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:11px 12px;font-size:13px;font-weight:600}
+.more span{display:flex;align-items:center;gap:8px}
+.more .i{width:18px;height:18px;color:var(--g)}
+.more em{font-style:normal;color:var(--g);font-weight:700;font-size:12.5px;display:flex;align-items:center}
+.more em .i{width:13px;height:13px;stroke-width:2.8}
+
+.bill{margin-top:10px;padding:12px}
+.bill h4{font-size:14px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px}
+.bl{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#3C423E;padding:3px 0}
+.bl span{display:flex;align-items:center;gap:6px}
+.bl .i{width:14px;height:14px;color:var(--sub)}
+.bl s{color:var(--sub2);margin-right:4px}
+.bl .free{color:var(--g);font-weight:700}
+.bl.tot{border-top:1px dashed var(--line);margin-top:6px;padding-top:9px;font-size:14px;font-weight:800;color:var(--ink)}
+.saved{margin-top:9px;height:30px;border-radius:7px;background:#EAF3FF;color:#1D4FB8;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px}
+.saved .i{width:14px;height:14px}
+
+.tip{margin-top:10px;padding:12px}
+.tip h4{font-size:13.5px;font-weight:700;letter-spacing:-.2px}
+.tip p{font-size:11.5px;color:var(--sub);margin-top:2px}
+.tips{display:flex;gap:7px;margin-top:9px}
+.tips div{height:32px;padding:0 12px;border-radius:8px;border:1px solid rgba(20,24,21,.12);font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:4px;background:#fff}
+.tips .on{border-color:var(--g);background:var(--g-s);color:var(--g-d)}
+
+.bbar{flex-direction:column;align-items:stretch;gap:10px;padding-top:10px}
+.pay{display:flex;align-items:center;gap:10px}
+.pay .ic{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;font-size:10px;font-weight:900;letter-spacing:-.2px;color:#5F259F;background:#fff}
+.pay .t{flex:1}
+.pay small{display:block;font-size:11px;color:var(--sub);font-weight:500}
+.pay b{display:flex;align-items:center;gap:3px;font-size:13.5px;font-weight:700}
+.pay b .i{width:14px;height:14px;stroke-width:2.6}
+.pay .cod{font-size:12px;font-weight:700;color:var(--g)}
+.bbar .btn{flex:none;justify-content:space-between;padding:0 16px}
+.btn .l{display:flex;flex-direction:column;align-items:flex-start;line-height:1.1}
+.btn .l b{font-size:16px;font-weight:800}
+.btn .l small{font-size:10.5px;font-weight:600;color:var(--g-l);letter-spacing:.3px}
+.btn .r{display:flex;align-items:center;gap:4px}
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="top">
+    <!--SB-->
+    <div class="topbar">
+      <div class="sq"><svg class="i"><use href="#left"/></svg></div>
+      <div class="tt"><b>Checkout</b><small><svg class="i"><use href="#pin"/></svg>Home – B-12, Mayur Colony, Kothrud</small></div>
+      <div class="sq"><svg class="i"><use href="#share"/></svg></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="yay"><span class="ic"><svg class="i"><use href="#check"/></svg></span><span>Yay! You saved <b>₹85</b> on this order</span></div>
+
+    <div class="card ship">
+      <div class="sh">
+        <div class="ic"><svg class="i"><use href="#clock"/></svg></div>
+        <div><b>Delivery in 11 minutes</b><small>5 items · packed by Shree Ganesh Kirana</small></div>
+      </div>
+      <div class="it"><div class="th"><svg class="pk"><use href="#pk-atta"/></svg></div><div class="nm"><b>Gehu Gold Whole Wheat Atta</b><small>5 kg</small></div><div class="step"><span>−</span>1<span>+</span></div><div class="pr"><b>₹265</b><s>₹299</s></div></div>
+      <div class="it"><div class="th"><svg class="pk"><use href="#pk-dal"/></svg></div><div class="nm"><b>Unpolished Toor Dal</b><small>1 kg</small></div><div class="step"><span>−</span>1<span>+</span></div><div class="pr"><b>₹159</b><s>₹180</s></div></div>
+      <div class="it"><div class="th"><svg class="pk"><use href="#pk-milk"/></svg></div><div class="nm"><b>Dudhwala Toned Milk</b><small>500 ml</small></div><div class="step"><span>−</span>2<span>+</span></div><div class="pr"><b>₹56</b></div></div>
+      <div class="it"><div class="th"><svg class="pk"><use href="#pk-bread"/></svg></div><div class="nm"><b>Brown Bread</b><small>400 g</small></div><div class="step"><span>−</span>1<span>+</span></div><div class="pr"><b>₹45</b><s>₹50</s></div></div>
+    </div>
+
+    <div class="card more"><span><svg class="i"><use href="#plus"/></svg>Missed something?</span><em>Add more items<svg class="i"><use href="#right"/></svg></em></div>
+
+    <div class="card bill">
+      <h4>Bill details</h4>
+      <div class="bl"><span><svg class="i"><use href="#note"/></svg>Items total</span><span><s>₹585</s>₹525</span></div>
+      <div class="bl"><span><svg class="i"><use href="#scooter"/></svg>Delivery fee</span><span><s>₹25</s><b class="free">FREE</b></span></div>
+      <div class="bl"><span><svg class="i"><use href="#bag"/></svg>Carry bag (cloth jhola)</span><span>₹0</span></div>
+      <div class="bl tot"><span>To pay</span><span>₹525</span></div>
+    </div>
+  </div>
+
+  <div class="bbar">
+    <div class="pay">
+      <div class="ic">UPI</div>
+      <div class="t"><small>Pay using</small><b>GPay · rohan@okhdfc<svg class="i"><use href="#down"/></svg></b></div>
+      <span class="cod">or Cash</span>
+    </div>
+    <div class="btn"><span class="l"><b>₹525</b><small>TOTAL</small></span><span class="r">Place order<svg class="i"><use href="#right"/></svg></span></div>
+  </div>
+  <div class="homebar"></div>
+</div>
+<!--ICONS-->
+<!--PACKS-->
+</body>
+</html>

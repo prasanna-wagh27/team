@@ -1,0 +1,96 @@
+/* Jhola UI kit (final: green direction). Font: Geist. Packshot labels keep their own "packaging" fonts. */
+@font-face{font-family:Geist;font-weight:400;src:url(fonts/geist-sans-latin-400-normal.woff2)}
+@font-face{font-family:Geist;font-weight:500;src:url(fonts/geist-sans-latin-500-normal.woff2)}
+@font-face{font-family:Geist;font-weight:600;src:url(fonts/geist-sans-latin-600-normal.woff2)}
+@font-face{font-family:Geist;font-weight:700;src:url(fonts/geist-sans-latin-700-normal.woff2)}
+@font-face{font-family:Geist;font-weight:800;src:url(fonts/geist-sans-latin-800-normal.woff2)}
+@font-face{font-family:Geist;font-weight:900;src:url(fonts/geist-sans-latin-900-normal.woff2)}
+@font-face{font-family:Onest;font-weight:500;src:url(fonts/onest-latin-500-normal.woff2)}
+@font-face{font-family:Onest;font-weight:600;src:url(fonts/onest-latin-600-normal.woff2)}
+@font-face{font-family:Onest;font-weight:700;src:url(fonts/onest-latin-700-normal.woff2)}
+@font-face{font-family:Onest;font-weight:800;src:url(fonts/onest-latin-800-normal.woff2)}
+@font-face{font-family:Brico;font-weight:800;src:url(fonts/bricolage-grotesque-latin-800-normal.woff2)}
+
+:root{--g:#0A8A43;--g-d:#06622F;--g-dd:#053B20;--g-s:#E6F6EC;--g-l:#C9F2D8;--or:#FF6A13;--or-s:#FFF0E5;--yl:#FFE14A;
+  --ink:#141815;--sub:#6B726D;--sub2:#A3A9A5;--line:#ECEEEB;--bg:#F5F6F4;--warm:#FFF6E2;--r:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8EAE7}
+body{font-family:Geist,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
+.d{font-weight:800;letter-spacing:-.04em}
+.screen{width:390px;height:844px;position:relative;overflow:hidden;background:#fff}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pk{width:100%;height:100%;overflow:visible}
+
+/* status bar + island + home bar */
+.sb{height:47px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px;letter-spacing:-.2px;position:relative;z-index:9}
+.sb .r{display:flex;gap:6px;align-items:center}.sb svg{fill:currentColor}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:122px;height:35px;border-radius:20px;background:#000;z-index:20}
+.homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#141815;z-index:30}
+
+/* top bar (inner pages) */
+.topbar{display:flex;align-items:center;gap:10px;padding:4px 16px 10px;position:relative;z-index:5}
+.sq{width:40px;height:40px;border-radius:10px;border:1px solid rgba(20,24,21,.1);background:#fff;display:grid;place-items:center;flex:none}
+.sq .i{width:20px;height:20px}
+.tt{flex:1;min-width:0}
+.tt b{display:block;font-size:17px;font-weight:700;letter-spacing:-.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tt small{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--sub);margin-top:1px;white-space:nowrap}
+.tt small .i{width:13px;height:13px;color:var(--g)}
+
+/* section header */
+.sec{display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-top:14px}
+.sec h3{font-size:18px;font-weight:800;letter-spacing:-.6px}
+.sec a{font-size:12.5px;font-weight:700;color:var(--g);display:flex;align-items:center;gap:1px}
+.sec a .i{width:13px;height:13px;stroke-width:2.8}
+
+/* product card (Blinkit-style) */
+.pc{border:1px solid var(--line);border-radius:12px;background:#fff;padding:8px 8px 9px;position:relative}
+.pc .im{height:104px;border-radius:9px;background:#F7F8F6;display:grid;place-items:center;position:relative}
+.pc .im .pk{width:68px;height:82px}
+.pc .im img{width:72px;height:72px}
+.badge{position:absolute;left:6px;top:-1px;width:30px;padding:3px 0 6px;background:var(--or);color:#fff;font-size:9px;font-weight:800;line-height:1.05;text-align:center;z-index:1;
+  clip-path:polygon(0 0,100% 0,100% 100%,83% 88%,66% 100%,50% 88%,33% 100%,17% 88%,0 100%)}
+.eta{display:inline-flex;align-items:center;gap:3px;height:18px;padding:0 5px;border-radius:4px;background:#F2F3F1;font-size:9.5px;font-weight:700;color:var(--ink);letter-spacing:.2px;margin-top:8px}
+.eta .i{width:10px;height:10px;stroke-width:2.6}
+.pc .pn{font-size:12.5px;font-weight:600;line-height:1.28;margin-top:5px;letter-spacing:-.15px;height:32px;overflow:hidden}
+.pc .pw{font-size:11.5px;color:var(--sub);margin-top:3px}
+.pc .pb{display:flex;align-items:flex-end;justify-content:space-between;margin-top:8px}
+.pc .pr b{display:block;font-size:13.5px;font-weight:700;letter-spacing:-.2px}
+.pc .pr s{display:block;font-size:11px;color:var(--sub2)}
+.addb{height:32px;min-width:64px;border-radius:8px;border:1px solid var(--g);background:#F4FBF6;color:var(--g);font-size:12.5px;font-weight:800;letter-spacing:.4px;display:flex;align-items:center;justify-content:center}
+.addb.q{background:var(--g);color:#fff;justify-content:space-between;padding:0 8px;min-width:68px}
+.addb.q span{font-size:16px;font-weight:500;line-height:1}
+.opt{font-size:10px;font-weight:600;color:var(--sub);text-align:center;margin-top:3px}
+
+/* green cart bar */
+.cart{position:absolute;left:12px;right:12px;bottom:96px;z-index:6;border-radius:14px;background:var(--g);color:#fff;padding:9px 9px 10px 9px;box-shadow:0 14px 30px -10px rgba(6,98,47,.65)}
+.cart .row{display:flex;align-items:center;gap:11px}
+.thumbs{display:flex}
+.thumbs i{width:38px;height:38px;border-radius:9px;background:#fff;display:grid;place-items:center;border:2px solid var(--g);overflow:hidden}
+.thumbs i+i{margin-left:-12px}
+.thumbs .pk{width:26px;height:31px;margin-top:3px}
+.cart .t{flex:1;min-width:0;white-space:nowrap}
+.cart .t b{display:block;font-size:15px;font-weight:700;letter-spacing:-.3px}
+.cart .t small{font-size:11.5px;font-weight:500;color:var(--g-l)}
+.cart .t small b{display:inline;font-size:11.5px;color:#fff}
+.cart .go{display:flex;align-items:center;gap:2px;font-size:14px;font-weight:700;white-space:nowrap;height:36px;padding:0 8px 0 12px;border-radius:9px;background:rgba(255,255,255,.16)}
+.cart .go .i{width:16px;height:16px;stroke-width:2.8}
+.prog{height:4px;border-radius:2px;background:rgba(255,255,255,.22);margin:9px 5px 0 3px;position:relative}
+.prog i{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:var(--yl)}
+.prog em{position:absolute;right:-4px;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;background:#fff;color:var(--g);display:grid;place-items:center}
+.prog em .i{width:10px;height:10px;stroke-width:3}
+
+/* bottom action bar */
+.bbar{position:absolute;left:0;right:0;bottom:0;z-index:8;background:#fff;border-top:1px solid var(--line);padding:12px 16px 34px;display:flex;align-items:center;gap:12px}
+.btn{height:52px;border-radius:12px;background:var(--g);color:#fff;font-size:16px;font-weight:700;letter-spacing:-.2px;display:flex;align-items:center;justify-content:center;gap:8px;flex:1}
+.btn .i{width:18px;height:18px;stroke-width:2.6}
+
+/* tab bar */
+.nav{position:absolute;left:0;right:0;bottom:0;height:86px;background:#fff;border-top:1px solid var(--line);z-index:7;display:flex;padding:0 6px}
+.nav div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--sub2);padding-top:10px;position:relative}
+.nav .i{width:24px;height:24px;stroke-width:1.8}
+.nav .on{color:var(--g-d)}
+.nav .on .i{fill:var(--g-s)}
+.nav .on:before{content:"";position:absolute;top:-1px;width:32px;height:3px;border-radius:0 0 3px 3px;background:var(--g)}
+
+/* generic card */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r)}

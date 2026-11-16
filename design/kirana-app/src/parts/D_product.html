@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jhola · Product</title>
+<style>
+<!--KIT-->
+.screen{background:var(--bg)}
+.hero{position:relative;height:388px;background:radial-gradient(70% 60% at 50% 55%,#FFFFFF 0%,rgba(255,255,255,0) 70%),linear-gradient(180deg,#FFF1D6,#FFF8EA);border-bottom:1px solid #F3EBD6}
+.hero .tb{position:absolute;left:0;right:0;top:47px;display:flex;gap:8px;padding:4px 16px;z-index:3}
+.hero .tb .sq{border-color:rgba(20,24,21,.08)}
+.hero .tb .sp{flex:1}
+.shot{position:absolute;left:50%;top:92px;transform:translateX(-50%);width:200px;height:240px}
+.shot:after{content:"";position:absolute;left:10%;right:10%;bottom:-6px;height:20px;border-radius:50%;background:radial-gradient(closest-side,rgba(120,70,0,.22),transparent)}
+.thumbs2{position:absolute;left:16px;bottom:14px;display:flex;flex-direction:column;gap:6px}
+.thumbs2 i{width:42px;height:42px;border-radius:9px;background:#fff;border:1px solid rgba(20,24,21,.1);display:grid;place-items:center;overflow:hidden}
+.thumbs2 i.on{border:1.5px solid var(--g)}
+.thumbs2 .pk{width:26px;height:32px}
+.thumbs2 i.nut{font-size:8.5px;font-weight:700;color:var(--sub);text-align:center;line-height:1.1}
+.dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px}
+.dots i{width:5px;height:5px;border-radius:3px;background:rgba(20,24,21,.18)}.dots i.on{width:16px;background:var(--ink)}
+.fresh{position:absolute;right:16px;bottom:14px;display:flex;align-items:center;gap:5px;height:26px;padding:0 9px;border-radius:13px;background:#fff;border:1px solid rgba(20,24,21,.08);font-size:11px;font-weight:700;color:var(--g-d)}
+.fresh .i{width:13px;height:13px}
+
+.info{background:#fff;padding:14px 16px 14px;border-bottom:1px solid var(--line)}
+.r1{display:flex;align-items:center;gap:8px}
+.info .eta{margin:0}
+.brand{font-size:12.5px;font-weight:700;color:var(--g);display:flex;align-items:center;gap:1px}
+.brand .i{width:13px;height:13px;stroke-width:2.8}
+.info h1{font-size:21px;font-weight:800;letter-spacing:-.7px;line-height:1.15;margin-top:8px}
+.rate{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12.5px;color:var(--sub);font-weight:500}
+.rate .stars{display:flex;gap:1px}.rate .stars .i{width:13px;height:13px}
+.rate b{color:var(--ink);font-weight:700}
+
+.sizes{display:flex;gap:8px;margin-top:14px}
+.sz{flex:1;border:1px solid rgba(20,24,21,.12);border-radius:10px;padding:9px 10px 9px;position:relative;background:#fff}
+.sz small{display:block;font-size:12px;font-weight:600;color:var(--sub)}
+.sz b{display:block;font-size:15px;font-weight:800;letter-spacing:-.3px;margin-top:3px}
+.sz s{font-size:11px;color:var(--sub2);font-weight:500;margin-left:3px}
+.sz em{display:block;font-style:normal;font-size:10.5px;font-weight:700;color:var(--g);margin-top:2px}
+.sz.on{border:1.5px solid var(--g);background:#F6FCF8}
+.sz .best{position:absolute;top:-9px;left:50%;transform:translateX(-50%);height:17px;padding:0 6px;border-radius:5px;background:var(--g);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;white-space:nowrap}
+
+.blk{background:#fff;margin-top:8px;padding:13px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.store{display:flex;align-items:center;gap:11px}
+.store .ic{width:40px;height:40px;border-radius:10px;background:var(--g-s);display:grid;place-items:center;color:var(--g-d);flex:none}
+.store .ic .i{width:20px;height:20px}
+.store .t{flex:1;min-width:0}
+.store .t b{display:flex;align-items:center;gap:4px;font-size:13.5px;font-weight:700}
+.store .t b .vf{width:13px;height:13px;color:var(--g)}
+.store .t small{display:block;font-size:12px;color:var(--sub);margin-top:2px}
+.store .go{font-size:12.5px;font-weight:700;color:var(--g);display:flex;align-items:center}
+.store .go .i{width:13px;height:13px;stroke-width:2.8}
+.hl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.hl div{border:1px solid var(--line);border-radius:10px;padding:9px 8px;display:flex;flex-direction:column;gap:5px;font-size:11.5px;font-weight:600;line-height:1.2;background:#FBFBFA}
+.hl .i{width:18px;height:18px;color:var(--g)}
+
+.bbar .pp{display:flex;flex-direction:column}
+.bbar .pp b{font-size:20px;font-weight:800;letter-spacing:-.6px}
+.bbar .pp small{font-size:11.5px;color:var(--sub);font-weight:500}
+.bbar .pp small s{color:var(--sub2)}
+.bbar .pp small em{font-style:normal;color:var(--g);font-weight:700}
+.bbar .btn{flex:none;width:200px}
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="hero">
+    <!--SB-->
+    <div class="tb">
+      <div class="sq"><svg class="i"><use href="#left"/></svg></div>
+      <div class="sp"></div>
+      <div class="sq"><svg class="i"><use href="#heart"/></svg></div>
+      <div class="sq"><svg class="i"><use href="#search"/></svg></div>
+      <div class="sq"><svg class="i"><use href="#share"/></svg></div>
+    </div>
+    <svg class="shot pk"><use href="#pk-atta"/></svg>
+    <div class="thumbs2">
+      <i class="on"><svg class="pk"><use href="#pk-atta"/></svg></i>
+      <i><img src="img/roti.webp" alt="" style="width:28px;height:28px" onerror="this.remove()"></i>
+      <i class="nut">Nutri<br>info</i>
+    </div>
+    <div class="dots"><i class="on"></i><i></i><i></i></div>
+    <div class="fresh"><svg class="i"><use href="#leaf2"/></svg>Milled 6 days ago</div>
+  </div>
+
+  <div class="info">
+    <div class="r1"><span class="eta"><svg class="i"><use href="#clock"/></svg>11 MINS</span><span class="brand">Gehu Gold<svg class="i"><use href="#right"/></svg></span></div>
+    <h1>Gehu Gold Chakki Fresh Whole Wheat Atta</h1>
+    <div class="rate"><span class="stars"><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg></span><b>4.6</b>· 2,140 ratings</div>
+    <div class="sizes">
+      <div class="sz"><small>1 kg</small><b>₹58</b><em>₹58/kg</em></div>
+      <div class="sz on"><span class="best">BEST VALUE</span><small>5 kg</small><b>₹265<s>₹299</s></b><em>₹53/kg</em></div>
+      <div class="sz"><small>10 kg</small><b>₹515<s>₹590</s></b><em>₹51.5/kg</em></div>
+    </div>
+  </div>
+
+  <div class="blk">
+    <div class="store">
+      <div class="ic"><svg class="i"><use href="#store"/></svg></div>
+      <div class="t"><b>Shree Ganesh Kirana<svg class="vf"><use href="#vf"/></svg></b><small>Sold &amp; packed by your local store · 400 m</small></div>
+      <span class="go">Visit<svg class="i"><use href="#right"/></svg></span>
+    </div>
+    <div class="hl">
+      <div><svg class="i"><use href="#leaf2"/></svg>100% whole wheat</div>
+      <div><svg class="i"><use href="#shield"/></svg>No maida added</div>
+      <div><svg class="i"><use href="#again"/></svg>Easy 2-day return</div>
+    </div>
+  </div>
+
+  <div class="bbar">
+    <div class="pp"><b>₹265</b><small>MRP <s>₹299</s> · <em>11% off</em></small></div>
+    <div class="btn">Add to cart</div>
+  </div>
+  <div class="homebar"></div>
+</div>
+<!--ICONS-->
+<!--PACKS-->
+</body>
+</html>

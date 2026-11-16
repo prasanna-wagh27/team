@@ -28,6 +28,7 @@ defs = '''
 <radialGradient id="pk-pillow" cx=".38" cy=".38" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity=".10"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></radialGradient>
 <linearGradient id="pk-gloss" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <pattern id="pt-dal" width="6" height="5" patternUnits="userSpaceOnUse"><rect width="6" height="5" fill="#F4C02E"/><circle cx="1.6" cy="1.4" r="1.45" fill="#F8D45A"/><circle cx="4.6" cy="3.6" r="1.45" fill="#E9AC12"/><circle cx="4.4" cy="1" r=".9" fill="#FBE08A"/></pattern>
+<pattern id="pt-chana" width="6" height="5" patternUnits="userSpaceOnUse"><rect width="6" height="5" fill="#E2A53A"/><circle cx="1.6" cy="1.4" r="1.5" fill="#EDBE5C"/><circle cx="4.6" cy="3.6" r="1.5" fill="#D18F22"/><circle cx="4.4" cy="1" r=".8" fill="#F5D287"/></pattern>
 <pattern id="pt-sugar" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#F3F2EE"/><rect x=".6" y=".6" width="1.7" height="1.7" fill="#fff" transform="rotate(15 1.4 1.4)"/><rect x="2.8" y="2.7" width="1.6" height="1.6" fill="#DCDAD3" transform="rotate(-20 3.6 3.5)"/></pattern>
 <pattern id="pt-rice" width="7" height="5" patternUnits="userSpaceOnUse"><rect width="7" height="5" fill="#EFE9DA"/><ellipse cx="2" cy="1.5" rx="1.9" ry=".7" fill="#fff" transform="rotate(25 2 1.5)"/><ellipse cx="5.2" cy="3.6" rx="1.9" ry=".7" fill="#FBF8F0" transform="rotate(-30 5.2 3.6)"/></pattern>
 '''
@@ -80,6 +81,7 @@ def pouch(id, fill, band, ink, name, sub, wt):
 <path d="{p}" fill="none" stroke="#000" stroke-opacity=".08" stroke-width=".6"/>
 '''
 S["dal"] = pouch("dal", "url(#pt-dal)", "#14853F", "#14532D", "Toor Dal", "UNPOLISHED", "1 kg")
+S["chana"] = pouch("chana", "url(#pt-chana)", "#B5481B", "#5A2A0B", "Chana Dal", "PREMIUM", "1 kg")
 S["sugar"] = pouch("sugar", "url(#pt-sugar)", "#E2336B", "#7A1236", "Sugar", "FINE GRAIN", "1 kg")
 S["poha"] = pouch("poha", "url(#pt-rice)", "#E07A12", "#6B3407", "Poha", "INDORI", "500 g")
 

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jhola · Order tracking</title>
+<style>
+<!--KIT-->
+.screen{background:#E9EEE6}
+.map{position:absolute;left:0;top:0;width:390px;height:430px}
+.mtb{position:absolute;left:0;right:0;top:47px;display:flex;align-items:center;gap:8px;padding:4px 16px;z-index:3}
+.mtb .sq{box-shadow:0 4px 12px -6px rgba(0,0,0,.25);border-color:rgba(20,24,21,.06)}
+.mtb .sp{flex:1}
+.help{height:40px;padding:0 14px;border-radius:10px;background:#fff;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;box-shadow:0 4px 12px -6px rgba(0,0,0,.25)}
+.help .i{width:16px;height:16px}
+.rider{position:absolute;left:206px;top:212px;z-index:2}
+.rider .dot{width:44px;height:44px;border-radius:50%;background:#fff;border:3px solid var(--g);display:grid;place-items:center;color:var(--g-d);box-shadow:0 6px 14px -4px rgba(6,98,47,.5)}
+.rider .dot .i{width:22px;height:22px;stroke-width:2}
+.rider .pulse{position:absolute;inset:-12px;border-radius:50%;background:rgba(10,138,67,.16)}
+.bub{position:absolute;left:50%;bottom:54px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:11.5px;font-weight:700;white-space:nowrap;height:26px;padding:0 9px;border-radius:7px;display:flex;align-items:center;gap:5px}
+.bub:after{content:"";position:absolute;left:50%;bottom:-4px;transform:translateX(-50%) rotate(45deg);width:8px;height:8px;background:var(--ink)}
+.bub i{width:6px;height:6px;border-radius:50%;background:#4ADE80}
+.mk{position:absolute;z-index:2;display:flex;flex-direction:column;align-items:center}
+.mk .p{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#fff;box-shadow:0 6px 14px -5px rgba(0,0,0,.4)}
+.mk .p .i{width:19px;height:19px}
+.mk .lb{margin-top:5px;background:#fff;border-radius:6px;padding:3px 7px;font-size:10.5px;font-weight:700;white-space:nowrap;box-shadow:0 3px 8px -4px rgba(0,0,0,.3)}
+
+.sheet{position:absolute;left:0;right:0;top:396px;bottom:0;background:#fff;border-radius:20px 20px 0 0;z-index:4;padding:8px 16px 0;box-shadow:0 -10px 30px -16px rgba(0,0,0,.25)}
+.grab{width:38px;height:4px;border-radius:2px;background:#DADDD8;margin:0 auto 12px}
+.st1{display:flex;align-items:flex-start;justify-content:space-between}
+.st1 h1{font-size:24px;font-weight:800;letter-spacing:-.9px;line-height:1.05}
+.st1 h1 em{font-style:normal;color:var(--g)}
+.st1 p{font-size:12.5px;color:var(--sub);margin-top:5px}
+.eta2{width:58px;height:58px;border-radius:14px;background:var(--g);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+.eta2 b{font-size:22px;font-weight:800;letter-spacing:-.8px;line-height:1}
+.eta2 small{font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--g-l)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:14px}
+.steps div{font-size:10.5px;font-weight:600;color:var(--sub2)}
+.steps div:before{content:"";display:block;height:4px;border-radius:2px;background:#E8EAE6;margin-bottom:6px}
+.steps .d{color:var(--ink)}.steps .d:before{background:var(--g)}
+.steps .a{color:var(--g-d);font-weight:700}.steps .a:before{background:linear-gradient(90deg,var(--g) 55%,#E8EAE6 55%)}
+
+.row{display:flex;align-items:center;gap:11px;padding:12px;margin-top:12px}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;background:linear-gradient(135deg,#3BB273,#0A6B37);flex:none}
+.row .t{flex:1;min-width:0}
+.row .t b{display:flex;align-items:center;gap:5px;font-size:14px;font-weight:700;letter-spacing:-.2px}
+.row .t small{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--sub);margin-top:2px}
+.row .t small .i{width:12px;height:12px}
+.cb{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink);flex:none}
+.cb.g{background:var(--g);border-color:var(--g);color:#fff}
+.cb .i{width:18px;height:18px}
+.store2{display:flex;align-items:center;gap:11px;margin-top:8px;padding:11px 12px;border-radius:12px;background:var(--warm);border:1px solid #F3E6C4}
+.store2 .ic{width:40px;height:40px;border-radius:10px;background:#fff;display:grid;place-items:center;color:#B26B00;flex:none;border:1px solid #F0E2BD}
+.store2 .ic .i{width:20px;height:20px}
+.store2 b{display:block;font-size:13px;font-weight:700}
+.store2 small{display:block;font-size:11.5px;color:#7A6A45;margin-top:2px;line-height:1.3}
+.otp{display:flex;align-items:center;justify-content:space-between;margin-top:8px;padding:10px 12px;border-radius:12px;border:1px solid var(--line)}
+.otp .l{display:flex;align-items:center;gap:10px}
+.otp .l .i{width:18px;height:18px;color:var(--g)}
+.otp .l small{display:block;font-size:11.5px;color:var(--sub)}
+.otp .l b{font-size:13px;font-weight:700}
+.otp .code{display:flex;gap:4px}
+.otp .code i{width:26px;height:32px;border-radius:7px;background:var(--g-s);color:var(--g-dd);font-style:normal;font-size:16px;font-weight:800;display:grid;place-items:center}
+.sum{display:flex;align-items:center;gap:11px;margin-top:8px;padding:10px 12px;border-radius:12px;border:1px solid var(--line)}
+.sum .th{display:flex}
+.sum .th i{width:32px;height:32px;border-radius:8px;background:#F7F8F6;border:1.5px solid #fff;outline:1px solid var(--line);display:grid;place-items:center;font-style:normal}
+.sum .th i+i{margin-left:-8px}
+.sum .th .pk{width:20px;height:24px}
+.sum .th .n{font-size:11px;font-weight:700;color:var(--sub)}
+.sum .t{flex:1}
+.sum .t b{display:block;font-size:13px;font-weight:700}
+.sum .t small{font-size:11.5px;color:var(--sub)}
+.sum>.i{width:16px;height:16px;color:var(--sub);stroke-width:2.6}
+</style>
+</head>
+<body>
+<div class="screen">
+  <svg class="map" viewBox="0 0 390 430">
+    <rect width="390" height="430" fill="#EEF1EB"/>
+    <!-- blocks -->
+    <g fill="#F8F9F6" stroke="#E3E7DF" stroke-width="1">
+      <rect x="-10" y="70" width="120" height="96" rx="8"/><rect x="128" y="70" width="104" height="96" rx="8"/><rect x="250" y="56" width="150" height="110" rx="8"/>
+      <rect x="-10" y="186" width="96" height="110" rx="8"/><rect x="104" y="186" width="86" height="64" rx="8"/><rect x="290" y="186" width="110" height="80" rx="8"/>
+      <rect x="-10" y="316" width="150" height="120" rx="8"/><rect x="160" y="300" width="112" height="140" rx="8"/><rect x="290" y="286" width="110" height="150" rx="8"/>
+    </g>
+    <rect x="208" y="186" width="64" height="94" rx="8" fill="#D6ECCF" stroke="#C4E2BA"/>
+    <g fill="#BFDDB4"><circle cx="226" cy="206" r="6"/><circle cx="250" cy="222" r="7"/><circle cx="230" cy="250" r="6"/><circle cx="256" cy="262" r="5"/></g>
+    <!-- roads -->
+    <g stroke="#fff" stroke-linecap="round" fill="none">
+      <path d="M-10 176 H400" stroke-width="16"/>
+      <path d="M120 40 V440" stroke-width="12"/>
+      <path d="M241 40 V180 M281 176 V440" stroke-width="10"/>
+      <path d="M-10 306 H400" stroke-width="12"/>
+      <path d="M96 186 V300 M198 186 V300" stroke-width="8"/>
+    </g>
+    <text x="16" y="172" font-family="Geist" font-size="9" font-weight="600" fill="#A3AA9F" letter-spacing=".5">PAUD ROAD</text>
+    <text x="16" y="302" font-family="Geist" font-size="9" font-weight="600" fill="#A3AA9F" letter-spacing=".5">MAYUR COLONY</text>
+    <!-- route -->
+    <path d="M52 210 H96 V176 H198 V306 H328" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M52 210 H96 V176 H198 V234" fill="none" stroke="#0A8A43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M198 234 V306 H328" fill="none" stroke="#0A8A43" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 8" stroke-linejoin="round"/>
+  </svg>
+
+  <!--SB-->
+  <div class="mtb">
+    <div class="sq"><svg class="i"><use href="#left"/></svg></div>
+    <div class="sp"></div>
+    <div class="help"><svg class="i"><use href="#chat"/></svg>Help</div>
+  </div>
+
+  <div class="mk" style="left:34px;top:192px"><div class="p" style="background:var(--g)"><svg class="i"><use href="#store"/></svg></div><span class="lb">Shree Ganesh</span></div>
+  <div class="mk" style="left:310px;top:288px"><div class="p" style="background:var(--ink);border-radius:50%"><svg class="i"><use href="#home"/></svg></div><span class="lb">Home</span></div>
+  <div class="rider" style="left:176px;top:212px"><span class="pulse"></span><div class="dot"><svg class="i"><use href="#scooter"/></svg></div><span class="bub"><i></i>Rahul · 650 m away</span></div>
+
+  <div class="sheet">
+    <div class="grab"></div>
+    <div class="st1">
+      <div><h1>On the way to <em>you</em></h1><p>Rahul picked up your order at 7:42 pm</p></div>
+      <div class="eta2"><b>6</b><small>MINS</small></div>
+    </div>
+    <div class="steps">
+      <div class="d">Confirmed</div><div class="d">Packed</div><div class="a">On the way</div><div>Delivered</div>
+    </div>
+
+    <div class="card row">
+      <div class="av">RP</div>
+      <div class="t"><b>Rahul Pawar</b><small><svg class="i"><use href="#star"/></svg>4.9 · 1,200+ deliveries in Kothrud</small></div>
+      <div class="cb"><svg class="i"><use href="#chat"/></svg></div>
+      <div class="cb g"><svg class="i"><use href="#phone"/></svg></div>
+    </div>
+
+    <div class="store2">
+      <div class="ic"><svg class="i"><use href="#store"/></svg></div>
+      <div><b>Packed by Ramesh at Shree Ganesh Kirana</b><small>Milk is from today’s 6 am batch. All 5 items checked.</small></div>
+    </div>
+
+    <div class="otp">
+      <div class="l"><svg class="i"><use href="#shield"/></svg><div><small>Share at the door</small><b>Delivery OTP</b></div></div>
+      <div class="code"><i>4</i><i>8</i><i>2</i><i>1</i></div>
+    </div>
+
+    <div class="sum">
+      <div class="th"><i><svg class="pk"><use href="#pk-atta"/></svg></i><i><svg class="pk"><use href="#pk-dal"/></svg></i><i><svg class="pk"><use href="#pk-milk"/></svg></i><i class="n">+2</i></div>
+      <div class="t"><b>Order #JH-20419</b><small>5 items · ₹525 paid via UPI</small></div>
+      <svg class="i"><use href="#right"/></svg>
+    </div>
+  </div>
+  <div class="homebar"></div>
+</div>
+<!--ICONS-->
+<!--PACKS-->
+</body>
+</html>
