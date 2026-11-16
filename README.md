@@ -14,7 +14,7 @@
 |---|---|
 | [Quick-delivery app](proposals/Outgrid_Quick_Delivery_App_Proposal.pdf) | Launch ₹2L · Growth ₹3L · Scale ₹4.5L |
 | [Parcel app (landscape, for screen share)](proposals/Outgrid_Parcel_App_Proposal.pdf) | ₹75,000 (lowest ₹70,000) · call script: [playbook/Parcel_App_Call_Script.pdf](playbook/Parcel_App_Call_Script.pdf) |
-| [Kiranacart: multi-vendor quick delivery (landscape, subscription)](proposals/Outgrid_Kiranacart_Proposal.pdf) | ₹20k/month + ₹20k setup, 6-month minimum (floor ₹15k/month) · after 6 months ₹15k/month or ₹1L buyout · call script: [playbook/Kiranacart_Call_Script.pdf](playbook/Kiranacart_Call_Script.pdf) |
+| [Kiranacart: multi-vendor quick delivery (landscape, subscription)](proposals/Outgrid_Kiranacart_Proposal.pdf) | ₹20k/month + ₹20k setup, 6-month minimum (floor ₹15k/month) · after 6 months same ₹20k/month or ₹1L licence · Outgrid keeps all code rights · call script: [playbook/Kiranacart_Call_Script.pdf](playbook/Kiranacart_Call_Script.pdf) |
 | [Agri marketplace (landscape)](proposals/Outgrid_Agri_Marketplace_Proposal.pdf) | Launch ₹1.2L · Growth ₹1.75L · Scale ₹2.25L (lowest 1L / 1.5L / 2L) · call script: [playbook/Agri_Marketplace_Call_Script.pdf](playbook/Agri_Marketplace_Call_Script.pdf) |
 | [Online kirana store website](proposals/Outgrid_Kirana_Store_Website_Proposal.pdf) | Launch ₹75k · Growth ₹1.15L · Growth + WhatsApp ₹1.5L |
 
