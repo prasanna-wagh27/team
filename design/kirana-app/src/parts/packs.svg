@@ -1,0 +1,252 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+
+<radialGradient id="pk-ground"><stop offset="0" stop-color="#000" stop-opacity=".30"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="pk-sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".16" stop-color="#fff" stop-opacity=".06"/><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset=".9" stop-color="#000" stop-opacity=".16"/><stop offset="1" stop-color="#000" stop-opacity=".30"/></linearGradient>
+<linearGradient id="pk-shv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".25" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity=".04"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
+<radialGradient id="pk-pillow" cx=".38" cy=".38" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity=".10"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></radialGradient>
+<linearGradient id="pk-gloss" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<pattern id="pt-dal" width="6" height="5" patternUnits="userSpaceOnUse"><rect width="6" height="5" fill="#F4C02E"/><circle cx="1.6" cy="1.4" r="1.45" fill="#F8D45A"/><circle cx="4.6" cy="3.6" r="1.45" fill="#E9AC12"/><circle cx="4.4" cy="1" r=".9" fill="#FBE08A"/></pattern>
+<pattern id="pt-sugar" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#F3F2EE"/><rect x=".6" y=".6" width="1.7" height="1.7" fill="#fff" transform="rotate(15 1.4 1.4)"/><rect x="2.8" y="2.7" width="1.6" height="1.6" fill="#DCDAD3" transform="rotate(-20 3.6 3.5)"/></pattern>
+<pattern id="pt-rice" width="7" height="5" patternUnits="userSpaceOnUse"><rect width="7" height="5" fill="#EFE9DA"/><ellipse cx="2" cy="1.5" rx="1.9" ry=".7" fill="#fff" transform="rotate(25 2 1.5)"/><ellipse cx="5.2" cy="3.6" rx="1.9" ry=".7" fill="#FBF8F0" transform="rotate(-30 5.2 3.6)"/></pattern>
+
+<symbol id="pk-atta" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="32" ry="3.6" fill="url(#pk-ground)"/>
+<defs><clipPath id="c-atta"><path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z"/></clipPath>
+<linearGradient id="g-atta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F28A1E"/><stop offset="1" stop-color="#D9530F"/></linearGradient></defs>
+<path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z" fill="#FFF4DC"/>
+<g clip-path="url(#c-atta)">
+  <path d="M10 58 Q35 48 55 56 T92 52 L92 120 L10 120 Z" fill="url(#g-atta)"/>
+  <g transform="translate(32 102) scale(.8)" fill="#FFE29A"><ellipse cx="-1.5" cy="0.0" rx="1.6" ry="3" transform="rotate(-35 -1.5 0.0)"/><ellipse cx="1.5" cy="-3.2" rx="1.6" ry="3" transform="rotate(35 1.5 -3.2)"/><ellipse cx="-1.5" cy="-6.4" rx="1.6" ry="3" transform="rotate(-35 -1.5 -6.4)"/><ellipse cx="1.5" cy="-9.600000000000001" rx="1.6" ry="3" transform="rotate(35 1.5 -9.600000000000001)"/><ellipse cx="-1.5" cy="-12.8" rx="1.6" ry="3" transform="rotate(-35 -1.5 -12.8)"/><ellipse cx="1.5" cy="-16.0" rx="1.6" ry="3" transform="rotate(35 1.5 -16.0)"/><path d="M0 6 V-18" stroke="#FFE29A" stroke-width=".9"/></g>
+  <rect x="10" y="10" width="90" height="8" fill="#7A2A0C" opacity=".9"/>
+</g>
+<path d="M24.5 18 24.5 10 L26.0 7.8 L27.5 10 L29.0 7.8 L30.5 10 L32.0 7.8 L33.5 10 L35.0 7.8 L36.5 10 L38.0 7.8 L39.5 10 L41.0 7.8 L42.5 10 L44.0 7.8 L45.5 10 L47.0 7.8 L48.5 10 L50.0 7.8 L51.5 10 L53.0 7.8 L54.5 10 L56.0 7.8 L57.5 10 L59.0 7.8 L60.5 10 L62.0 7.8 L63.5 10 L65.0 7.8 L66.5 10 L68.0 7.8 L69.5 10 L71.0 7.8 L72.5 10 L74.0 7.8 L75.5 10 L75.5 18 Z" fill="#7A2A0C"/>
+<text x="50" y="33" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="10" fill="#7A2A0C" letter-spacing="-.3">GEHU GOLD</text>
+<text x="50" y="41.5" text-anchor="middle" font-family="Onest,sans-serif" font-weight="600" font-size="3.7" fill="#7A2A0C" opacity=".75" letter-spacing=".4">CHAKKI FRESH · 100% WHEAT</text>
+<text x="50" y="68" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5" fill="#fff" opacity=".9" letter-spacing=".6">WHOLE WHEAT</text><text x="50" y="81" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="12.5" fill="#fff" letter-spacing="-.4">Atta</text>
+<circle cx="66" cy="98" r="8" fill="#fff"/><text x="66" y="100.4" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="7" fill="#7A2A0C">5kg</text>
+<path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z" fill="url(#pk-sh)"/><path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z" fill="url(#pk-shv)"/>
+</symbol>
+<symbol id="pk-rice" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="32" ry="3.6" fill="url(#pk-ground)"/>
+<defs><clipPath id="c-rice"><path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z"/></clipPath>
+<linearGradient id="g-rice" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F8E4D"/><stop offset="1" stop-color="#0E5C31"/></linearGradient></defs>
+<path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z" fill="#F2F7EC"/>
+<g clip-path="url(#c-rice)">
+  <path d="M10 58 Q35 48 55 56 T92 52 L92 120 L10 120 Z" fill="url(#g-rice)"/>
+  <g transform="translate(30 98) scale(.8)"><ellipse cx="0" cy="0" rx="2.6" ry="1" fill="#fff" transform="rotate(20 0 0)"/><ellipse cx="5" cy="2" rx="2.6" ry="1" fill="#fff" transform="rotate(-25 5 2)"/><ellipse cx="2" cy="6" rx="2.6" ry="1" fill="#fff" transform="rotate(40 2 6)"/><ellipse cx="8" cy="7" rx="2.6" ry="1" fill="#fff" transform="rotate(10 8 7)"/><ellipse cx="-3" cy="5" rx="2.6" ry="1" fill="#fff" transform="rotate(-15 -3 5)"/><ellipse cx="6" cy="-4" rx="2.6" ry="1" fill="#fff" transform="rotate(30 6 -4)"/></g>
+  <rect x="10" y="10" width="90" height="8" fill="#0D4426" opacity=".9"/>
+</g>
+<path d="M24.5 18 24.5 10 L26.0 7.8 L27.5 10 L29.0 7.8 L30.5 10 L32.0 7.8 L33.5 10 L35.0 7.8 L36.5 10 L38.0 7.8 L39.5 10 L41.0 7.8 L42.5 10 L44.0 7.8 L45.5 10 L47.0 7.8 L48.5 10 L50.0 7.8 L51.5 10 L53.0 7.8 L54.5 10 L56.0 7.8 L57.5 10 L59.0 7.8 L60.5 10 L62.0 7.8 L63.5 10 L65.0 7.8 L66.5 10 L68.0 7.8 L69.5 10 L71.0 7.8 L72.5 10 L74.0 7.8 L75.5 10 L75.5 18 Z" fill="#0D4426"/>
+<text x="50" y="33" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="10" fill="#0D4426" letter-spacing="-.3">Dhaanya</text>
+<text x="50" y="41.5" text-anchor="middle" font-family="Onest,sans-serif" font-weight="600" font-size="3.7" fill="#0D4426" opacity=".75" letter-spacing=".4">AGED 12 MONTHS</text>
+<text x="50" y="68" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5" fill="#fff" opacity=".9" letter-spacing=".6">SONA MASOORI</text><text x="50" y="81" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="12.5" fill="#fff" letter-spacing="-.4">Rice</text>
+<circle cx="66" cy="98" r="8" fill="#fff"/><text x="66" y="100.4" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="7" fill="#0D4426">5kg</text>
+<path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z" fill="url(#pk-sh)"/><path d="M25 16 L75 16 Q79 60 80 104 Q80 110 74 110 L26 110 Q20 110 20 104 Q21 60 25 16 Z" fill="url(#pk-shv)"/>
+</symbol>
+<symbol id="pk-dal" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="26" ry="3.6" fill="url(#pk-ground)"/>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="url(#pt-dal)"/>
+<path d="M27.5 18 27.5 10 L29.0 7.8 L30.5 10 L32.0 7.8 L33.5 10 L35.0 7.8 L36.5 10 L38.0 7.8 L39.5 10 L41.0 7.8 L42.5 10 L44.0 7.8 L45.5 10 L47.0 7.8 L48.5 10 L50.0 7.8 L51.5 10 L53.0 7.8 L54.5 10 L56.0 7.8 L57.5 10 L59.0 7.8 L60.5 10 L62.0 7.8 L63.5 10 L65.0 7.8 L66.5 10 L68.0 7.8 L69.5 10 L71.0 7.8 L72.5 10 L72.5 18 Z" fill="#E9E6DD" opacity=".95"/>
+<rect x="27.5" y="17" width="45" height="2" fill="#fff" opacity=".6"/>
+<rect x="33" y="48" width="34" height="44" rx="5" fill="#fff"/>
+<path d="M33 53 a5 5 0 0 1 5 -5 h24 a5 5 0 0 1 5 5 v6 h-34 Z" fill="#14853F"/>
+<text x="50" y="56.4" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.8" fill="#fff" letter-spacing=".4">UNPOLISHED</text>
+<text x="50" y="72" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="9" fill="#14532D" letter-spacing="-.3">Toor Dal</text>
+<text x="50" y="84" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="6" fill="#14532D" opacity=".7">1 kg</text>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="url(#pk-sh)"/>
+<rect x="31" y="22" width="5" height="84" fill="url(#pk-gloss)" opacity=".8"/>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="none" stroke="#000" stroke-opacity=".08" stroke-width=".6"/>
+</symbol>
+<symbol id="pk-sugar" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="26" ry="3.6" fill="url(#pk-ground)"/>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="url(#pt-sugar)"/>
+<path d="M27.5 18 27.5 10 L29.0 7.8 L30.5 10 L32.0 7.8 L33.5 10 L35.0 7.8 L36.5 10 L38.0 7.8 L39.5 10 L41.0 7.8 L42.5 10 L44.0 7.8 L45.5 10 L47.0 7.8 L48.5 10 L50.0 7.8 L51.5 10 L53.0 7.8 L54.5 10 L56.0 7.8 L57.5 10 L59.0 7.8 L60.5 10 L62.0 7.8 L63.5 10 L65.0 7.8 L66.5 10 L68.0 7.8 L69.5 10 L71.0 7.8 L72.5 10 L72.5 18 Z" fill="#E9E6DD" opacity=".95"/>
+<rect x="27.5" y="17" width="45" height="2" fill="#fff" opacity=".6"/>
+<rect x="33" y="48" width="34" height="44" rx="5" fill="#fff"/>
+<path d="M33 53 a5 5 0 0 1 5 -5 h24 a5 5 0 0 1 5 5 v6 h-34 Z" fill="#E2336B"/>
+<text x="50" y="56.4" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.8" fill="#fff" letter-spacing=".4">FINE GRAIN</text>
+<text x="50" y="72" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="9" fill="#7A1236" letter-spacing="-.3">Sugar</text>
+<text x="50" y="84" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="6" fill="#7A1236" opacity=".7">1 kg</text>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="url(#pk-sh)"/>
+<rect x="31" y="22" width="5" height="84" fill="url(#pk-gloss)" opacity=".8"/>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="none" stroke="#000" stroke-opacity=".08" stroke-width=".6"/>
+</symbol>
+<symbol id="pk-poha" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="26" ry="3.6" fill="url(#pk-ground)"/>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="url(#pt-rice)"/>
+<path d="M27.5 18 27.5 10 L29.0 7.8 L30.5 10 L32.0 7.8 L33.5 10 L35.0 7.8 L36.5 10 L38.0 7.8 L39.5 10 L41.0 7.8 L42.5 10 L44.0 7.8 L45.5 10 L47.0 7.8 L48.5 10 L50.0 7.8 L51.5 10 L53.0 7.8 L54.5 10 L56.0 7.8 L57.5 10 L59.0 7.8 L60.5 10 L62.0 7.8 L63.5 10 L65.0 7.8 L66.5 10 L68.0 7.8 L69.5 10 L71.0 7.8 L72.5 10 L72.5 18 Z" fill="#E9E6DD" opacity=".95"/>
+<rect x="27.5" y="17" width="45" height="2" fill="#fff" opacity=".6"/>
+<rect x="33" y="48" width="34" height="44" rx="5" fill="#fff"/>
+<path d="M33 53 a5 5 0 0 1 5 -5 h24 a5 5 0 0 1 5 5 v6 h-34 Z" fill="#E07A12"/>
+<text x="50" y="56.4" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.8" fill="#fff" letter-spacing=".4">INDORI</text>
+<text x="50" y="72" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="9" fill="#6B3407" letter-spacing="-.3">Poha</text>
+<text x="50" y="84" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="6" fill="#6B3407" opacity=".7">500 g</text>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="url(#pk-sh)"/>
+<rect x="31" y="22" width="5" height="84" fill="url(#pk-gloss)" opacity=".8"/>
+<path d="M28 16 L72 16 L74 106 Q74 110 70 110 L30 110 Q26 110 26 106 Z" fill="none" stroke="#000" stroke-opacity=".08" stroke-width=".6"/>
+</symbol>
+<symbol id="pk-milk" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="28" ry="3.6" fill="url(#pk-ground)"/>
+<defs><clipPath id="c-milk"><path d="M27 22 Q50 16 73 22 Q77 62 74 102 Q50 108 26 102 Q23 62 27 22 Z"/></clipPath></defs>
+<path d="M27 22 Q50 16 73 22 Q77 62 74 102 Q50 108 26 102 Q23 62 27 22 Z" fill="#F7F9FC"/>
+<g clip-path="url(#c-milk)">
+  <path d="M10 10 H90 V52 Q70 60 50 54 T10 56 Z" fill="#1D5BD6"/>
+  <path d="M10 56 Q30 50 50 56 T90 52 V58 Q70 64 50 60 T10 62 Z" fill="#8DB4FF"/>
+  <rect x="10" y="96" width="90" height="20" fill="#1D5BD6"/>
+</g>
+<path d="M27 22 Q50 16 73 22 L73 25 Q50 19 27 25 Z" fill="#fff" opacity=".7"/>
+<text x="50" y="38" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="9" fill="#fff" letter-spacing="-.3">Dudhwala</text>
+<text x="50" y="46" text-anchor="middle" font-family="Onest,sans-serif" font-weight="600" font-size="3.6" fill="#CFE0FF" letter-spacing=".4">FARM FRESH · PUNE</text>
+<text x="50" y="76" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="8.4" fill="#1D3E8F" letter-spacing="-.2">Toned Milk</text>
+<text x="50" y="86" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="6" fill="#1D3E8F" opacity=".75">500 ml</text>
+<path d="M27 22 Q50 16 73 22 Q77 62 74 102 Q50 108 26 102 Q23 62 27 22 Z" fill="url(#pk-pillow)"/>
+</symbol>
+<symbol id="pk-oil" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="28" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-oil" x1="0" x2="1"><stop offset="0" stop-color="#FFD84A"/><stop offset=".5" stop-color="#F6B714"/><stop offset="1" stop-color="#D98A00"/></linearGradient></defs>
+<rect x="40" y="10" width="20" height="14" rx="2.5" fill="#1C7A3A"/>
+<rect x="40" y="10" width="20" height="14" rx="2.5" fill="url(#pk-sh)"/>
+<rect x="38.5" y="22" width="23" height="5" rx="1.5" fill="#15652F"/>
+<path d="M42 26 L58 26 Q60 34 70 38 Q76 41 76 50 L76 104 Q76 110 70 110 L30 110 Q24 110 24 104 L24 50 Q24 41 30 38 Q40 34 42 26 Z" fill="url(#g-oil)"/>
+<rect x="24" y="56" width="52" height="38" fill="#fff"/>
+<rect x="24" y="56" width="52" height="6" fill="#1C7A3A"/>
+<g transform="translate(37 76)"><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(0)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(30)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(60)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(90)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(120)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(150)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(180)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(210)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(240)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(270)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(300)"/><ellipse cx="0" cy="-5.2" rx="2" ry="3.6" fill="#FFB800" transform="rotate(330)"/><circle r="3.6" fill="#7A4A12"/></g>
+<text x="62" y="74" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="8.5" fill="#14532D">Suraj</text>
+<text x="62" y="81" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="4.3" fill="#14532D" letter-spacing=".3">SUNFLOWER</text>
+<text x="62" y="88.5" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5.2" fill="#14532D" opacity=".7">1 L</text>
+<text x="50" y="60.4" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.6" fill="#fff" letter-spacing=".8">REFINED OIL</text>
+<path d="M42 26 L58 26 Q60 34 70 38 Q76 41 76 50 L76 104 Q76 110 70 110 L30 110 Q24 110 24 104 L24 50 Q24 41 30 38 Q40 34 42 26 Z" fill="url(#pk-sh)"/>
+<rect x="28" y="40" width="4" height="66" rx="2" fill="#fff" opacity=".45"/>
+</symbol>
+<symbol id="pk-chips" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="32" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-chips" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2BB46A"/><stop offset="1" stop-color="#0B6B3A"/></linearGradient><clipPath id="c-chips"><path d="M22 22 L78 22 Q83 64 78 104 L22 104 Q17 64 22 22 Z"/></clipPath></defs>
+<path d="M22 22 L78 22 Q83 64 78 104 L22 104 Q17 64 22 22 Z" fill="url(#g-chips)"/>
+<path d="M21.5 24 21.5 16 L23.0 13.8 L24.5 16 L26.0 13.8 L27.5 16 L29.0 13.8 L30.5 16 L32.0 13.8 L33.5 16 L35.0 13.8 L36.5 16 L38.0 13.8 L39.5 16 L41.0 13.8 L42.5 16 L44.0 13.8 L45.5 16 L47.0 13.8 L48.5 16 L50.0 13.8 L51.5 16 L53.0 13.8 L54.5 16 L56.0 13.8 L57.5 16 L59.0 13.8 L60.5 16 L62.0 13.8 L63.5 16 L65.0 13.8 L66.5 16 L68.0 13.8 L69.5 16 L71.0 13.8 L72.5 16 L74.0 13.8 L75.5 16 L77.0 13.8 L78.5 16 L78.5 24 Z" fill="#0F7A42"/>
+<path d="M21.5 102 L78.5 102 78.5 110 L71.4 112.2 L64.2 110 L57.1 112.2 L50.0 110 L42.9 112.2 L35.8 110 L28.6 112.2 L21.5 110 Z" fill="#0F7A42"/>
+<g clip-path="url(#c-chips)">
+  <path d="M10 42 L90 30 L90 52 L10 64 Z" fill="#FFD23F"/>
+  <ellipse cx="40" cy="84" rx="9.9" ry="7.15" fill="#F7C548" transform="rotate(-20 40 84)"/><ellipse cx="40" cy="84" rx="9.9" ry="7.15" fill="none" stroke="#D99A1C" stroke-width=".8" transform="rotate(-20 40 84)"/><circle cx="38" cy="83" r=".9" fill="#C0491A"/><circle cx="43" cy="85.5" r=".8" fill="#C0491A"/><ellipse cx="58" cy="88" rx="10.35" ry="7.475" fill="#F7C548" transform="rotate(15 58 88)"/><ellipse cx="58" cy="88" rx="10.35" ry="7.475" fill="none" stroke="#D99A1C" stroke-width=".8" transform="rotate(15 58 88)"/><circle cx="56" cy="87" r=".9" fill="#C0491A"/><circle cx="61" cy="89.5" r=".8" fill="#C0491A"/><ellipse cx="50" cy="76" rx="9" ry="6.5" fill="#F7C548" transform="rotate(5 50 76)"/><ellipse cx="50" cy="76" rx="9" ry="6.5" fill="none" stroke="#D99A1C" stroke-width=".8" transform="rotate(5 50 76)"/><circle cx="48" cy="75" r=".9" fill="#C0491A"/><circle cx="53" cy="77.5" r=".8" fill="#C0491A"/>
+</g>
+<text x="50" y="52" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="12.5" fill="#0B4D2A" letter-spacing="-.5" transform="rotate(-8 50 50)">Cruncho</text>
+<text x="50" y="66" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5.6" fill="#fff" letter-spacing=".4">MASALA MUNCH</text>
+<path d="M22 22 L78 22 Q83 64 78 104 L22 104 Q17 64 22 22 Z" fill="url(#pk-pillow)"/>
+</symbol>
+<symbol id="pk-biscuit" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="36" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-bis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD84D"/><stop offset="1" stop-color="#F2AE12"/></linearGradient></defs>
+<g transform="translate(0 18)">
+<path d="M14 46 L86 38 L88 74 L16 82 Z" fill="url(#g-bis)"/>
+<path d="M14 46 L10 44 L12 48 L9 51 L12 54 L9 58 L12 62 L9 66 L12 70 L9 74 L12 78 L13 82 L16 82 Z" fill="#E9A10C"/>
+<path d="M86 38 L90 36 L88 40 L91 44 L88 48 L91 52 L88 56 L91 60 L88 64 L91 68 L88 72 L91 75 L88 74 Z" fill="#D99208"/>
+<path d="M15 64 L87 56 L87.6 66 L15.6 74 Z" fill="#D7261E"/>
+<text x="50" y="66" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="7" fill="#fff" transform="rotate(-6.3 50 66)">Glucose+ Biscuits</text>
+<text x="34" y="56" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="9" fill="#9A1C14" transform="rotate(-6.3 34 56)">Bachpan</text>
+<g transform="rotate(-6.3 70 50)"><circle cx="68" cy="50" r="7" fill="#E1A04A"/><circle cx="68" cy="50" r="7" fill="none" stroke="#B87424" stroke-width=".8"/><circle cx="65" cy="48" r=".7" fill="#A8641C"/><circle cx="68" cy="47" r=".7" fill="#A8641C"/><circle cx="71" cy="49" r=".7" fill="#A8641C"/><circle cx="66" cy="52" r=".7" fill="#A8641C"/><circle cx="70" cy="53" r=".7" fill="#A8641C"/></g>
+<path d="M14 46 L86 38 L88 74 L16 82 Z" fill="url(#pk-shv)"/>
+<path d="M14 46 L86 38 L86.3 42 L14.3 50 Z" fill="#fff" opacity=".35"/>
+</g>
+</symbol>
+<symbol id="pk-tea" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="30" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-tea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A3231F"/><stop offset="1" stop-color="#6E1210"/></linearGradient></defs>
+<path d="M24 26 L66 26 L80 18 L38 18 Z" fill="#C2413A"/>
+<path d="M66 26 L80 18 L80 100 L66 108 Z" fill="#5A0E0C"/>
+<rect x="24" y="26" width="42" height="82" fill="url(#g-tea)"/>
+<rect x="27" y="30" width="36" height="74" rx="2" fill="none" stroke="#E8B84A" stroke-width=".7"/>
+<text x="45" y="44" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="7.6" fill="#F7D27A" letter-spacing="-.2">Chai</text>
+<text x="45" y="53" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="7.6" fill="#F7D27A" letter-spacing="-.2">Shakti</text>
+<path d="M36 72 h18 v4 a9 9 0 0 1 -18 0 Z" fill="#fff"/><path d="M54 74 a3 3 0 0 1 0 6" fill="none" stroke="#fff" stroke-width="1.6"/>
+<path d="M40 70 q2 -4 0 -7 M45 70 q2 -4 0 -7 M50 70 q2 -4 0 -7" stroke="#F7D27A" stroke-width=".9" fill="none" stroke-linecap="round"/>
+<text x="45" y="96" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.7" fill="#fff" letter-spacing=".3">STRONG · 250 g</text>
+<rect x="24" y="26" width="42" height="82" fill="url(#pk-sh)" opacity=".7"/>
+</symbol>
+<symbol id="pk-ghee" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="30" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-ghee" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE38A"/><stop offset="1" stop-color="#EDB52C"/></linearGradient>
+<linearGradient id="g-lid" x1="0" x2="1"><stop offset="0" stop-color="#F6D27A"/><stop offset=".45" stop-color="#C9932C"/><stop offset="1" stop-color="#8C5F14"/></linearGradient></defs>
+<rect x="24" y="34" width="52" height="76" rx="10" fill="url(#g-ghee)"/>
+<rect x="27" y="20" width="46" height="16" rx="3" fill="url(#g-lid)"/>
+<rect x="29" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="32" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="35" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="38" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="41" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="44" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="47" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="50" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="53" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="56" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="59" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="62" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="65" y="22" width="1" height="12" fill="#000" opacity=".12"/><rect x="68" y="22" width="1" height="12" fill="#000" opacity=".12"/>
+<rect x="24" y="54" width="52" height="38" fill="#fff"/>
+<rect x="24" y="54" width="52" height="5" fill="#B3261E"/><rect x="24" y="87" width="52" height="5" fill="#B3261E"/>
+<text x="50" y="72" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="8" fill="#7A1A12" letter-spacing="-.3">Gaon Ghee</text>
+<text x="50" y="80" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.7" fill="#7A1A12" opacity=".8" letter-spacing=".3">PURE COW · 500 ml</text>
+<rect x="24" y="34" width="52" height="76" rx="10" fill="url(#pk-sh)"/>
+<rect x="29" y="38" width="4" height="66" rx="2" fill="#fff" opacity=".5"/>
+</symbol>
+<symbol id="pk-bread" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="30" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9A5524"/><stop offset=".35" stop-color="#C98446"/><stop offset="1" stop-color="#B26D33"/></linearGradient></defs>
+<path d="M22 46 Q22 22 50 22 Q78 22 78 46 L78 104 Q78 110 72 110 L28 110 Q22 110 22 104 Z" fill="url(#g-br)"/>
+<rect x="22" y="58" width="56" height="26" fill="#fff"/>
+<rect x="22" y="58" width="56" height="4" fill="#C2271E"/>
+<text x="50" y="73" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="7.4" fill="#7A1A12" letter-spacing="-.3">Brown Bread</text>
+<text x="50" y="80" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.6" fill="#7A1A12" opacity=".75" letter-spacing=".3">100% ATTA · 400 g</text>
+<path d="M22 46 Q22 22 50 22 Q78 22 78 46 L78 104 Q78 110 72 110 L28 110 Q22 110 22 104 Z" fill="url(#pk-sh)"/>
+<path d="M22 46 Q22 22 50 22 Q78 22 78 46 L78 104 Q78 110 72 110 L28 110 Q22 110 22 104 Z" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
+<rect x="27" y="34" width="4" height="70" rx="2" fill="#fff" opacity=".35"/>
+</symbol>
+<symbol id="pk-curd" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="30" ry="3.6" fill="url(#pk-ground)"/>
+<path d="M22 40 L78 40 L72 106 Q50 112 28 106 Z" fill="#fff"/>
+<path d="M23.2 54 L76.8 54 L75.7 66 L24.3 66 Z" fill="#1D5BD6"/>
+<ellipse cx="50" cy="40" rx="28" ry="8" fill="#C9D6EA"/>
+<ellipse cx="50" cy="38.5" rx="28" ry="8" fill="#E7EEF8"/>
+<ellipse cx="50" cy="38.5" rx="20" ry="5" fill="none" stroke="#1D5BD6" stroke-width=".8" opacity=".5"/>
+<text x="50" y="62.5" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5.2" fill="#fff" letter-spacing=".8">DUDHWALA</text>
+<text x="50" y="84" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="12" fill="#1D3E8F" letter-spacing="-.4">Dahi</text>
+<text x="50" y="94" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5.4" fill="#1D3E8F" opacity=".7">400 g</text>
+<path d="M22 40 L78 40 L72 106 Q50 112 28 106 Z" fill="url(#pk-sh)"/>
+</symbol>
+<symbol id="pk-paneer" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="36" ry="3.6" fill="url(#pk-ground)"/>
+<rect x="14" y="44" width="72" height="56" rx="9" fill="#DCE6F2"/>
+<rect x="19" y="49" width="62" height="46" rx="6" fill="#FBFAF4"/>
+<circle cx="26" cy="56" r=".9" fill="#E8E4D4"/><circle cx="40" cy="62" r=".9" fill="#E8E4D4"/><circle cx="58" cy="54" r=".9" fill="#E8E4D4"/><circle cx="70" cy="66" r=".9" fill="#E8E4D4"/><circle cx="34" cy="86" r=".9" fill="#E8E4D4"/><circle cx="64" cy="88" r=".9" fill="#E8E4D4"/><circle cx="48" cy="78" r=".9" fill="#E8E4D4"/><circle cx="74" cy="82" r=".9" fill="#E8E4D4"/>
+<rect x="28" y="60" width="44" height="24" rx="4" fill="#1D5BD6"/>
+<text x="50" y="72" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="6.6" fill="#fff" letter-spacing="-.2">Malai Paneer</text>
+<text x="50" y="79.5" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="4.6" fill="#CFE0FF">200 g</text>
+<rect x="14" y="44" width="72" height="56" rx="9" fill="url(#pk-shv)"/>
+<path d="M18 48 L50 48" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+</symbol>
+<symbol id="pk-detergent" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="30" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-det" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2F86FF"/><stop offset="1" stop-color="#0A3FA8"/></linearGradient><clipPath id="c-det"><path d="M24 18 L76 18 L78 100 Q78 110 68 110 L32 110 Q22 110 22 100 Z"/></clipPath></defs>
+<path d="M24 18 L76 18 L78 100 Q78 110 68 110 L32 110 Q22 110 22 100 Z" fill="url(#g-det)"/>
+<path d="M23.5 20 23.5 12 L25.1 9.8 L26.6 12 L28.2 9.8 L29.7 12 L31.3 9.8 L32.9 12 L34.4 9.8 L36.0 12 L37.5 9.8 L39.1 12 L40.6 9.8 L42.2 12 L43.8 9.8 L45.3 12 L46.9 9.8 L48.4 12 L50.0 9.8 L51.6 12 L53.1 9.8 L54.7 12 L56.2 9.8 L57.8 12 L59.4 9.8 L60.9 12 L62.5 9.8 L64.0 12 L65.6 9.8 L67.1 12 L68.7 9.8 L70.3 12 L71.8 9.8 L73.4 12 L74.9 9.8 L76.5 12 L76.5 20 Z" fill="#0A3FA8"/>
+<g clip-path="url(#c-det)"><circle cx="50" cy="86" r="26" fill="#fff" opacity=".14"/><circle cx="50" cy="86" r="17" fill="#fff" opacity=".18"/>
+<path d="M10 100 Q30 92 50 98 T92 94 L92 120 L10 120 Z" fill="#FFD23F"/></g>
+<text x="50" y="44" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="15" fill="#fff" letter-spacing="-.6">Ujla</text>
+<text x="50" y="53" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="5" fill="#CFE0FF" letter-spacing=".8">MATIC POWDER</text>
+<path d="M66 30 l1.4 3.6 3.6 1.4 -3.6 1.4 -1.4 3.6 -1.4 -3.6 -3.6 -1.4 3.6 -1.4Z" fill="#FFE47A"/>
+<text x="50" y="107" text-anchor="middle" font-family="Onest,sans-serif" font-weight="800" font-size="6" fill="#0A3FA8">1 kg</text>
+<path d="M24 18 L76 18 L78 100 Q78 110 68 110 L32 110 Q22 110 22 100 Z" fill="url(#pk-sh)"/>
+</symbol>
+<symbol id="pk-noodles" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="34" ry="3.6" fill="url(#pk-ground)"/>
+<defs><linearGradient id="g-nd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A2A"/><stop offset="1" stop-color="#E25A0C"/></linearGradient></defs>
+<path d="M16 42 L84 42 L86 98 L14 98 Z" fill="url(#g-nd)"/>
+<path d="M16 42 16 42 L17.5 39.8 L19.1 42 L20.6 39.8 L22.2 42 L23.7 39.8 L25.3 42 L26.8 39.8 L28.4 42 L29.9 39.8 L31.5 42 L33.0 39.8 L34.5 42 L36.1 39.8 L37.6 42 L39.2 39.8 L40.7 42 L42.3 39.8 L43.8 42 L45.4 39.8 L46.9 42 L48.5 39.8 L50.0 42 L51.5 39.8 L53.1 42 L54.6 39.8 L56.2 42 L57.7 39.8 L59.3 42 L60.8 39.8 L62.4 42 L63.9 39.8 L65.5 42 L67.0 39.8 L68.5 42 L70.1 39.8 L71.6 42 L73.2 39.8 L74.7 42 L76.3 39.8 L77.8 42 L79.4 39.8 L80.9 42 L82.5 39.8 L84.0 42 Z" fill="#C24A08"/>
+<path d="M14 98 L86 98 86 98 L77.0 100.2 L68.0 98 L59.0 100.2 L50.0 98 L41.0 100.2 L32.0 98 L23.0 100.2 L14.0 98 Z" fill="#C24A08"/>
+<text x="50" y="58" text-anchor="middle" font-family="Brico,Onest,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.4">Zaika</text>
+<text x="50" y="65" text-anchor="middle" font-family="Onest,sans-serif" font-weight="700" font-size="3.9" fill="#FFE2C8" letter-spacing=".4">MASALA NOODLES</text>
+<path d="M32 76 h36 a18 10 0 0 1 -36 0 Z" fill="#fff"/>
+<path d="M36 76 q4 -6 8 0 t8 0 t8 0 t8 0" fill="none" stroke="#F7C548" stroke-width="2" stroke-linecap="round"/>
+<circle cx="44" cy="74" r="1.6" fill="#3E9C47"/><circle cx="57" cy="73" r="1.4" fill="#D7261E"/>
+<path d="M16 42 L84 42 L86 98 L14 98 Z" fill="url(#pk-shv)"/>
+<path d="M16 42 L84 42 L86 98 L14 98 Z" fill="url(#pk-sh)" opacity=".7"/>
+</symbol>
+<symbol id="pk-eggs" viewBox="0 0 100 120">
+<ellipse cx="50" cy="112" rx="38" ry="3.6" fill="url(#pk-ground)"/>
+<defs><radialGradient id="g-egg" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#FFF6EA"/><stop offset=".55" stop-color="#F1D3AE"/><stop offset="1" stop-color="#C9945E"/></radialGradient></defs>
+<path d="M10 70 L90 70 L86 104 Q50 110 14 104 Z" fill="#B9C3CF"/>
+<path d="M10 70 L90 70 L86 104 Q50 110 14 104 Z" fill="url(#pk-sh)"/>
+<ellipse cx="28" cy="58" rx="9" ry="10.5" fill="url(#g-egg)"/><ellipse cx="25" cy="54" rx="2.4" ry="3.2" fill="#fff" opacity=".55"/><ellipse cx="50" cy="56" rx="9" ry="10.5" fill="url(#g-egg)"/><ellipse cx="47" cy="52" rx="2.4" ry="3.2" fill="#fff" opacity=".55"/><ellipse cx="72" cy="58" rx="9" ry="10.5" fill="url(#g-egg)"/><ellipse cx="69" cy="54" rx="2.4" ry="3.2" fill="#fff" opacity=".55"/>
+<path d="M8 66 Q20 74 28 68 Q39 76 50 68 Q61 76 72 68 Q80 74 92 66 L92 74 L8 74 Z" fill="#CDD5DF"/>
+<ellipse cx="30" cy="74" rx="9" ry="10.5" fill="url(#g-egg)"/><ellipse cx="27" cy="70" rx="2.4" ry="3.2" fill="#fff" opacity=".55"/><ellipse cx="50" cy="76" rx="9" ry="10.5" fill="url(#g-egg)"/><ellipse cx="47" cy="72" rx="2.4" ry="3.2" fill="#fff" opacity=".55"/><ellipse cx="70" cy="74" rx="9" ry="10.5" fill="url(#g-egg)"/><ellipse cx="67" cy="70" rx="2.4" ry="3.2" fill="#fff" opacity=".55"/>
+<path d="M6 80 Q18 90 30 84 Q40 92 50 86 Q60 92 70 84 Q82 90 94 80 L90 96 Q50 104 10 96 Z" fill="#D9E0E8"/>
+<rect x="31" y="88" width="38" height="9" rx="2" fill="#E07A12"/>
+<text x="50" y="95" text-anchor="middle" font-family="Onest,sans-serif" font-weight="800" font-size="4.2" fill="#fff" letter-spacing=".3">FARM EGGS · 6</text>
+</symbol>
+</defs></svg>

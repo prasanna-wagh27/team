@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jhola · Home · Direction A</title>
+<style>
+/* Direction A v2: bold and quick (Zepto / Blinkit lean). Font: Geist. */
+@font-face{font-family:Rupee;src:url(fonts/geist-sans-latin-700-normal.woff2);unicode-range:U+20B9}
+@font-face{font-family:Geist;font-weight:400;src:url(fonts/geist-sans-latin-400-normal.woff2)}
+@font-face{font-family:Geist;font-weight:500;src:url(fonts/geist-sans-latin-500-normal.woff2)}
+@font-face{font-family:Geist;font-weight:600;src:url(fonts/geist-sans-latin-600-normal.woff2)}
+@font-face{font-family:Geist;font-weight:700;src:url(fonts/geist-sans-latin-700-normal.woff2)}
+@font-face{font-family:Geist;font-weight:800;src:url(fonts/geist-sans-latin-800-normal.woff2)}
+@font-face{font-family:Geist;font-weight:900;src:url(fonts/geist-sans-latin-900-normal.woff2)}
+/* packshot label fonts */
+@font-face{font-family:Onest;font-weight:500;src:url(fonts/onest-latin-500-normal.woff2)}
+@font-face{font-family:Onest;font-weight:600;src:url(fonts/onest-latin-600-normal.woff2)}
+@font-face{font-family:Onest;font-weight:700;src:url(fonts/onest-latin-700-normal.woff2)}
+@font-face{font-family:Onest;font-weight:800;src:url(fonts/onest-latin-800-normal.woff2)}
+@font-face{font-family:Brico;font-weight:800;src:url(fonts/bricolage-grotesque-latin-800-normal.woff2)}
+:root{--p0:#1C0745;--p1:#3A0F86;--p2:#6A23D6;--pink:#FF2E63;--pink-d:#E61E52;
+  --ink:#15121C;--sub:#76717F;--sub2:#A9A4B2;--line:#EEECF2;--tile:#F6F4FA;--tileb:#EEEBF4;
+  --lime:#DBF86A;--green:#0A8F4D}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E9E7EE}
+body{font-family:Rupee,Geist,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.screen{width:390px;height:844px;position:relative;overflow:hidden;background:#fff}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pk{width:100%;height:100%}
+
+.sb{height:47px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px;letter-spacing:-.2px;position:relative;z-index:2}
+.sb .r{display:flex;gap:6px;align-items:center}.sb svg{fill:currentColor}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:122px;height:35px;border-radius:20px;background:#000;z-index:20}
+
+/* header */
+.hdr{position:relative;color:#fff;overflow:hidden;background:
+  radial-gradient(60% 70% at 100% 0%,rgba(168,96,255,.55),transparent 70%),
+  radial-gradient(50% 60% at 0% 100%,rgba(255,46,99,.30),transparent 70%),
+  linear-gradient(180deg,var(--p0),var(--p1) 75%,#4613A6)}
+.hdr:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;background-image:radial-gradient(#fff 1px,transparent 1.2px);background-size:12px 12px;
+  -webkit-mask-image:linear-gradient(180deg,#000 0,transparent 60%)}
+.top{display:flex;align-items:flex-start;gap:8px;padding:4px 16px 0;position:relative;z-index:1}
+.eta{flex:1;min-width:0}
+.eta small{display:block;font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.6)}
+.eta h1{font-size:28px;font-weight:900;letter-spacing:-1.1px;line-height:1;margin-top:5px;display:flex;align-items:center;gap:7px}
+.eta h1 .x{display:inline-flex;align-items:center;gap:3px;height:20px;padding:0 6px 0 4px;border-radius:5px;background:var(--lime);color:var(--ink);font-size:10.5px;font-weight:800;letter-spacing:.3px}
+.eta h1 .x .i{width:12px;height:12px}
+.addr{display:flex;align-items:center;gap:3px;margin-top:7px;font-size:13px;color:rgba(255,255,255,.75);white-space:nowrap}
+.addr b{color:#fff;font-weight:700}
+.addr .i{width:14px;height:14px;stroke-width:2.6}
+.wal{height:34px;display:flex;align-items:center;gap:6px;padding:0 10px 0 8px;border-radius:9px;font-weight:700;font-size:13.5px;margin-top:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}
+.wal .i{width:16px;height:16px;color:var(--lime)}
+.av{width:34px;height:34px;border-radius:50%;margin-top:8px;display:grid;place-items:center;font-weight:700;font-size:12.5px;
+  background:linear-gradient(135deg,#FFB86B,#FF5F8A);border:2px solid rgba(255,255,255,.35)}
+
+.search{position:relative;z-index:1;margin:12px 16px 0;height:46px;border-radius:10px;background:#fff;color:var(--ink);
+  display:flex;align-items:center;gap:10px;padding:0 13px;box-shadow:0 10px 24px -12px rgba(10,0,40,.7)}
+.search .i{color:var(--p1);width:19px;height:19px}
+.search span{flex:1;font-size:14.5px;color:var(--sub)}
+.search span b{color:var(--ink);font-weight:600}
+.search .bar{width:1px;height:20px;background:var(--line)}
+
+.tabs{position:relative;z-index:1;display:flex;gap:24px;padding:12px 18px 0;width:max-content}
+.tabs div{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.66);padding-bottom:9px;position:relative}
+.tabs .i{width:22px;height:22px;stroke-width:1.7}
+.tabs .on{color:#fff}
+.tabs .on .i{stroke-width:2}
+.tabs .on:after{content:"";position:absolute;bottom:0;left:-6px;right:-6px;height:3px;border-radius:3px 3px 0 0;background:#fff}
+
+/* hero carousel */
+.hero{display:flex;gap:10px;padding:14px 16px 0;width:max-content}
+.hc{width:318px;height:126px;border-radius:14px;position:relative;overflow:hidden;padding:14px 15px;flex:none}
+.h1c{background:linear-gradient(120deg,#E3FB7E,#C8EF3C)}
+.h1c:before{content:"";position:absolute;right:-50px;top:-60px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.35)}
+.hc .tag{display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:5px;background:var(--ink);color:var(--lime);font-size:10px;font-weight:800;letter-spacing:.6px;position:relative}
+.hc h2{font-size:23px;font-weight:900;letter-spacing:-.9px;line-height:1.02;margin-top:8px;position:relative}
+.hc h2 em{font-style:normal;color:#2D6A00}
+.hc p{font-size:12px;font-weight:500;color:#3F4D12;margin-top:5px;position:relative}
+.hc .cta{position:absolute;left:15px;bottom:13px;display:inline-flex;align-items:center;gap:2px;height:26px;padding:0 8px 0 10px;border-radius:7px;background:var(--ink);color:#fff;font-size:12px;font-weight:700}
+.hc .cta .i{width:13px;height:13px;stroke-width:2.8}
+.pile{position:absolute;right:0;bottom:0;width:160px;height:126px}
+.pile img{position:absolute;filter:drop-shadow(0 6px 8px rgba(40,60,0,.28))}
+.h2c{background:linear-gradient(135deg,#FF4F7E,#C2185B)}.h2c:before{content:"";position:absolute;left:-30px;top:20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.15)}
+
+.dots{display:flex;justify-content:center;gap:4px;margin-top:9px}
+.dots i{width:5px;height:5px;border-radius:3px;background:#DDD9E4}.dots i.on{width:16px;background:var(--p1)}
+
+/* section */
+.sec{display:flex;align-items:flex-end;justify-content:space-between;padding:0 16px;margin-top:12px}
+.sec h3{font-size:17px;font-weight:800;letter-spacing:-.5px}
+.sec h3 small{display:block;font-size:11.5px;font-weight:500;color:var(--sub);letter-spacing:0;margin-top:1px}
+.sec a{font-size:12.5px;font-weight:700;color:var(--pink);display:flex;align-items:center;gap:1px;padding-bottom:1px}
+.sec a .i{width:13px;height:13px;stroke-width:2.8}
+
+/* product cards */
+.rail{display:flex;gap:10px;padding:10px 16px 0;width:max-content}
+.pc{width:108px}
+.pimg{height:108px;border-radius:12px;background:var(--tile);border:1px solid var(--tileb);position:relative;display:grid;place-items:center}
+.pimg .pk{width:72px;height:86px;margin-top:4px}
+.off{position:absolute;top:-1px;left:8px;padding:4px 5px 5px;font-size:9.5px;font-weight:800;line-height:1.05;text-align:center;color:#fff;background:var(--p2);border-radius:0 0 5px 5px;letter-spacing:.2px;z-index:1}
+.add{position:absolute;right:6px;bottom:-12px;height:30px;min-width:60px;border-radius:8px;background:#fff;border:1px solid var(--pink);color:var(--pink);
+  font-size:12.5px;font-weight:800;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px -4px rgba(255,46,99,.45)}
+.add.q{background:var(--pink);color:#fff;justify-content:space-between;padding:0 9px;min-width:70px}
+.add.q span{font-size:16px;font-weight:500;line-height:1}
+.pinfo{padding:17px 1px 0}
+.price{display:flex;align-items:baseline;gap:5px}
+.price b{font-size:14.5px;font-weight:800;letter-spacing:-.3px}
+.price s{font-size:11.5px;color:var(--sub2);font-weight:500}
+.save{font-size:11px;font-weight:700;color:var(--green);margin-top:1px}
+.pn{font-size:12.5px;font-weight:600;line-height:1.28;margin-top:3px;letter-spacing:-.15px;height:32px;overflow:hidden}
+.pw{font-size:11.5px;color:var(--sub);margin-top:4px;display:flex;align-items:center;gap:4px}
+.pw i{width:3px;height:3px;border-radius:50%;background:var(--sub2)}
+.pw .st{width:11px;height:11px}
+
+/* bestseller collage tiles */
+.bs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:10px 16px 0}
+.bt .tl{height:114px;border-radius:12px;background:var(--tile);border:1px solid var(--tileb);display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:6px;position:relative}
+.bt .tl div{background:#fff;border-radius:8px;display:grid;place-items:center}
+.bt .tl .pk{width:30px;height:36px}
+.bt .more{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);height:20px;padding:0 8px;border-radius:10px;background:#fff;border:1px solid var(--tileb);font-size:10.5px;font-weight:700;color:var(--sub);display:flex;align-items:center;white-space:nowrap}
+.bt span.l{display:block;text-align:center;font-size:12px;font-weight:700;margin-top:15px;letter-spacing:-.2px}
+
+/* floating cart */
+.cart{position:absolute;left:50%;transform:translateX(-50%);bottom:98px;z-index:6;height:58px;border-radius:30px;background:var(--pink);color:#fff;
+  display:flex;align-items:center;gap:10px;padding:0 8px;box-shadow:0 14px 30px -8px rgba(230,30,82,.65)}
+.thumbs{display:flex}
+.thumbs i{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;border:2px solid var(--pink);overflow:hidden}
+.thumbs i+i{margin-left:-17px}
+.thumbs .pk{width:26px;height:32px;margin-top:3px}
+.cart .t{white-space:nowrap}
+.cart .t b{display:block;font-size:15px;font-weight:800;letter-spacing:-.2px}
+.cart .t small{display:flex;align-items:center;gap:3px;font-size:11.5px;font-weight:600;opacity:.92}
+.cart .t small .i{width:12px;height:12px;stroke-width:3}
+.cart .go{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;margin-left:4px}
+.cart .go .i{stroke-width:2.6}
+
+/* tab bar */
+.nav{position:absolute;left:0;right:0;bottom:0;height:86px;background:#fff;border-top:1px solid var(--line);z-index:7;display:flex;padding:9px 6px 0}
+.nav div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--sub2)}
+.nav .i{width:24px;height:24px;stroke-width:1.8}
+.nav .on{color:var(--p1)}
+.nav .on .i{fill:#EDE4FF}
+.homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#15121C;z-index:8}
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <div class="hdr">
+    <!--SB-->
+    <div class="top">
+      <div class="eta">
+        <small>JHOLA IN</small>
+        <h1>9 minutes <span class="x"><svg class="i"><use href="#bolt"/></svg>EXPRESS</span></h1>
+        <div class="addr"><b>Home</b>&nbsp;– Flat 302, Shanti Niwas, Dadar W<svg class="i"><use href="#down"/></svg></div>
+      </div>
+      <div class="wal"><svg class="i"><use href="#wallet"/></svg>₹120</div>
+      <div class="av">RK</div>
+    </div>
+
+    <div class="search">
+      <svg class="i"><use href="#search"/></svg>
+      <span>Search “<b>toor dal</b>”</span>
+      <i class="bar"></i>
+      <svg class="i"><use href="#mic"/></svg>
+    </div>
+
+    <div class="tabs">
+      <div class="on"><svg class="i"><use href="#t-all"/></svg>All</div>
+      <div><svg class="i"><use href="#t-kirana"/></svg>Kirana</div>
+      <div><svg class="i"><use href="#t-fresh"/></svg>Fresh</div>
+      <div><svg class="i"><use href="#t-dairy"/></svg>Dairy</div>
+      <div><svg class="i"><use href="#t-snacks"/></svg>Snacks</div>
+      <div><svg class="i"><use href="#t-home"/></svg>Cleaning</div>
+      <div><svg class="i"><use href="#t-pooja"/></svg>Pooja</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hc h1c">
+      <span class="tag">MANDI FRESH · 5 AM</span>
+      <h2>Sabzi from <em>₹9</em></h2>
+      <p>Straight from Vashi APMC</p>
+      <span class="cta">Shop now<svg class="i"><use href="#right"/></svg></span>
+      <div class="pile">
+        <img src="img/onion.webp" style="width:60px;right:92px;bottom:-4px" alt="">
+        <img src="img/potato.webp" style="width:58px;right:2px;bottom:-2px" alt="">
+        <img src="img/tomato.webp" style="width:76px;right:38px;bottom:14px" alt="">
+        <img src="img/chilli.webp" style="width:42px;right:8px;bottom:62px;transform:rotate(-24deg)" alt="">
+        <img src="img/leafy.webp" style="width:46px;right:104px;bottom:46px;transform:rotate(-16deg)" alt="">
+        <img src="img/garlic.webp" style="width:34px;right:12px;bottom:46px" alt="">
+      </div>
+    </div>
+    <div class="hc h2c"></div>
+  </div>
+  <div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="sec">
+    <h3>Buy again</h3>
+    <a>See all<svg class="i"><use href="#right"/></svg></a>
+  </div>
+  <div class="rail">
+    <div class="pc">
+      <div class="pimg"><span class="off">11%<br>OFF</span><svg class="pk"><use href="#pk-atta"/></svg><div class="add">ADD</div></div>
+      <div class="pinfo"><div class="price"><b>₹265</b><s>₹299</s></div><div class="pn">Gehu Gold Whole Wheat Atta</div><div class="pw">5 kg<i></i><svg class="st"><use href="#star"/></svg>4.6</div></div>
+    </div>
+    <div class="pc">
+      <div class="pimg"><svg class="pk"><use href="#pk-milk"/></svg><div class="add q"><span>−</span>2<span>+</span></div></div>
+      <div class="pinfo"><div class="price"><b>₹28</b></div><div class="pn">Dudhwala Toned Milk</div><div class="pw">500 ml<i></i><svg class="st"><use href="#star"/></svg>4.8</div></div>
+    </div>
+    <div class="pc">
+      <div class="pimg"><span class="off">12%<br>OFF</span><svg class="pk"><use href="#pk-dal"/></svg><div class="add">ADD</div></div>
+      <div class="pinfo"><div class="price"><b>₹159</b><s>₹180</s></div><div class="pn">Unpolished Toor Dal</div><div class="pw">1 kg<i></i><svg class="st"><use href="#star"/></svg>4.5</div></div>
+    </div>
+    <div class="pc">
+      <div class="pimg"><svg class="pk"><use href="#pk-oil"/></svg><div class="add">ADD</div></div>
+      <div class="pinfo"><div class="price"><b>₹145</b><s>₹165</s></div><div class="pn">Suraj Sunflower Oil</div><div class="pw">1 L</div></div>
+    </div>
+  </div>
+
+  <div class="sec" style="margin-top:18px"><h3>Bestsellers</h3><a>See all<svg class="i"><use href="#right"/></svg></a></div>
+  <div class="bs">
+    <div class="bt"><div class="tl"><div><svg class="pk"><use href="#pk-atta"/></svg></div><div><svg class="pk"><use href="#pk-rice"/></svg></div><div><svg class="pk"><use href="#pk-dal"/></svg></div><div><svg class="pk"><use href="#pk-sugar"/></svg></div><span class="more">+42 more</span></div><span class="l">Atta, Rice &amp; Dal</span></div>
+    <div class="bt"><div class="tl"><div><svg class="pk"><use href="#pk-milk"/></svg></div><div><svg class="pk"><use href="#pk-curd"/></svg></div><div><svg class="pk"><use href="#pk-bread"/></svg></div><div><svg class="pk"><use href="#pk-eggs"/></svg></div><span class="more">+28 more</span></div><span class="l">Dairy &amp; Bread</span></div>
+    <div class="bt"><div class="tl"><div><svg class="pk"><use href="#pk-chips"/></svg></div><div><svg class="pk"><use href="#pk-biscuit"/></svg></div><div><svg class="pk"><use href="#pk-noodles"/></svg></div><div><svg class="pk"><use href="#pk-tea"/></svg></div><span class="more">+60 more</span></div><span class="l">Snacks &amp; Tea</span></div>
+  </div>
+
+  <div class="cart">
+    <div class="thumbs"><i><svg class="pk"><use href="#pk-milk"/></svg></i><i><svg class="pk"><use href="#pk-bread"/></svg></i><i><svg class="pk"><use href="#pk-curd"/></svg></i></div>
+    <div class="t"><b>View cart · ₹247</b><small><svg class="i"><use href="#check"/></svg>Free delivery unlocked</small></div>
+    <div class="go"><svg class="i"><use href="#right"/></svg></div>
+  </div>
+
+  <div class="nav">
+    <div class="on"><svg class="i"><use href="#home"/></svg>Home</div>
+    <div><svg class="i"><use href="#grid"/></svg>Categories</div>
+    <div><svg class="i"><use href="#again"/></svg>Buy again</div>
+    <div><svg class="i"><use href="#user"/></svg>Account</div>
+  </div>
+  <div class="homebar"></div>
+</div>
+<!--ICONS-->
+<!--PACKS-->
+</body>
+</html>

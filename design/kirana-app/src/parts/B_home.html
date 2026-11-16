@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jhola · Home · Direction B</title>
+<style>
+/* Direction B v2: fresh and local (Instamart / Blinkit lean). Fonts: Bricolage Grotesque (display) + Onest (text). */
+@font-face{font-family:Rupee;src:url(fonts/geist-sans-latin-700-normal.woff2);unicode-range:U+20B9}
+@font-face{font-family:Onest;font-weight:400;src:url(fonts/onest-latin-400-normal.woff2)}
+@font-face{font-family:Onest;font-weight:500;src:url(fonts/onest-latin-500-normal.woff2)}
+@font-face{font-family:Onest;font-weight:600;src:url(fonts/onest-latin-600-normal.woff2)}
+@font-face{font-family:Onest;font-weight:700;src:url(fonts/onest-latin-700-normal.woff2)}
+@font-face{font-family:Onest;font-weight:800;src:url(fonts/onest-latin-800-normal.woff2)}
+@font-face{font-family:Brico;font-weight:700;src:url(fonts/bricolage-grotesque-latin-700-normal.woff2)}
+@font-face{font-family:Brico;font-weight:800;src:url(fonts/bricolage-grotesque-latin-800-normal.woff2)}
+:root{--g:#0A8A43;--g-d:#06622F;--g-dd:#053B20;--g-s:#E6F6EC;--or:#FF6A13;
+  --ink:#141815;--sub:#6B726D;--sub2:#A3A9A5;--line:#ECEEEB}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8EAE7}
+body{font-family:Rupee,Onest,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.d{font-family:Rupee,Brico,Onest,sans-serif}
+.screen{width:390px;height:844px;position:relative;overflow:hidden;background:#fff}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pk{width:100%;height:100%}
+
+.sb{height:47px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font-weight:600;font-size:16px;letter-spacing:-.2px;position:relative;z-index:2}
+.sb .r{display:flex;gap:6px;align-items:center}.sb svg{fill:currentColor}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:122px;height:35px;border-radius:20px;background:#000;z-index:20}
+
+/* warm header */
+.hdr{position:relative;background:linear-gradient(180deg,#FFE9B8 0%,#FFF4DA 58%,#FFFDF7 100%);padding-bottom:14px;border-bottom:1px solid #F3EBD6}
+.hdr:before{content:"";position:absolute;right:-70px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#FFD47A 0%,rgba(255,212,122,0) 68%)}
+/* toran (festive string) */
+.toran{position:absolute;left:0;right:0;top:44px;height:20px;z-index:1;opacity:.9}
+.top{display:flex;align-items:flex-start;gap:10px;padding:6px 16px 0;position:relative;z-index:2}
+.eta{flex:1;min-width:0}
+.from{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--g-d);white-space:nowrap}
+.from .i{width:15px;height:15px;stroke-width:2.2}
+.from .vf{width:14px;height:14px;color:var(--g)}
+.eta h1{font-size:31px;font-weight:800;letter-spacing:-1.3px;line-height:1;margin-top:6px}
+.addr{display:flex;align-items:center;gap:3px;margin-top:7px;font-size:13px;color:var(--sub);white-space:nowrap}
+.addr b{color:var(--ink);font-weight:700}
+.addr .i{width:14px;height:14px;stroke-width:2.6;color:var(--ink)}
+.ib{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid rgba(20,24,21,.1);display:grid;place-items:center;margin-top:4px}
+.ib .i{width:20px;height:20px}
+
+.search{position:relative;z-index:2;margin:14px 16px 0;height:48px;border-radius:12px;background:#fff;border:1px solid rgba(20,24,21,.12);
+  display:flex;align-items:center;gap:10px;padding:0 14px;box-shadow:0 8px 20px -14px rgba(90,60,0,.55)}
+.search .i{width:19px;height:19px}
+.search span{flex:1;font-size:14.5px;color:var(--sub)}
+.search span b{color:var(--ink);font-weight:600}
+.search .bar{width:1px;height:20px;background:var(--line)}
+.search .mic{color:var(--g)}
+
+.promise{position:relative;z-index:2;display:flex;gap:8px;padding:10px 16px 0}
+.promise div{flex:1;height:30px;border-radius:8px;background:rgba(255,255,255,.75);border:1px solid rgba(20,24,21,.07);display:flex;align-items:center;justify-content:center;gap:5px;
+  font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap;letter-spacing:-.1px}
+.promise .i{width:14px;height:14px;color:var(--g);stroke-width:2.4}
+
+/* section */
+.sec{display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-top:14px}
+.sec h3{font-size:18.5px;font-weight:800;letter-spacing:-.6px}
+.sec a{font-size:12.5px;font-weight:700;color:var(--g);display:flex;align-items:center;gap:1px}
+.sec a .i{width:13px;height:13px;stroke-width:2.8}
+
+/* category grid with packshot collages */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 9px;padding:11px 16px 0}
+.ct{height:74px;border-radius:14px;position:relative;overflow:hidden;border:1px solid rgba(20,24,21,.05)}
+.ct .b{position:absolute;width:37px;height:44px;left:6px;bottom:2px;transform:rotate(-8deg)}
+.ct .f{position:absolute;width:44px;height:53px;right:4px;bottom:-2px}
+.ct img.b{width:38px;height:38px;left:6px;bottom:6px;transform:none}
+.ct img.f{width:46px;height:46px;right:4px;bottom:4px}
+.cg span{display:block;text-align:center;font-size:11.5px;font-weight:600;line-height:1.22;margin-top:6px;letter-spacing:-.15px}
+.cg .new{position:absolute;top:5px;left:5px;height:16px;padding:0 5px;border-radius:4px;background:var(--or);color:#fff;font-size:9px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;z-index:1}
+.c1{background:linear-gradient(180deg,#EAF7E2,#D3EEC6)}.c2{background:linear-gradient(180deg,#FFF3DD,#FFE3B5)}
+.c3{background:linear-gradient(180deg,#E8F1FF,#D3E3FF)}.c4{background:linear-gradient(180deg,#FFEDE6,#FFD8C8)}
+.c5{background:linear-gradient(180deg,#FFF6D3,#FFEA9E)}.c6{background:linear-gradient(180deg,#FBEAEA,#F5D2D2)}
+.c7{background:linear-gradient(180deg,#E4F6F8,#CBEDF0)}.c8{background:linear-gradient(180deg,#F2ECFF,#E2D6FF)}
+
+/* ration banner: product shelf */
+.banner{margin:12px 16px 0;height:126px;border-radius:14px;position:relative;overflow:hidden;padding:14px 15px;color:#fff;
+  background:radial-gradient(80% 120% at 100% 0%,#13A157 0%,transparent 60%),linear-gradient(135deg,var(--g-dd),#08713A)}
+.banner small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.8px;color:#A8EBC3}
+.banner h2{font-size:20px;font-weight:800;letter-spacing:-.6px;line-height:1.05;margin-top:5px}
+.banner .cta{display:inline-flex;align-items:center;gap:3px;margin-top:10px;height:28px;padding:0 9px 0 11px;border-radius:8px;background:#fff;color:var(--g-dd);font-size:12.5px;font-weight:700}
+.banner .cta .i{width:13px;height:13px;stroke-width:2.8}
+.shelf{position:absolute;right:10px;bottom:10px;width:176px;height:96px}
+.shelf:after{content:"";position:absolute;left:-6px;right:-6px;bottom:0;height:7px;border-radius:3px;background:linear-gradient(180deg,#C98A3E,#8C5A1E);box-shadow:0 4px 8px rgba(0,0,0,.25)}
+.shelf .pk{position:absolute;bottom:3px}
+.save{position:absolute;right:12px;top:10px;z-index:2;background:#FFE14A;color:var(--ink);font-size:10px;font-weight:800;line-height:1.05;text-align:center;
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;transform:rotate(10deg)}
+
+/* Blinkit-style product cards (peeking under the cart) */
+.rail{display:flex;gap:10px;padding:10px 16px 0;width:max-content}
+.pc{width:124px;border:1px solid var(--line);border-radius:12px;padding:8px;background:#fff;position:relative}
+.pc .im{height:92px;display:grid;place-items:center}
+.pc .im .pk{width:66px;height:80px}
+.badge{position:absolute;left:8px;top:-1px;width:30px;padding:3px 0 6px;background:var(--or);color:#fff;font-size:9px;font-weight:800;line-height:1.05;text-align:center;
+  clip-path:polygon(0 0,100% 0,100% 100%,83% 88%,66% 100%,50% 88%,33% 100%,17% 88%,0 100%)}
+
+/* cart bar with free-delivery progress */
+.cart{position:absolute;left:12px;right:12px;bottom:96px;z-index:6;border-radius:14px;background:var(--g);color:#fff;padding:9px 14px 10px 9px;
+  box-shadow:0 14px 30px -10px rgba(6,98,47,.65)}
+.cart .row{display:flex;align-items:center;gap:11px}
+.thumbs{display:flex}
+.thumbs i{width:38px;height:38px;border-radius:9px;background:#fff;display:grid;place-items:center;border:2px solid var(--g);overflow:hidden}
+.thumbs i+i{margin-left:-12px}
+.thumbs .pk{width:26px;height:31px;margin-top:3px}
+.cart .t{flex:1;min-width:0;white-space:nowrap}
+.cart .t b{display:block;font-size:15px;font-weight:700;letter-spacing:-.2px}
+.cart .t small{font-size:11.5px;font-weight:500;color:#CBF3DA}
+.cart .t small b{display:inline;font-size:11.5px;color:#fff}
+.cart .go{display:flex;align-items:center;gap:2px;font-size:14px;height:34px;padding:0 8px 0 11px;border-radius:9px;background:rgba(255,255,255,.16);font-weight:700;white-space:nowrap}
+.cart .go .i{width:16px;height:16px;stroke-width:2.8}
+.prog{height:4px;border-radius:2px;background:rgba(255,255,255,.22);margin:9px 0 0 3px;position:relative}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:78%;border-radius:2px;background:#FFE14A}
+.prog em{position:absolute;right:-2px;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;background:#fff;color:var(--g);display:grid;place-items:center}
+.prog em .i{width:10px;height:10px;stroke-width:3}
+
+/* tab bar */
+.nav{position:absolute;left:0;right:0;bottom:0;height:86px;background:#fff;border-top:1px solid var(--line);z-index:7;display:flex;padding:0 6px}
+.nav div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--sub2);padding-top:10px;position:relative}
+.nav .i{width:24px;height:24px;stroke-width:1.8}
+.nav .on{color:var(--g-d)}
+.nav .on .i{fill:var(--g-s)}
+.nav .on:before{content:"";position:absolute;top:-1px;width:32px;height:3px;border-radius:0 0 3px 3px;background:var(--g)}
+.homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#141815;z-index:8}
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <div class="hdr">
+    <!--SB-->
+    <div class="top">
+      <div class="eta">
+        <div class="from"><svg class="i"><use href="#store"/></svg>Shree Ganesh Kirana<svg class="vf"><use href="#vf"/></svg><span style="color:var(--sub);font-weight:600">· 400 m</span></div>
+        <h1 class="d">11 minutes</h1>
+        <div class="addr"><b>Home</b>&nbsp;– B-12, Mayur Colony, Kothrud<svg class="i"><use href="#down"/></svg></div>
+      </div>
+      <div class="ib"><svg class="i"><use href="#user"/></svg></div>
+    </div>
+
+    <div class="search">
+      <svg class="i"><use href="#search"/></svg>
+      <span>Search “<b>Kolhapuri masala</b>”</span>
+      <i class="bar"></i>
+      <svg class="i mic"><use href="#mic"/></svg>
+    </div>
+
+    <div class="promise">
+      <div><svg class="i"><use href="#tag"/></svg>Shop prices</div>
+      <div><svg class="i"><use href="#check"/></svg>Cash on delivery</div>
+      <div><svg class="i"><use href="#again"/></svg>Easy returns</div>
+    </div>
+  </div>
+
+  <div class="sec"><h3 class="d">Shop by category</h3><a>All 24<svg class="i"><use href="#right"/></svg></a></div>
+  <div class="grid">
+    <div class="cg"><div class="ct c1"><img class="b" src="img/carrot.webp" alt=""><img class="f" src="img/tomato.webp" alt=""></div><span>Fruits &amp; Vegetables</span></div>
+    <div class="cg"><div class="ct c2"><svg class="pk b"><use href="#pk-rice"/></svg><svg class="pk f"><use href="#pk-atta"/></svg></div><span>Atta, Rice &amp; Dal</span></div>
+    <div class="cg"><div class="ct c3"><svg class="pk b"><use href="#pk-curd"/></svg><svg class="pk f"><use href="#pk-milk"/></svg></div><span>Dairy, Bread &amp; Eggs</span></div>
+    <div class="cg"><div class="ct c4"><svg class="pk b"><use href="#pk-ghee"/></svg><svg class="pk f"><use href="#pk-oil"/></svg></div><span>Oil, Ghee &amp; Masala</span></div>
+    <div class="cg"><div class="ct c5"><svg class="pk b"><use href="#pk-biscuit"/></svg><svg class="pk f"><use href="#pk-chips"/></svg></div><span>Snacks &amp; Biscuits</span></div>
+    <div class="cg"><div class="ct c6"><svg class="pk b"><use href="#pk-noodles"/></svg><svg class="pk f"><use href="#pk-tea"/></svg></div><span>Tea, Coffee &amp; Instant</span></div>
+    <div class="cg"><div class="ct c7"><svg class="pk b" style="transform:rotate(-6deg)"><use href="#pk-sugar"/></svg><svg class="pk f"><use href="#pk-detergent"/></svg></div><span>Cleaning &amp; Home</span></div>
+    <div class="cg"><div class="ct c8"><span class="new">NEW</span><img class="b" src="img/diya.webp" alt=""><img class="f" src="img/coconut.webp" alt="" onerror="this.src='img/gift.webp'"></div><span>Pooja Needs</span></div>
+  </div>
+
+  <div class="banner">
+    <small>MONTHLY RATION</small>
+    <h2 class="d">Whole month’s<br>kirana, in one tap</h2>
+    <span class="cta">Build my list<svg class="i"><use href="#right"/></svg></span>
+    <div class="shelf">
+      <svg class="pk" style="left:-2px;width:46px;height:56px"><use href="#pk-dal"/></svg>
+      <svg class="pk" style="left:30px;width:58px;height:70px"><use href="#pk-atta"/></svg>
+      <svg class="pk" style="left:76px;width:50px;height:60px"><use href="#pk-oil"/></svg>
+      <svg class="pk" style="left:116px;width:42px;height:50px"><use href="#pk-tea"/></svg>
+      <svg class="pk" style="left:146px;width:36px;height:44px"><use href="#pk-sugar"/></svg>
+    </div>
+    <div class="save">SAVE<br>₹180</div>
+  </div>
+
+
+  <div class="cart">
+    <div class="row">
+      <div class="thumbs"><i><svg class="pk"><use href="#pk-milk"/></svg></i><i><svg class="pk"><use href="#pk-bread"/></svg></i></div>
+      <div class="t"><b>4 items · ₹247</b><small><b>₹52</b> away from free delivery</small></div>
+      <div class="go">View cart<svg class="i"><use href="#right"/></svg></div>
+    </div>
+    <div class="prog"><i></i><em><svg class="i"><use href="#bag"/></svg></em></div>
+  </div>
+
+  <div class="nav">
+    <div class="on"><svg class="i"><use href="#home"/></svg>Home</div>
+    <div><svg class="i"><use href="#grid"/></svg>Categories</div>
+    <div><svg class="i"><use href="#again"/></svg>Buy again</div>
+    <div><svg class="i"><use href="#bag"/></svg>Orders</div>
+  </div>
+  <div class="homebar"></div>
+</div>
+<!--ICONS-->
+<!--PACKS-->
+</body>
+</html>
