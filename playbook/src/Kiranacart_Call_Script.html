@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Kiranacart Call Script</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../assets/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../assets/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../assets/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../assets/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../assets/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../assets/fonts/poppins-latin-ext-700-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:400;src:url(../../assets/fonts/noto-sans-devanagari-devanagari-400-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:600;src:url(../../assets/fonts/noto-sans-devanagari-devanagari-600-normal.woff2)}
+  @font-face{font-family:NotoDeva;font-weight:700;src:url(../../assets/fonts/noto-sans-devanagari-devanagari-700-normal.woff2)}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#3f4552}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{width:110mm;font-family:Poppins,PoppinsX,NotoDeva,sans-serif;color:var(--char);font-size:9.6pt;line-height:1.5}
+  b{font-weight:700}
+  section{padding:0 6mm 8mm}
+  .head{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.6),rgba(255,208,20,0) 55%),var(--char);color:#fff;padding:7mm 6mm 6mm;margin:0 -6mm 5mm}
+  .logo{display:flex;align-items:center;gap:8px}
+  .logo svg{width:24px;height:24px}
+  .logo .div{width:1.5px;height:22px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:12pt;line-height:1}
+  .logo span{display:block;font-size:8pt;letter-spacing:.3em}
+  .head .tag{display:inline-block;margin-top:5mm;background:var(--yellow);color:var(--char);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .head h1{margin:2mm 0 1mm;font-size:18pt;line-height:1.15}
+  .head h1 em{font-style:normal;color:var(--yellow)}
+  .head p{margin:0;color:#d6d9df;font-size:9pt}
+  .sh{margin:7mm -6mm 4mm;padding:6mm 6mm 0;border-top:6px solid var(--yellow)}
+  .sh .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:7.5pt;border-radius:20px;padding:2px 9px;letter-spacing:.05em}
+  .sh h1{margin:2mm 0 0;font-size:16pt;line-height:1.2}
+  h3{font-size:11pt;margin:5mm 0 2mm;line-height:1.25}
+
+  .step{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .step .top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .step .d{flex:0 0 24px;height:24px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;font-size:9.5pt;display:flex;align-items:center;justify-content:center}
+  .step .top b{font-size:11pt}
+  .row{display:flex;gap:6px;margin:3px 0;font-size:9.2pt}
+  .row .k{flex:0 0 58px;font-weight:600;color:var(--muted);font-size:8.3pt;text-transform:uppercase;letter-spacing:.04em;padding-top:1px}
+  .row div{flex:1}
+  .done{margin-top:5px;background:#fff8d6;border-radius:7px;padding:4px 8px;font-size:8.8pt}
+  .done b{font-size:8.5pt}
+  .say{background:var(--char);color:#fff;border-radius:9px;padding:7px 10px;margin:5px 0}
+  .say .mr{font-size:9.6pt;font-weight:600}
+  .say .en{color:#b9bec8;font-size:8.4pt}
+  ul{margin:2px 0 4px;padding-left:16px}
+  li{margin-bottom:2px}
+
+  .prod{border:1px solid var(--stone);border-radius:12px;margin-bottom:7px;overflow:hidden}
+  .prod .t{display:flex;justify-content:space-between;align-items:baseline;background:var(--cloud);padding:7px 11px;border-bottom:1px solid var(--stone)}
+  .prod .t b{font-size:10.2pt}
+  .prod .t span{font-weight:700;white-space:nowrap}
+  .prod .b{padding:6px 11px 8px;font-size:9pt}
+  .prod .in b,.prod .out b{display:block;font-size:8.2pt;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .prod .out{margin-top:4px}
+  .fees{background:var(--char);color:#fff;border-radius:12px;padding:9px 12px;font-size:9pt}
+  .fees b{color:var(--yellow)}
+
+  .pf{border:1px solid var(--stone);border-radius:12px;padding:9px 11px;margin-bottom:7px}
+  .pf b{font-size:10.2pt}
+  .pf .how{color:var(--muted);font-size:8.8pt;margin-top:2px}
+  .pf .line{margin-top:4px;background:var(--cloud);border-left:3px solid var(--yellow);border-radius:0 7px 7px 0;padding:4px 8px;font-size:9pt}
+
+  .ag{display:flex;gap:9px;padding:7px 0;border-bottom:1px dashed var(--stone)}
+  .ag:last-child{border-bottom:0}
+  .ag .n{flex:0 0 22px;height:22px;border-radius:6px;background:var(--yellow);font-weight:700;font-size:9pt;display:flex;align-items:center;justify-content:center}
+  .ag b{display:block}
+  .ag span{color:var(--muted);font-size:9pt}
+  .note{background:var(--cloud);border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.8pt;margin-top:6px}
+  .foot{margin-top:6mm;color:var(--muted);font-size:7.5pt;text-align:center}
+  .nums{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+  .nums div{border:1px solid var(--stone);border-radius:10px;padding:7px 10px;font-size:8.6pt;color:var(--muted)}
+  .nums b{display:block;font-size:14pt;color:var(--char);line-height:1.2}
+  .nums div.dk{background:var(--char);border-color:var(--char);color:#c9cdd5}
+  .nums div.dk b{color:var(--yellow)}
+  .if{border-left:3px solid var(--yellow);background:var(--cloud);border-radius:0 9px 9px 0;padding:6px 10px;margin-bottom:6px;font-size:9.1pt}
+  .if b{display:block}
+  .dont li{margin-bottom:3px}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+</defs></svg>
+<section>
+  <div class="head">
+    <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+    <span class="tag">CALL SCRIPT · KIRANACART</span>
+    <h1>Subscription, not one-time. <em>Hold ₹20k.</em></h1>
+    <p>Share the proposal on screen and go slide by slide. Keep this open on your phone.</p>
+  </div>
+
+  <div class="nums">
+    <div><b>₹20k + ₹20k</b>Quote: per month + one-time setup</div>
+    <div class="dk"><b>₹15k / month</b>Floor for all 4 zones. Never below</div>
+    <div><b>₹1.4L</b>First 6 months, setup included</div>
+    <div><b>₹15k · ₹1L</b>After 6 months: continue · buy copy</div>
+  </div>
+
+  <h3>Ask before you pitch</h3>
+  <ul>
+    <li>"How many supermarkets have agreed so far, and in which areas?"</li>
+    <li>"How many orders a day in month 1? By month 6?"</li>
+    <li>"Who sets prices: you, or each supermarket?"</li>
+    <li>"Riders: yours, or the supermarkets' staff?"</li>
+    <li>"When do you want the first real order?"</li>
+  </ul>
+
+  <div class="step" style="margin-top:6px"><div class="top"><span class="d">1</span><b>Open · slides 1–2</b></div>
+    <div class="row"><span class="k">Say</span><div>"Your app, your brand, and no dark store to rent. The supermarket in each area is your dark store."</div></div>
+    <div class="row"><span class="k">Ask</span><div>"Is this how you see it? What's missing?"</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">2</span><b>Zones · slide 3</b></div>
+    <div class="row"><span class="k">Say</span><div>"The customer never picks a store. The address decides which supermarket gets the order."</div></div>
+    <div class="row"><span class="k">Ask</span><div>"Which 4 areas, and which supermarket in each?"</div></div>
+    <div class="done"><b>Get:</b> vendor names and areas written down.</div></div>
+
+  <div class="step"><div class="top"><span class="d">3</span><b>What's inside · slide 4</b></div>
+    <div class="row"><span class="k">Say</span><div>Walk the four columns. Stress: "The vendor app is one phone at the counter. No billing software needed."</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">4</span><b>Pricing model · slide 5</b></div>
+    <div class="row"><span class="k">Ask</span><div>"Who should set prices, you or each supermarket?"</div></div>
+    <div class="row"><span class="k">Unsure?</span><div>"Most start with A, one price list. You can move to B later."</div></div>
+    <div class="done"><b>Get:</b> A or B. It changes the build.</div></div>
+
+  <div class="step"><div class="top"><span class="d">5</span><b>Journey and reality · slides 6–7</b></div>
+    <div class="row"><span class="k">Say</span><div>"We promise 20–30 minutes, not 10. A supermarket isn't a dark store, and customers forgive a late order less than an honest promise."</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">6</span><b>Price · slides 8–10</b></div>
+    <div class="row"><span class="k">Say</span><div>"₹20,000 setup and ₹20,000 a month for 6 months. Real orders in 6–8 weeks. After 6 months: continue at ₹15,000, buy your copy for ₹1 lakh, or stop and take all your data."</div></div>
+    <div class="row"><span class="k">Then</span><div><b>Stop talking.</b> Let him answer.</div></div></div>
+
+  <div class="step"><div class="top"><span class="d">7</span><b>Close · slides 11–12</b></div>
+    <div class="row"><span class="k">Say</span><div>"Shall we start? ₹40,000 gets us going: setup plus month 1. I'll send the UPI link now and the agreement today."</div></div>
+    <div class="row"><span class="k">Do</span><div>Send the link while he's still on the call.</div></div>
+    <div class="done"><b>Done when:</b> ₹40,000 paid, or the next call is booked before you hang up.</div></div>
+  <div class="foot">Outgrid Labs · outgridlabs.com · 1/2</div>
+</section>
+
+<section>
+  <div class="sh"><span class="tag">NEGOTIATION</span><h1>Give one step at a time. Get something back each time.</h1></div>
+
+  <h3>Concession ladder, in this order</h3>
+  <div class="ag"><span class="n">1</span><div><b>Waive the ₹20k setup</b><span>Only if he pays 2 months upfront (₹40,000).</span></div></div>
+  <div class="ag"><span class="n">2</span><div><b>Price per zone</b><span>2 zones at ₹15k/month, +₹3k per extra zone. All 4 live = ₹21k. Best move.</span></div></div>
+  <div class="ag"><span class="n">3</span><div><b>Cheaper build months</b><span>Months 1–2 at ₹15k, then ₹20k after launch.</span></div></div>
+  <div class="ag"><span class="n">4</span><div><b>Hybrid</b><span>₹10k/month + ₹3 per delivered order, 6-month minimum. 50 orders/day ≈ ₹14.5k; 150/day ≈ ₹23.5k.</span></div></div>
+  <div class="fees" style="margin-top:6px"><b>Walk away</b> below ₹15k/month for all 4 zones. This is our ₹4.5L multi-store build.</div>
+
+  <h3>If he says</h3>
+  <div class="if"><b>"₹20k a month is too much."</b>"Start with 2 zones at ₹15,000. Add each zone for ₹3,000 when you're ready."</div>
+  <div class="if"><b>"Why pay while you're still building?"</b>"You're booking a team for 6 months. Demo by week 5, real orders by week 8. If it helps, the 2 build months are ₹15,000."</div>
+  <div class="if"><b>"It's a trial. What if it fails?"</b>"Your total risk is ₹1.4 lakh, against ₹4–5 lakh for a custom build. And after 6 months you can stop and take all your data."</div>
+  <div class="if"><b>"Someone quoted ₹50k one-time."</b>"Ask them: does it send orders to the right supermarket by zone? Does each vendor get an app? Who fixes it at 9 pm?"</div>
+  <div class="if"><b>"We want to own the app."</b>"Buy your copy for ₹1 lakh after 6 months. Full ownership from day one is a custom build, ₹4.5 lakh."</div>
+  <div class="if"><b>"Give us the first month free."</b>"I can't, it's the month we work hardest. Pay 2 months upfront and I'll waive the setup."</div>
+  <div class="if"><b>"Take a share of profit instead."</b>"Happy to: ₹10,000 fixed plus ₹3 per delivered order."</div>
+  <div class="if"><b>"Let me think."</b>"What's the one thing stopping you?" Solve it, or fix the next call date now.</div>
+
+  <h3>Don't</h3>
+  <ul class="dont">
+    <li>Promise 10-minute delivery</li>
+    <li>Promise live stock sync with billing software. It's phase 2</li>
+    <li>Give code ownership inside the subscription</li>
+    <li>Include an iPhone app or a second city in this price</li>
+    <li>Start building before the ₹40,000 is in</li>
+    <li>Go below ₹15k/month for 4 zones</li>
+  </ul>
+
+  <h3>The agreement must say</h3>
+  <div class="note">6-month minimum, billed monthly in advance from kickoff · Scope: 4 zones, 4 vendors, about 3,000 products each, 5,000 orders/month · Service pauses after 15 days unpaid · Outgrid owns the software; he owns his brand and data · App on Outgrid's Play account until he buys it · After 6 months: ₹15k/month or ₹1L buyout · Only him in [City] while subscribed · Pricing model A or B · Case-study clause.</div>
+
+  <h3>After the call</h3>
+  <div class="note"><b>Paid:</b> agreement today, kickoff this week, update the tracker.<br><b>Not paid:</b> send the proposal PDF on WhatsApp with the next call time.<br><b>Why we want this deal:</b> he pays us to build the multi-vendor version of our app, and we keep the code to sell in other cities.</div>
+  <div class="foot">Outgrid Labs · outgridlabs.com · 2/2</div>
+</section>
+</body>
+</html>

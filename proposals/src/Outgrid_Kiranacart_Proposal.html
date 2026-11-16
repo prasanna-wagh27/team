@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outgrid Labs · Kiranacart Proposal</title>
+<style>
+  @font-face{font-family:Poppins;font-weight:400;src:url(../../assets/fonts/poppins-latin-400-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:500;src:url(../../assets/fonts/poppins-latin-500-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:600;src:url(../../assets/fonts/poppins-latin-600-normal.woff2)}
+  @font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/poppins-latin-700-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:400;src:url(../../assets/fonts/poppins-latin-ext-400-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:600;src:url(../../assets/fonts/poppins-latin-ext-600-normal.woff2)}
+  @font-face{font-family:PoppinsX;font-weight:700;src:url(../../assets/fonts/poppins-latin-ext-700-normal.woff2)}
+  @page{size:1280px 720px;margin:0}
+  :root{--char:#0B0D12;--yellow:#FFD014;--stone:#E5E7EB;--cloud:#F9FAFB;--muted:#4a505c;--soft:#fff8d6}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  body{font-family:Poppins,PoppinsX,sans-serif;color:var(--char);font-size:18px;line-height:1.45}
+  b{font-weight:700}
+  ul{margin:0;padding-left:20px}
+  li{margin-bottom:5px}
+
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;padding:52px 72px 70px;break-after:page;background:#fff}
+  .slide:last-child{break-after:auto}
+  .slide.dark{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.55),rgba(255,208,20,0) 50%),var(--char);color:#fff}
+  .ft{position:absolute;left:72px;right:72px;bottom:26px;display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+  .dark .ft{color:#9aa0ab}
+  .tag{display:inline-block;background:var(--char);color:var(--yellow);font-weight:700;font-size:13px;border-radius:20px;padding:3px 13px;letter-spacing:.06em}
+  .dark .tag{background:var(--yellow);color:var(--char)}
+  h2{font-size:40px;line-height:1.15;margin:12px 0 6px}
+  h2 em{font-style:normal;background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+  .lede{color:var(--muted);font-size:19px;margin:0 0 22px;max-width:980px}
+
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo svg{width:40px;height:40px}
+  .logo .div{width:2px;height:36px;background:#fff;opacity:.5}
+  .logo b{display:block;font-size:21px;line-height:1}
+  .logo span{display:block;font-size:13px;letter-spacing:.3em}
+
+  /* cover */
+  .cover h1{font-size:64px;line-height:1.08;margin:18px 0 16px;max-width:900px}
+  .cover h1 em{font-style:normal;color:var(--yellow)}
+  .cover p{font-size:21px;color:#d6d9df;max-width:760px;margin:0}
+  .cover .chips{display:flex;gap:10px;margin-top:30px}
+  .cover .chips span{border:1px solid #3a3f4b;background:#171a22;border-radius:30px;padding:7px 16px;font-size:16px}
+  .cover .date{position:absolute;left:72px;bottom:60px;color:#b9bec8;font-size:16px}
+
+  /* flow */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .fs{border:1px solid var(--stone);border-radius:16px;padding:16px 18px;min-height:150px}
+  .fs .n{width:34px;height:34px;border-radius:50%;background:var(--char);color:var(--yellow);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+  .fs b{display:block;font-size:19px;line-height:1.25}
+  .fs span{color:var(--muted);font-size:15.5px}
+  .fs.earn{background:var(--yellow);border-color:var(--yellow)}
+  .fs.earn .n{background:var(--char)}
+  .fs.earn span{color:var(--char)}
+
+  /* columns */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .col{border:1px solid var(--stone);border-radius:16px;overflow:hidden}
+  .col .t{background:var(--cloud);border-bottom:1px solid var(--stone);padding:12px 18px;display:flex;justify-content:space-between;align-items:baseline}
+  .col .t b{font-size:21px}
+  .col .t span{color:var(--muted);font-size:14px}
+  .col.dk .t{background:var(--char);color:#fff;border-color:var(--char)}
+  .col.dk .t span{color:#b9bec8}
+  .col ul{padding:14px 18px 10px 38px;font-size:16.5px}
+  .col li{margin-bottom:6px}
+  .strip{margin-top:18px;background:var(--cloud);border:1px solid var(--stone);border-radius:14px;padding:12px 18px;font-size:16.5px}
+  .strip b{margin-right:6px}
+
+  /* trust grid */
+  .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tc{border:1px solid var(--stone);border-radius:16px;padding:18px 20px}
+  .tc .i{width:42px;height:42px;border-radius:12px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin-bottom:10px}
+  .tc b{display:block;font-size:19px}
+  .tc span{color:var(--muted);font-size:15.5px}
+
+  /* earn options */
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .op{border:1px solid var(--stone);border-radius:16px;padding:18px 20px;position:relative}
+  .op.rec{border:2.5px solid var(--char)}
+  .op .badge{position:absolute;top:-13px;right:16px;background:var(--yellow);font-weight:700;font-size:12.5px;border-radius:20px;padding:3px 12px;letter-spacing:.05em}
+  .op .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .op b.h{display:block;font-size:21px;line-height:1.25;margin:2px 0 8px}
+  .op p{margin:0 0 10px;font-size:16px}
+  .op .pc{font-size:15px;border-top:1px dashed var(--stone);padding-top:8px}
+  .op .pc div{margin-bottom:3px}
+  .op .pc .y{font-weight:600}
+  .op .pc .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
+  .op .pc .x:before{content:"− ";color:#c0392b;font-weight:700}
+
+  /* fee slabs */
+  .fee{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  .slab{border:1px solid var(--stone);border-radius:16px;overflow:hidden}
+  .slab .r{display:flex;justify-content:space-between;padding:11px 20px;border-top:1px solid var(--stone);font-size:18px}
+  .slab .r:first-child{border-top:0;background:var(--char);color:#fff;font-size:14px;font-weight:600;padding:9px 20px}
+  .slab .r b{font-size:20px}
+  .slab .r.hl{background:var(--soft)}
+  .slab .cap{padding:8px 20px;font-size:13.5px;color:var(--muted);background:var(--cloud);border-top:1px solid var(--stone)}
+  .ex{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:18px;padding:20px 24px}
+  .ex .k{color:#b9bec8;font-size:15px}
+  .ex .rt{font-size:24px;font-weight:700;margin:2px 0 12px}
+  .ex .ln{display:flex;justify-content:space-between;padding:6px 0;border-top:1px solid #2f3440;font-size:17px}
+  .ex .ln.t{font-weight:700;font-size:20px;color:var(--yellow)}
+  .mini{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .mini div{border:1px solid var(--stone);border-radius:14px;padding:12px 16px;font-size:15px;color:var(--muted)}
+  .mini b{display:block;color:var(--char);font-size:17px}
+
+  /* pay options */
+  .po{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pc2{border:1px solid var(--stone);border-radius:18px;padding:20px 24px}
+  .pc2 .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .pc2 b.h{display:block;font-size:24px;margin:2px 0 12px}
+  .pc2 .mv{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:16.5px}
+  .pc2 .mv .a{flex:0 0 auto;background:var(--char);color:var(--yellow);font-weight:700;border-radius:8px;padding:3px 10px;font-size:15px;min-width:64px;text-align:center}
+  .pc2 .pp{border-top:1px dashed var(--stone);margin-top:10px;padding-top:8px;font-size:15.5px}
+  .pc2 .pp div{margin-bottom:3px}
+  .pc2 .pp .y:before{content:"+ ";color:#0a8a3a;font-weight:700}
+  .pc2 .pp .x:before{content:"− ";color:#c0392b;font-weight:700}
+
+  /* flowchart */
+  .fc .rw{display:flex;align-items:stretch;gap:0;margin-bottom:12px}
+  .fc .lb{flex:0 0 112px;display:flex;flex-direction:column;justify-content:center;font-weight:700;font-size:15px;line-height:1.2}
+  .fc .lb span{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+  .fc .nd{flex:1;border:1.5px solid var(--char);border-radius:11px;padding:8px 10px;font-size:14px;line-height:1.25;text-align:center;display:flex;flex-direction:column;justify-content:center;background:#fff}
+  .fc .nd small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+  .fc .nd.q{border:2px solid #d4a800;background:var(--soft)}
+  .fc .nd.q:before{content:"◆ ";color:#d4a800;font-size:11px}
+  .fc .nd.pay{background:var(--char);color:#fff;border-color:var(--char)}
+  .fc .nd.pay small{color:#c9cdd5}
+  .fc .nd.who{flex:0 0 auto;border:0;background:var(--cloud);font-weight:700;font-size:13px;padding:8px 10px;border-radius:9px}
+  .fc .ar{flex:0 0 26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px}
+  .fc .gap{flex:0 0 24px}
+  .fc .dn{margin:-6px 0 6px 112px;font-weight:700;font-size:15px;color:var(--muted)}
+
+  /* price */
+  .pgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start}
+  .pbox{background:radial-gradient(circle at 100% 0%,rgba(255,208,20,.5),rgba(255,208,20,0) 55%),var(--char);color:#fff;border-radius:22px;padding:28px 32px}
+  .pbox .l{color:#b9bec8;font-size:16px}
+  .pbox .p{font-size:66px;font-weight:700;color:var(--yellow);line-height:1.05;margin:4px 0 6px}
+  .pbox .s{font-size:17px;color:#e3e5ea}
+  .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+  .pay div{background:#1b1f28;border:1px solid #333845;border-radius:12px;padding:10px 12px;font-size:14px;color:#c9cdd5}
+  .pay b{display:block;color:#fff;font-size:20px}
+  .lst b.h{display:block;font-size:19px;margin-bottom:6px}
+  .lst ul{font-size:17px;margin-bottom:18px}
+  .lst .no li{color:var(--muted)}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:10px}
+  .tl:before{content:"";position:absolute;left:20px;right:20px;top:20px;height:3px;background:var(--stone)}
+  .tl .w{position:relative;padding-right:22px}
+  .tl .dot{width:42px;height:42px;border-radius:50%;background:#fff;border:3px solid var(--char);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;position:relative}
+  .tl .w.m .dot{background:var(--yellow)}
+  .tl .d{font-weight:700;color:var(--muted);font-size:14px;letter-spacing:.05em;margin-top:14px}
+  .tl b{display:block;font-size:19px;line-height:1.25;margin:2px 0 4px}
+  .tl span{color:var(--muted);font-size:15.5px}
+  .callout{margin-top:34px;background:var(--char);color:#fff;border-radius:16px;padding:16px 22px;font-size:16.5px;display:flex;gap:18px;align-items:flex-start}
+  .callout b{color:var(--yellow)}
+  .callout .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--yellow);color:var(--char);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:20px}
+
+  /* costs */
+  .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cc{border:1px solid var(--stone);border-radius:16px;padding:16px 20px}
+  .cc .w{font-size:15px;color:var(--muted)}
+  .cc b{display:block;font-size:24px;line-height:1.2;margin:2px 0}
+  .cc span{font-size:15px;color:var(--muted)}
+
+  /* next */
+  .next{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start;margin-top:8px}
+  .ns{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #2a2e38}
+  .ns:last-child{border-bottom:0}
+  .ns .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--char);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:17px}
+  .ns b{display:block;font-size:21px}
+  .ns span{color:#c9cdd5;font-size:16px}
+  .ab{background:#171a22;border:1px solid #333845;border-radius:18px;padding:20px 24px;font-size:16px;color:#d6d9df}
+  .ab b.h{font-size:20px;color:#fff;display:block;margin-bottom:4px}
+  .ab ul{margin-top:8px}
+  .ab .c{margin-top:14px;padding-top:10px;border-top:1px solid #333845}
+  .ab .c div{padding:3px 0}
+  .ab .c span{display:inline-block;width:150px;color:#9aa0ab}
+
+  /* agri extras */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
+  .pl{border:1px solid var(--stone);border-radius:18px;padding:18px 20px;position:relative}
+  .pl.star{background:var(--char);color:#fff;border-color:var(--char)}
+  .pl .badge{position:absolute;top:-13px;right:16px;background:var(--yellow);color:var(--char);font-weight:700;font-size:12.5px;border-radius:20px;padding:3px 12px;letter-spacing:.05em}
+  .pl .nm{display:flex;justify-content:space-between;align-items:baseline}
+  .pl .nm b{font-size:22px}
+  .pl .nm span{font-size:13.5px;color:var(--muted)}
+  .pl.star .nm span{color:#b9bec8}
+  .pl .pr{font-size:36px;font-weight:700;line-height:1.15;margin:2px 0 2px}
+  .pl.star .pr{color:var(--yellow)}
+  .pl .for{font-size:15px;color:var(--muted);margin-bottom:10px}
+  .pl.star .for{color:#c9cdd5}
+  .pl .plus{display:inline-block;font-weight:600;font-size:13.5px;background:var(--soft);color:var(--char);border-radius:6px;padding:2px 8px;margin-bottom:6px}
+  .pl ul{font-size:15px;padding-left:18px}
+  .pl li{margin-bottom:4px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .bx{border:1px solid var(--stone);border-radius:18px;padding:18px 22px}
+  .bx.dk{background:var(--char);color:#fff;border-color:var(--char)}
+  .bx .k{font-weight:700;font-size:14px;color:var(--muted);letter-spacing:.06em}
+  .bx.dk .k{color:var(--yellow)}
+  .bx b.h{display:block;font-size:23px;margin:2px 0 10px}
+  .bx ul{font-size:16.5px}
+  .money{display:flex;align-items:stretch;gap:0;margin-top:8px}
+  .money .m{flex:1;border:1.5px solid var(--char);border-radius:14px;padding:14px 16px;text-align:center}
+  .money .m .a{font-size:30px;font-weight:700;line-height:1.1}
+  .money .m span{color:var(--muted);font-size:15px}
+  .money .m.y{background:var(--yellow);border-color:var(--yellow)}
+  .money .m.y span{color:var(--char)}
+  .money .m.d{background:var(--char);color:#fff}
+  .money .m.d .a{color:var(--yellow)}
+  .money .m.d span{color:#c9cdd5}
+  .money .ar{flex:0 0 44px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700}
+  table.pt{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--stone);border-radius:14px;overflow:hidden;font-size:17px}
+  table.pt th{background:var(--char);color:#fff;font-weight:600;font-size:14.5px;padding:10px 16px;text-align:right}
+  table.pt th:first-child,table.pt td:first-child{text-align:left}
+  table.pt td{padding:10px 16px;border-top:1px solid var(--stone);text-align:right}
+  table.pt td:first-child{font-weight:700}
+  table.pt tr.hl td{background:var(--soft)}
+  .wkt{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+  .wkt div{border:1px solid var(--stone);border-radius:14px;padding:12px 18px;color:var(--muted);font-size:15px}
+  .wkt b{display:block;color:var(--char);font-size:26px;line-height:1.15}
+  .wkt div.dk{background:var(--char);border-color:var(--char);color:#c9cdd5}
+  .wkt div.dk b{color:var(--yellow)}
+  .pm2{display:flex;gap:14px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--stone);font-size:17px}
+  .pm2:last-child{border-bottom:0}
+  .pm2 .n{flex:0 0 34px;height:34px;border-radius:9px;background:var(--yellow);font-weight:700;display:flex;align-items:center;justify-content:center}
+  /* kiranacart extras */
+  .cols.c4{grid-template-columns:repeat(4,1fr);gap:14px}
+  .cols.c4 .col .t{padding:11px 16px}
+  .cols.c4 .col .t b{font-size:19px}
+  .cols.c4 .col .t span{font-size:12.5px}
+  .cols.c4 .col ul{padding:12px 14px 8px 32px;font-size:15px}
+  .zone{display:grid;grid-template-columns:520px 1fr;gap:34px;align-items:start;margin-top:4px}
+  .zone svg{width:520px;height:440px}
+  .zl{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--stone)}
+  .zl:first-child{padding-top:2px}
+  .zl:last-child{border-bottom:0}
+  .zl .n{flex:0 0 36px;height:36px;border-radius:10px;background:var(--yellow);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .zl b{display:block;font-size:18.5px;line-height:1.25}
+  .zl span{color:var(--muted);font-size:15.5px}
+  .opts .op .pr2{font-size:34px;font-weight:700;line-height:1.1;margin:4px 0 2px}
+  .opts .op .pr2 small{font-size:16px;font-weight:600;color:var(--muted)}
+  .opts .op.rec{background:var(--char);color:#fff;border-color:var(--char)}
+  .opts .op.rec .k{color:var(--yellow)}
+  .opts .op.rec .pr2{color:var(--yellow)}
+  .opts .op.rec .pr2 small,.opts .op.rec p{color:#d6d9df}
+  .ex2{margin-top:18px;display:grid;grid-template-columns:auto 1fr 1fr;gap:0;border:1px solid var(--stone);border-radius:14px;overflow:hidden;font-size:16px}
+  .ex2 div{padding:11px 18px;border-left:1px solid var(--stone)}
+  .ex2 div:first-child{border-left:0;background:var(--char);color:#fff;font-weight:700;display:flex;align-items:center}
+  .ex2 b{font-size:17px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="mark" viewBox="-6 -6 112 112"><path fill-rule="evenodd" stroke-linejoin="round" stroke-width="7"
+    d="M38,0 L90,0 Q100,0 100,10 L100,60 L60,100 L10,100 Q0,100 0,90 L0,38 Z M29,25 L71,25 Q75,25 75,29 L75,71 Q75,75 71,75 L29,75 Q25,75 25,71 L25,29 Q25,25 29,25 Z"/></symbol>
+  <symbol id="shop" viewBox="0 0 24 24"><path d="M4 9.5V20h16V9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 4h18l1 4a3 3 0 0 1-5 1.5A3 3 0 0 1 12 9.5a3 3 0 0 1-5 0A3 3 0 0 1 2 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</defs></svg>
+
+<div class="slide dark cover">
+  <div class="logo"><svg fill="#fff" stroke="#fff"><use href="#mark"/></svg><div class="div"></div><div><b>Outgrid</b><span>Labs</span></div></div>
+  <div style="margin-top:70px"><span class="tag">PROPOSAL · KIRANACART</span></div>
+  <h1>[City]’s own <em>quick-delivery app.</em></h1>
+  <p>Customers order groceries on Kiranacart. The partner supermarket in their part of the city packs the order, and a rider delivers it in 20–30 minutes.</p>
+  <div class="chips"><span>Customer app</span><span>Vendor app</span><span>Rider app</span><span>Admin panel</span><span>4 city zones</span></div>
+  <div class="date">Date: ______________</div>
+</div>
+
+<div class="slide">
+  <span class="tag">01 · HOW IT WORKS</span>
+  <h2>One app for the city, <em>a supermarket in every zone.</em></h2>
+  <p class="lede">No dark store to rent or stock. Each part of [City] is served by a partner supermarket, your vendor. Kiranacart sends every order to the right one.</p>
+  <div class="flow">
+    <div class="fs"><div class="n">1</div><b>Customer orders</b><span>In the Kiranacart app, by category or search.</span></div>
+    <div class="fs"><div class="n">2</div><b>Zone found</b><span>From the delivery address, automatically.</span></div>
+    <div class="fs"><div class="n">3</div><b>Vendor alerted</b><span>That zone’s supermarket gets the order.</span></div>
+    <div class="fs"><div class="n">4</div><b>Vendor packs</b><span>Checks each item, marks anything out of stock.</span></div>
+    <div class="fs"><div class="n">5</div><b>Rider picks up</b><span>From the vendor’s counter, packed and sealed.</span></div>
+    <div class="fs"><div class="n">6</div><b>Delivered</b><span>In 20–30 minutes, with a delivery OTP.</span></div>
+    <div class="fs"><div class="n">7</div><b>Customer pays</b><span>UPI in the app, or cash at the door.</span></div>
+    <div class="fs earn"><div class="n">₹</div><b>You earn on every order</b><span>Your margin or commission, plus the delivery fee. Vendors are paid weekly.</span></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>2</span></div></div>
+
+<div class="slide">
+  <span class="tag">02 · CITY ZONES</span>
+  <h2>[City] in 4 zones, <em>each with its own vendor.</em></h2>
+  <div class="zone">
+    <svg viewBox="0 0 520 440">
+      <defs><clipPath id="city"><path d="M70 60 Q150 10 270 24 Q400 30 470 110 Q510 200 470 300 Q420 410 280 420 Q140 428 70 350 Q20 270 30 180 Q38 100 70 60 Z"/></clipPath></defs>
+      <g clip-path="url(#city)">
+        <rect x="0" y="0" width="260" height="220" fill="#FFF8D6"/>
+        <rect x="260" y="0" width="260" height="220" fill="#F9FAFB"/>
+        <rect x="0" y="220" width="260" height="220" fill="#F3F4F6"/>
+        <rect x="260" y="220" width="260" height="220" fill="#FFF1B3"/>
+        <path d="M262 0 Q248 110 266 220 T256 440" fill="none" stroke="#0B0D12" stroke-width="2.5" stroke-dasharray="7 6"/>
+        <path d="M0 214 Q130 236 260 220 T520 226" fill="none" stroke="#0B0D12" stroke-width="2.5" stroke-dasharray="7 6"/>
+        <g stroke="#E5E7EB" stroke-width="7" fill="none" stroke-linecap="round"><path d="M40 120 Q200 150 480 90"/><path d="M120 30 Q160 230 110 430"/><path d="M60 330 Q260 300 500 360"/><path d="M380 20 Q350 220 420 430"/></g>
+      </g>
+      <path d="M70 60 Q150 10 270 24 Q400 30 470 110 Q510 200 470 300 Q420 410 280 420 Q140 428 70 350 Q20 270 30 180 Q38 100 70 60 Z" fill="none" stroke="#0B0D12" stroke-width="3"/>
+      <g font-family="Poppins" font-weight="700">
+        <text x="96" y="92" font-size="17" fill="#0B0D12">Zone 1</text><text x="96" y="112" font-size="13" font-weight="500" fill="#4a505c">North</text>
+        <text x="330" y="92" font-size="17" fill="#0B0D12">Zone 2</text><text x="330" y="112" font-size="13" font-weight="500" fill="#4a505c">East</text>
+        <text x="64" y="256" font-size="17" fill="#0B0D12">Zone 3</text><text x="64" y="276" font-size="13" font-weight="500" fill="#4a505c">West</text>
+        <text x="350" y="262" font-size="17" fill="#0B0D12">Zone 4</text><text x="350" y="282" font-size="13" font-weight="500" fill="#4a505c">South</text>
+      </g>
+      <g>
+        <g transform="translate(150 140)"><circle r="44" fill="#0B0D12" opacity=".06"/><rect x="-20" y="-20" width="40" height="40" rx="10" fill="#0B0D12"/><svg x="-12" y="-12" width="24" height="24" color="#FFD014"><use href="#shop"/></svg></g>
+        <g transform="translate(380 150)"><circle r="44" fill="#0B0D12" opacity=".06"/><rect x="-20" y="-20" width="40" height="40" rx="10" fill="#0B0D12"/><svg x="-12" y="-12" width="24" height="24" color="#FFD014"><use href="#shop"/></svg></g>
+        <g transform="translate(160 334)"><circle r="44" fill="#0B0D12" opacity=".06"/><rect x="-20" y="-20" width="40" height="40" rx="10" fill="#0B0D12"/><svg x="-12" y="-12" width="24" height="24" color="#FFD014"><use href="#shop"/></svg></g>
+        <g transform="translate(390 330)"><circle r="44" fill="#0B0D12" opacity=".06"/><rect x="-20" y="-20" width="40" height="40" rx="10" fill="#0B0D12"/><svg x="-12" y="-12" width="24" height="24" color="#FFD014"><use href="#shop"/></svg></g>
+      </g>
+      <g font-family="Poppins" font-size="12" font-weight="600" fill="#0B0D12">
+        <text x="150" y="182" text-anchor="middle">Vendor 1</text><text x="380" y="192" text-anchor="middle">Vendor 2</text>
+        <text x="160" y="376" text-anchor="middle">Vendor 3</text><text x="390" y="372" text-anchor="middle">Vendor 4</text>
+      </g>
+      <g transform="translate(92 346)"><circle r="9" fill="#FFD014" stroke="#0B0D12" stroke-width="2.5"/></g>
+      <path d="M101 346 Q122 356 138 340" fill="none" stroke="#0B0D12" stroke-width="2" stroke-dasharray="3 5"/>
+      <g font-family="Poppins" font-size="11.5" font-weight="600"><rect x="40" y="302" width="104" height="22" rx="6" fill="#0B0D12"/><text x="92" y="317" text-anchor="middle" fill="#fff">Your order here</text></g>
+    </svg>
+    <div>
+      <div class="zl"><span class="n">1</span><div><b>One vendor per zone</b><span>Each zone has a partner supermarket, its own delivery area, and riders who start from there.</span></div></div>
+      <div class="zl"><span class="n">2</span><div><b>The address decides</b><span>Customers never pick a store. Kiranacart sends the order to their zone’s vendor.</span></div></div>
+      <div class="zl"><span class="n">3</span><div><b>Outside every zone?</b><span>“Coming soon to your area”, and we save their number, so you know where to open next.</span></div></div>
+      <div class="zl"><span class="n">4</span><div><b>Vendor closed or busy</b><span>Pause the zone, or send its orders to the next zone, from the admin panel.</span></div></div>
+      <div class="zl"><span class="n">5</span><div><b>You draw the zones</b><span>Change boundaries any time on a map, without rebuilding the app.</span></div></div>
+    </div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>3</span></div></div>
+
+<div class="slide">
+  <span class="tag">03 · WHAT’S INSIDE</span>
+  <h2>Four apps, <em>one system.</em></h2>
+  <p class="lede">What customers, vendors, riders and your team each get.</p>
+  <div class="cols c4">
+    <div class="col"><div class="t"><b>Customers</b><span>Android app</span></div><ul>
+      <li>Login with mobile OTP</li>
+      <li>Marathi and English</li>
+      <li>Categories, search, offers</li>
+      <li>Delivery fee and minimum order</li>
+      <li>UPI or cash on delivery</li>
+      <li>Live order tracking</li>
+      <li>One-tap reorder</li>
+    </ul></div>
+    <div class="col"><div class="t"><b>Vendors</b><span>Vendor app</span></div><ul>
+      <li>New order alert with sound</li>
+      <li>Tick items, mark out of stock</li>
+      <li>Call customer for a swap</li>
+      <li>Mark packed, ready for pickup</li>
+      <li>Opening hours and holidays</li>
+      <li>Daily orders, weekly payout</li>
+    </ul></div>
+    <div class="col"><div class="t"><b>Riders</b><span>Rider app</span></div><ul>
+      <li>Next order: pickup and drop</li>
+      <li>Directions in Google Maps</li>
+      <li>Delivery OTP check</li>
+      <li>Cash collected, recorded</li>
+      <li>Online and offline switch</li>
+      <li>Daily deliveries and earnings</li>
+    </ul></div>
+    <div class="col dk"><div class="t"><b>Your team</b><span>Admin panel</span></div><ul>
+      <li>Zones and their vendors</li>
+      <li>Products, prices, categories</li>
+      <li>Riders and order assignment</li>
+      <li>All orders, live</li>
+      <li>Offers, banners, coupons</li>
+      <li>Vendor payouts, reports per zone</li>
+    </ul></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>4</span></div></div>
+
+<div class="slide">
+  <span class="tag">04 · PRICING MODEL</span>
+  <h2>Two ways to set prices. <em>You choose.</em></h2>
+  <p class="lede">Decide this before we start. It changes how the vendor app and vendor payouts work.</p>
+  <div class="opts" style="grid-template-columns:1fr 1fr;gap:22px">
+    <div class="op"><span class="badge">SIMPLER TO START</span><div class="k">OPTION A · YOU SET THE PRICE</div><b class="h">One price list for all of [City]</b>
+      <p>You set every selling price. Each vendor is paid the purchase price you agreed with them. You keep the difference.</p>
+      <div class="pc"><div class="y">Same price in every zone</div><div class="y">Easier for vendors, faster to launch</div><div class="y">Full control of offers</div><div class="x">You agree purchase prices with each vendor</div><div class="x">Your team updates prices when the market moves</div></div></div>
+    <div class="op"><div class="k">OPTION B · VENDORS SET THE PRICE</div><b class="h">Each vendor runs their own catalogue</b>
+      <p>Each supermarket sets its own products and prices. You take a commission on every order from their zone.</p>
+      <div class="pc"><div class="y">Less price work for your team</div><div class="y">Vendors can run their own offers</div><div class="x">Prices can differ from zone to zone</div><div class="x">Each vendor must keep their catalogue updated</div><div class="x">Takes longer to set up</div></div></div>
+  </div>
+  <div class="ex2">
+    <div>Example: ₹500 order</div>
+    <div><b>Option A:</b> vendor paid the agreed ₹460, you keep ₹40</div>
+    <div><b>Option B:</b> 8% commission, you keep ₹40, vendor gets ₹460</div>
+  </div>
+  <p style="margin:10px 0 0;font-size:14.5px;color:var(--muted)">Numbers are only an example. In both options you also keep the delivery fee you set.</p>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>5</span></div></div>
+
+<div class="slide">
+  <span class="tag">05 · ORDER JOURNEY</span>
+  <h2>From order to payout, <em>step by step.</em></h2>
+  <div class="fc" style="margin-top:22px">
+    <div class="rw"><div class="lb">1 · Order</div>
+      <div class="nd">Customer orders<small>Kiranacart app</small></div><div class="ar">→</div>
+      <div class="nd">Zone found<small>From the address</small></div><div class="ar">→</div>
+      <div class="nd q">Pays online or cash?<small>Cash → collected by the rider</small></div><div class="ar">→</div>
+      <div class="nd pay">Vendor alerted<small>That zone’s supermarket</small></div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">2 · Pack</div>
+      <div class="nd">Vendor accepts<small>Within 2 minutes</small></div><div class="ar">→</div>
+      <div class="nd q">Item missing?<small>Yes → call, swap or remove</small></div><div class="ar">→</div>
+      <div class="nd">Packed and sealed</div><div class="ar">→</div>
+      <div class="nd">Rider assigned<small>Nearest free rider</small></div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">3 · Deliver</div>
+      <div class="nd">Rider picks up</div><div class="ar">→</div>
+      <div class="nd">Customer tracks live</div><div class="ar">→</div>
+      <div class="nd q">OTP at the door<small>Wrong OTP → not handed over</small></div><div class="ar">→</div>
+      <div class="nd">Delivered and rated</div></div>
+    <div class="dn">↓</div>
+    <div class="rw"><div class="lb">4 · Money</div>
+      <div class="nd">Riders hand in cash daily</div><div class="ar">→</div>
+      <div class="nd">Your margin kept</div><div class="ar">→</div>
+      <div class="nd pay">Vendors paid weekly<small>Statement in the vendor app</small></div></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>6</span></div></div>
+
+<div class="slide">
+  <span class="tag">06 · BUILT FOR [CITY]</span>
+  <h2>Built for how supermarkets <em>actually work.</em></h2>
+  <p class="lede">Vendors don’t need billing software. Everything runs from one phone at the counter.</p>
+  <div class="tg">
+    <div class="tc"><div class="i">1</div><b>Item check per order</b><span>Vendor staff tick each item while packing. No stock syncing needed to start.</span></div>
+    <div class="tc"><div class="i">2</div><b>Out of stock in one tap</b><span>The product is hidden in that zone until the vendor marks it back.</span></div>
+    <div class="tc"><div class="i">3</div><b>Swaps by phone</b><span>Item missing? The vendor calls, the customer okays a swap, or it’s removed from the bill.</span></div>
+    <div class="tc"><div class="i">4</div><b>Honest delivery time</b><span>20–30 minutes promised, and the app shows the real time for each zone.</span></div>
+    <div class="tc"><div class="i">★</div><b>Vendor score</b><span>Time to accept, missing items, customer ratings. You see which vendor performs.</span></div>
+    <div class="tc"><div class="i">◷</div><b>Opening hours</b><span>Each vendor sets timings and holidays. The zone pauses on its own when they close.</span></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>7</span></div></div>
+
+<div class="slide">
+  <span class="tag">07 · PRICE</span>
+  <h2>A monthly subscription, <em>not a big upfront bill.</em></h2>
+  <div class="pgrid" style="margin-top:20px">
+    <div class="pbox">
+      <div class="l">Kiranacart subscription</div>
+      <div class="p">₹20,000<span style="font-size:26px;color:#e3e5ea;font-weight:600"> / month</span></div>
+      <div class="s">plus ₹20,000 one-time setup · 6-month minimum</div>
+      <div class="pay">
+        <div><b>₹40,000</b>to start: setup + month 1</div>
+        <div><b>₹20,000</b>each month, paid in advance</div>
+        <div><b>₹1,40,000</b>total for the first 6 months</div>
+      </div>
+    </div>
+    <div class="lst">
+      <b class="h">Included</b>
+      <ul>
+        <li>Customer Android app, vendor app, rider app, admin panel</li>
+        <li>Up to 4 zones and 4 vendors, about 3,000 products each</li>
+        <li>Servers and hosting for up to 5,000 orders a month</li>
+        <li>Updates, fixes and WhatsApp support</li>
+        <li>Play Store listing under Outgrid’s developer account</li>
+      </ul>
+      <b class="h">Not included, priced when you need it</b>
+      <ul class="no">
+        <li>iPhone app</li>
+        <li>A second city</li>
+        <li>Live stock sync with a vendor’s billing software</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin:6px 0 0;font-size:14.5px;color:var(--muted)">No GST.</p>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>8</span></div></div>
+
+<div class="slide">
+  <span class="tag">08 · TIMELINE</span>
+  <h2>Real orders <em>in 6–8 weeks.</em></h2>
+  <div class="wkt" style="margin-top:16px">
+    <div><b>Week 5</b>Working demo</div>
+    <div class="dk"><b>Weeks 6–8</b>Real orders in one zone</div>
+    <div><b>Month 3</b>All 4 zones live</div>
+  </div>
+  <div class="tl">
+    <div class="w"><div class="dot">1</div><div class="d">WEEK 1</div><b>Plan zones and screens</b><span>Zone boundaries, vendors, categories, and screens for you to approve.</span></div>
+    <div class="w m"><div class="dot">2</div><div class="d">WEEKS 2–5</div><b>Working demo</b><span>Customer app, vendor app and admin panel working end to end.</span></div>
+    <div class="w"><div class="dot">3</div><div class="d">WEEKS 6–8</div><b>Pilot in one zone</b><span>Rider app live. Real orders from one vendor; we fix what we find.</span></div>
+    <div class="w m"><div class="dot">4</div><div class="d">MONTHS 3–6</div><b>Whole city</b><span>Remaining zones, offers and reports. A review call every month.</span></div>
+  </div>
+  <div class="callout"><span class="ic">!</span><div>The subscription starts on the day we start building. You see a <b>working demo by week 5</b> and <b>real orders by week 8.</b></div></div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>9</span></div></div>
+
+<div class="slide">
+  <span class="tag">09 · AFTER 6 MONTHS</span>
+  <h2>After 6 months, <em>you choose.</em></h2>
+  <p class="lede">The prices are fixed today, so there’s nothing to negotiate later.</p>
+  <div class="opts">
+    <div class="op rec"><span class="badge">MOST CHOOSE THIS</span><div class="k">CONTINUE</div><b class="h">Keep the subscription</b>
+      <div class="pr2">₹15,000<small> / month</small></div>
+      <p>Lower, because the build is done. Hosting, updates, support and small new features.</p></div>
+    <div class="op"><div class="k">OWN YOUR COPY</div><b class="h">Buy your own copy</b>
+      <div class="pr2">₹1,00,000<small> one time</small></div>
+      <p>A permanent licence, moved to your own server and Play Store account, with the source code of your copy. Support plans optional.</p></div>
+    <div class="op"><div class="k">STOP</div><b class="h">Leave, no lock-in</b>
+      <div class="pr2">₹0</div>
+      <p>The app is taken down. All your customer, vendor and order data is exported to you.</p></div>
+  </div>
+  <div class="mini" style="margin-top:18px">
+    <div><b>Always yours</b>The Kiranacart name and brand, your customer and order data, your vendors and riders.</div>
+    <div><b>Only for you in [City]</b>The software stays Outgrid’s. While you subscribe, we won’t offer this app to anyone else in [City].</div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>10</span></div></div>
+
+<div class="slide">
+  <span class="tag">10 · TERMS AND RUNNING COSTS</span>
+  <h2>Clear terms, <em>no surprises.</em></h2>
+  <div class="two" style="margin-top:18px">
+    <div class="bx"><div class="k">THE TERMS</div><b class="h">How the subscription works</b><ul>
+      <li>Billed monthly, in advance, from the day we start</li>
+      <li>6-month minimum, then continue, buy or stop</li>
+      <li>If a payment is 15 days late, service pauses until it’s paid</li>
+      <li>Scope: up to 4 zones, 4 vendors, about 3,000 products each, 5,000 orders a month</li>
+      <li>Anything beyond that, or a new feature, is priced before we build it</li>
+    </ul></div>
+    <div class="bx"><div class="k">PAID BY YOU, DIRECTLY</div><b class="h">Running costs</b><ul>
+      <li>Online payments: about 2% (Razorpay)</li>
+      <li>OTP SMS and WhatsApp messages</li>
+      <li>Google Maps, above its free monthly credit</li>
+      <li>Your riders, and your vendors’ payouts</li>
+      <li>Your domain name</li>
+    </ul><p style="margin:10px 0 0;font-size:14.5px;color:var(--muted)">We set it all up and share exact amounts before launch.</p></div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>11</span></div></div>
+
+<div class="slide dark">
+  <span class="tag">NEXT STEP</span>
+  <h2 style="font-size:46px">Why this is <span style="color:var(--yellow)">safe for you.</span></h2>
+  <div class="next">
+    <div>
+      <div class="ns"><span class="n">1</span><div><b>Start with ₹40,000</b><span>Not ₹4–5 lakh upfront for a custom multi-store build</span></div></div>
+      <div class="ns"><span class="n">2</span><div><b>Real orders before the city</b><span>Pilot in one zone, then open the rest</span></div></div>
+      <div class="ns"><span class="n">3</span><div><b>Your data is always yours</b><span>Export it any time, even if you stop</span></div></div>
+      <div class="ns"><span class="n">4</span><div><b>After-6-months prices fixed today</b><span>Continue, buy your copy, or stop</span></div></div>
+    </div>
+    <div class="ab"><b class="h">Outgrid Labs</b>
+      A Maharashtra studio building custom apps, websites and AI automation for businesses, end to end. You talk directly to the people building it.
+      <div class="c">
+        <div><span>Start</span>₹40,000 → agreement → kickoff</div>
+        <div><span>Call / WhatsApp</span>______________</div>
+        <div><span>Web</span>outgridlabs.com</div>
+      </div>
+    </div>
+  </div>
+<div class="ft"><span><b>Outgrid</b> Labs · outgridlabs.com</span><span>12</span></div></div>
+</body>
+</html>
